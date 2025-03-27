@@ -64,6 +64,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmForgotpwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForgotpwd.Designer.cs">
+      <DependentUpon>frmForgotpwd.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSignuppage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForgotpwd.resx">
+      <DependentUpon>frmForgotpwd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignuppage.resx">
       <DependentUpon>frmSignuppage.cs</DependentUpon>

@@ -45,6 +45,10 @@ namespace Recipe_Manager
         private void label1_Click(object sender, EventArgs e)
         {
             lblForgotpwd.Cursor = Cursors.Hand;
+
+            this.Hide();
+            frmForgotpwd frm2 = new frmForgotpwd();
+            frm2.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)

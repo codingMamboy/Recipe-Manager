@@ -30,22 +30,22 @@
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblSlogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbxUsername2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblUsername2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSignintext2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbxEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tbxPwd2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblPassword2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExit2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSignup = new Guna.UI2.WinForms.Guna2Button();
             this.tbxConfirmpwd = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblConfirmpwd = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnSignup = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExit2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
+            this.tbxPwd2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblPassword2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tbxEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -79,17 +79,6 @@
             this.lblSlogan.TabIndex = 2;
             this.lblSlogan.Text = "Your personal digital cookbook";
             // 
-            // lblTitile
-            // 
-            this.lblTitile.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitile.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
-            this.lblTitile.Location = new System.Drawing.Point(175, 235);
-            this.lblTitile.Name = "lblTitile";
-            this.lblTitile.Size = new System.Drawing.Size(244, 86);
-            this.lblTitile.TabIndex = 0;
-            this.lblTitile.Text = "CookNest";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
@@ -100,6 +89,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // lblTitile
+            // 
+            this.lblTitile.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitile.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
+            this.lblTitile.Location = new System.Drawing.Point(175, 235);
+            this.lblTitile.Name = "lblTitile";
+            this.lblTitile.Size = new System.Drawing.Size(244, 86);
+            this.lblTitile.TabIndex = 0;
+            this.lblTitile.Text = "CookNest";
             // 
             // guna2HtmlLabel1
             // 
@@ -179,78 +179,66 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(515, 574);
             this.panel1.TabIndex = 24;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // tbxEmail
+            // btnBack
             // 
-            this.tbxEmail.Animated = true;
-            this.tbxEmail.BorderRadius = 17;
-            this.tbxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxEmail.DefaultText = "";
-            this.tbxEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbxEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbxEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxEmail.DisabledState.Parent = this.tbxEmail;
-            this.tbxEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxEmail.FocusedState.Parent = this.tbxEmail;
-            this.tbxEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxEmail.HoverState.Parent = this.tbxEmail;
-            this.tbxEmail.Location = new System.Drawing.Point(136, 247);
-            this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.PasswordChar = '\0';
-            this.tbxEmail.PlaceholderText = "";
-            this.tbxEmail.SelectedText = "";
-            this.tbxEmail.ShadowDecoration.Parent = this.tbxEmail;
-            this.tbxEmail.Size = new System.Drawing.Size(231, 36);
-            this.tbxEmail.TabIndex = 25;
+            this.btnBack.Animated = true;
+            this.btnBack.BackgroundImage = global::Recipe_Manager.Properties.Resources._3643736_back_backward_left_mark_sign_icon__2_;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.BorderColor = System.Drawing.Color.Transparent;
+            this.btnBack.CheckedState.Parent = this.btnBack;
+            this.btnBack.CustomImages.Parent = this.btnBack;
+            this.btnBack.FillColor = System.Drawing.Color.Empty;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBack.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBack.HoverState.Parent = this.btnBack;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.PressedColor = System.Drawing.Color.White;
+            this.btnBack.ShadowDecoration.Parent = this.btnBack;
+            this.btnBack.Size = new System.Drawing.Size(35, 32);
+            this.btnBack.TabIndex = 32;
+            this.btnBack.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // lblEmail
+            // btnExit2
             // 
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
-            this.lblEmail.Location = new System.Drawing.Point(136, 216);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(38, 25);
-            this.lblEmail.TabIndex = 24;
-            this.lblEmail.Text = "Email";
-            this.lblEmail.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
+            this.btnExit2.Animated = true;
+            this.btnExit2.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
+            this.btnExit2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit2.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit2.CheckedState.Parent = this.btnExit2;
+            this.btnExit2.CustomImages.Parent = this.btnExit2;
+            this.btnExit2.FillColor = System.Drawing.Color.Empty;
+            this.btnExit2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit2.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit2.HoverState.Parent = this.btnExit2;
+            this.btnExit2.Location = new System.Drawing.Point(464, 12);
+            this.btnExit2.Name = "btnExit2";
+            this.btnExit2.PressedColor = System.Drawing.Color.White;
+            this.btnExit2.ShadowDecoration.Parent = this.btnExit2;
+            this.btnExit2.Size = new System.Drawing.Size(35, 32);
+            this.btnExit2.TabIndex = 31;
+            this.btnExit2.Click += new System.EventHandler(this.btnExit2_Click);
             // 
-            // tbxPwd2
+            // btnSignup
             // 
-            this.tbxPwd2.Animated = true;
-            this.tbxPwd2.BorderRadius = 17;
-            this.tbxPwd2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxPwd2.DefaultText = "";
-            this.tbxPwd2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbxPwd2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbxPwd2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxPwd2.DisabledState.Parent = this.tbxPwd2;
-            this.tbxPwd2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxPwd2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxPwd2.FocusedState.Parent = this.tbxPwd2;
-            this.tbxPwd2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxPwd2.HoverState.Parent = this.tbxPwd2;
-            this.tbxPwd2.Location = new System.Drawing.Point(136, 320);
-            this.tbxPwd2.Name = "tbxPwd2";
-            this.tbxPwd2.PasswordChar = '\0';
-            this.tbxPwd2.PlaceholderText = "";
-            this.tbxPwd2.SelectedText = "";
-            this.tbxPwd2.ShadowDecoration.Parent = this.tbxPwd2;
-            this.tbxPwd2.Size = new System.Drawing.Size(231, 36);
-            this.tbxPwd2.TabIndex = 27;
-            this.tbxPwd2.TextChanged += new System.EventHandler(this.tbxPwd2_TextChanged);
-            // 
-            // lblPassword2
-            // 
-            this.lblPassword2.BackColor = System.Drawing.Color.Transparent;
-            this.lblPassword2.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
-            this.lblPassword2.Location = new System.Drawing.Point(136, 289);
-            this.lblPassword2.Name = "lblPassword2";
-            this.lblPassword2.Size = new System.Drawing.Size(66, 25);
-            this.lblPassword2.TabIndex = 26;
-            this.lblPassword2.Text = "Password";
+            this.btnSignup.Animated = true;
+            this.btnSignup.BorderColor = System.Drawing.Color.Empty;
+            this.btnSignup.BorderRadius = 17;
+            this.btnSignup.CheckedState.Parent = this.btnSignup;
+            this.btnSignup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignup.CustomImages.Parent = this.btnSignup;
+            this.btnSignup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.btnSignup.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignup.ForeColor = System.Drawing.Color.White;
+            this.btnSignup.HoverState.Parent = this.btnSignup;
+            this.btnSignup.Location = new System.Drawing.Point(160, 455);
+            this.btnSignup.Name = "btnSignup";
+            this.btnSignup.ShadowDecoration.Parent = this.btnSignup;
+            this.btnSignup.Size = new System.Drawing.Size(180, 45);
+            this.btnSignup.TabIndex = 30;
+            this.btnSignup.Text = "Sign up";
             // 
             // tbxConfirmpwd
             // 
@@ -288,64 +276,77 @@
             this.lblConfirmpwd.TabIndex = 28;
             this.lblConfirmpwd.Text = "Confirm Password";
             // 
-            // btnSignup
+            // tbxPwd2
             // 
-            this.btnSignup.Animated = true;
-            this.btnSignup.BorderColor = System.Drawing.Color.Empty;
-            this.btnSignup.BorderRadius = 17;
-            this.btnSignup.CheckedState.Parent = this.btnSignup;
-            this.btnSignup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSignup.CustomImages.Parent = this.btnSignup;
-            this.btnSignup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
-            this.btnSignup.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignup.ForeColor = System.Drawing.Color.White;
-            this.btnSignup.HoverState.Parent = this.btnSignup;
-            this.btnSignup.Location = new System.Drawing.Point(160, 455);
-            this.btnSignup.Name = "btnSignup";
-            this.btnSignup.ShadowDecoration.Parent = this.btnSignup;
-            this.btnSignup.Size = new System.Drawing.Size(180, 45);
-            this.btnSignup.TabIndex = 30;
-            this.btnSignup.Text = "Sign up";
+            this.tbxPwd2.Animated = true;
+            this.tbxPwd2.BorderRadius = 17;
+            this.tbxPwd2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxPwd2.DefaultText = "";
+            this.tbxPwd2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxPwd2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxPwd2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxPwd2.DisabledState.Parent = this.tbxPwd2;
+            this.tbxPwd2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxPwd2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxPwd2.FocusedState.Parent = this.tbxPwd2;
+            this.tbxPwd2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxPwd2.HoverState.Parent = this.tbxPwd2;
+            this.tbxPwd2.Location = new System.Drawing.Point(136, 320);
+            this.tbxPwd2.Name = "tbxPwd2";
+            this.tbxPwd2.PasswordChar = '\0';
+            this.tbxPwd2.PlaceholderText = "";
+            this.tbxPwd2.SelectedText = "";
+            this.tbxPwd2.ShadowDecoration.Parent = this.tbxPwd2;
+            this.tbxPwd2.Size = new System.Drawing.Size(231, 36);
+            this.tbxPwd2.TabIndex = 27;
+            this.tbxPwd2.TextChanged += new System.EventHandler(this.tbxPwd2_TextChanged);
             // 
-            // btnExit2
+            // lblPassword2
             // 
-            this.btnExit2.Animated = true;
-            this.btnExit2.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
-            this.btnExit2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnExit2.BorderColor = System.Drawing.Color.Transparent;
-            this.btnExit2.CheckedState.Parent = this.btnExit2;
-            this.btnExit2.CustomImages.Parent = this.btnExit2;
-            this.btnExit2.FillColor = System.Drawing.Color.Empty;
-            this.btnExit2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit2.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExit2.HoverState.Parent = this.btnExit2;
-            this.btnExit2.Location = new System.Drawing.Point(464, 12);
-            this.btnExit2.Name = "btnExit2";
-            this.btnExit2.PressedColor = System.Drawing.Color.White;
-            this.btnExit2.ShadowDecoration.Parent = this.btnExit2;
-            this.btnExit2.Size = new System.Drawing.Size(35, 32);
-            this.btnExit2.TabIndex = 31;
-            this.btnExit2.Click += new System.EventHandler(this.btnExit2_Click);
+            this.lblPassword2.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword2.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.lblPassword2.Location = new System.Drawing.Point(136, 289);
+            this.lblPassword2.Name = "lblPassword2";
+            this.lblPassword2.Size = new System.Drawing.Size(66, 25);
+            this.lblPassword2.TabIndex = 26;
+            this.lblPassword2.Text = "Password";
             // 
-            // btnBack
+            // tbxEmail
             // 
-            this.btnBack.Animated = true;
-            this.btnBack.BackgroundImage = global::Recipe_Manager.Properties.Resources._3643736_back_backward_left_mark_sign_icon__2_;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.BorderColor = System.Drawing.Color.Transparent;
-            this.btnBack.CheckedState.Parent = this.btnBack;
-            this.btnBack.CustomImages.Parent = this.btnBack;
-            this.btnBack.FillColor = System.Drawing.Color.Empty;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBack.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBack.HoverState.Parent = this.btnBack;
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.PressedColor = System.Drawing.Color.White;
-            this.btnBack.ShadowDecoration.Parent = this.btnBack;
-            this.btnBack.Size = new System.Drawing.Size(35, 32);
-            this.btnBack.TabIndex = 32;
-            this.btnBack.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.tbxEmail.Animated = true;
+            this.tbxEmail.BorderRadius = 17;
+            this.tbxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxEmail.DefaultText = "";
+            this.tbxEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxEmail.DisabledState.Parent = this.tbxEmail;
+            this.tbxEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxEmail.FocusedState.Parent = this.tbxEmail;
+            this.tbxEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxEmail.HoverState.Parent = this.tbxEmail;
+            this.tbxEmail.Location = new System.Drawing.Point(136, 247);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.PasswordChar = '\0';
+            this.tbxEmail.PlaceholderText = "";
+            this.tbxEmail.SelectedText = "";
+            this.tbxEmail.ShadowDecoration.Parent = this.tbxEmail;
+            this.tbxEmail.Size = new System.Drawing.Size(231, 36);
+            this.tbxEmail.TabIndex = 25;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.lblEmail.Location = new System.Drawing.Point(136, 216);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(38, 25);
+            this.lblEmail.TabIndex = 24;
+            this.lblEmail.Text = "Email";
+            this.lblEmail.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
             // 
             // frmSignuppage
             // 

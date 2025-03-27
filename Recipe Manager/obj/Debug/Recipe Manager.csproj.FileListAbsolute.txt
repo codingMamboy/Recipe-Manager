@@ -26,3 +26,4 @@ C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.exe
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.pdb
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmSignuppage.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmForgotpwd.resources
