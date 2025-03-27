@@ -53,7 +53,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderThickness = 4;
             this.guna2Panel1.Controls.Add(this.lblSlogan);
@@ -94,7 +94,7 @@
             // 
             this.lblTitile.BackColor = System.Drawing.Color.Transparent;
             this.lblTitile.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
+            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.lblTitile.Location = new System.Drawing.Point(175, 235);
             this.lblTitile.Name = "lblTitile";
             this.lblTitile.Size = new System.Drawing.Size(244, 86);
@@ -105,7 +105,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Poppins Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(195, 108);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(121, 24);
@@ -140,7 +140,7 @@
             // 
             this.lblUsername2.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername2.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.lblUsername2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
             this.lblUsername2.Location = new System.Drawing.Point(136, 143);
             this.lblUsername2.Name = "lblUsername2";
             this.lblUsername2.Size = new System.Drawing.Size(70, 25);
@@ -151,7 +151,7 @@
             // 
             this.lblSignintext2.BackColor = System.Drawing.Color.Transparent;
             this.lblSignintext2.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignintext2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.lblSignintext2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
             this.lblSignintext2.Location = new System.Drawing.Point(202, 51);
             this.lblSignintext2.Name = "lblSignintext2";
             this.lblSignintext2.Size = new System.Drawing.Size(106, 50);
@@ -160,7 +160,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.btnExit2);
             this.panel1.Controls.Add(this.btnSignup);
@@ -184,7 +184,7 @@
             // btnBack
             // 
             this.btnBack.Animated = true;
-            this.btnBack.BackgroundImage = global::Recipe_Manager.Properties.Resources._3643736_back_backward_left_mark_sign_icon__2_;
+            this.btnBack.BackgroundImage = global::Recipe_Manager.Properties.Resources.output_onlinetools__1_;
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnBack.BorderColor = System.Drawing.Color.Transparent;
             this.btnBack.CheckedState.Parent = this.btnBack;
@@ -229,7 +229,7 @@
             this.btnSignup.CheckedState.Parent = this.btnSignup;
             this.btnSignup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignup.CustomImages.Parent = this.btnSignup;
-            this.btnSignup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.btnSignup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
             this.btnSignup.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignup.ForeColor = System.Drawing.Color.White;
             this.btnSignup.HoverState.Parent = this.btnSignup;
@@ -269,7 +269,7 @@
             // 
             this.lblConfirmpwd.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirmpwd.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.lblConfirmpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
             this.lblConfirmpwd.Location = new System.Drawing.Point(136, 362);
             this.lblConfirmpwd.Name = "lblConfirmpwd";
             this.lblConfirmpwd.Size = new System.Drawing.Size(121, 25);
@@ -305,7 +305,7 @@
             // 
             this.lblPassword2.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword2.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.lblPassword2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
             this.lblPassword2.Location = new System.Drawing.Point(136, 289);
             this.lblPassword2.Name = "lblPassword2";
             this.lblPassword2.Size = new System.Drawing.Size(66, 25);
@@ -340,7 +340,7 @@
             // 
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
             this.lblEmail.Location = new System.Drawing.Point(136, 216);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(38, 25);

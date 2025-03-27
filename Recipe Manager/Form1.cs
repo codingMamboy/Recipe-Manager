@@ -84,5 +84,10 @@ namespace Recipe_Manager
         {
 
         }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

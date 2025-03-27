@@ -140,5 +140,8 @@
   <ItemGroup>
     <None Include="Resources\3643736_back_backward_left_mark_sign_icon %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinetools %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

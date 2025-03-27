@@ -32,6 +32,7 @@
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblSlogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSignintext = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUsername = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -44,12 +45,12 @@
             this.lblSignin = new System.Windows.Forms.Label();
             this.lblSingnage = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pnlLogin = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -60,7 +61,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderThickness = 4;
             this.guna2Panel1.Controls.Add(this.lblSlogan);
@@ -86,11 +87,22 @@
             this.lblSlogan.Text = "Your personal digital cookbook";
             this.lblSlogan.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(150, 208);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblTitile
             // 
             this.lblTitile.BackColor = System.Drawing.Color.Transparent;
             this.lblTitile.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
+            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.lblTitile.Location = new System.Drawing.Point(216, 227);
             this.lblTitile.Name = "lblTitile";
             this.lblTitile.Size = new System.Drawing.Size(244, 86);
@@ -101,8 +113,8 @@
             // 
             this.lblSignintext.BackColor = System.Drawing.Color.Transparent;
             this.lblSignintext.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignintext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
-            this.lblSignintext.Location = new System.Drawing.Point(650, 60);
+            this.lblSignintext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblSignintext.Location = new System.Drawing.Point(140, 60);
             this.lblSignintext.Name = "lblSignintext";
             this.lblSignintext.Size = new System.Drawing.Size(254, 50);
             this.lblSignintext.TabIndex = 1;
@@ -112,12 +124,13 @@
             // 
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
-            this.lblUsername.Location = new System.Drawing.Point(666, 186);
+            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblUsername.Location = new System.Drawing.Point(154, 186);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(70, 25);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username";
+            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
             // 
             // tbxUsername
             // 
@@ -134,7 +147,7 @@
             this.tbxUsername.FocusedState.Parent = this.tbxUsername;
             this.tbxUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxUsername.HoverState.Parent = this.tbxUsername;
-            this.tbxUsername.Location = new System.Drawing.Point(666, 217);
+            this.tbxUsername.Location = new System.Drawing.Point(154, 217);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.PasswordChar = '\0';
             this.tbxUsername.PlaceholderText = "";
@@ -148,8 +161,8 @@
             // 
             this.lblPwd.BackColor = System.Drawing.Color.Transparent;
             this.lblPwd.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
-            this.lblPwd.Location = new System.Drawing.Point(666, 259);
+            this.lblPwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblPwd.Location = new System.Drawing.Point(154, 259);
             this.lblPwd.Name = "lblPwd";
             this.lblPwd.Size = new System.Drawing.Size(66, 25);
             this.lblPwd.TabIndex = 4;
@@ -170,7 +183,7 @@
             this.tbxPwd.FocusedState.Parent = this.tbxPwd;
             this.tbxPwd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxPwd.HoverState.Parent = this.tbxPwd;
-            this.tbxPwd.Location = new System.Drawing.Point(666, 290);
+            this.tbxPwd.Location = new System.Drawing.Point(154, 290);
             this.tbxPwd.Name = "tbxPwd";
             this.tbxPwd.PasswordChar = '\0';
             this.tbxPwd.PlaceholderText = "";
@@ -188,11 +201,11 @@
             this.btnLogin.CheckedState.Parent = this.btnLogin;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.CustomImages.Parent = this.btnLogin;
-            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
+            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
             this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnLogin.HoverState.Parent = this.btnLogin;
-            this.btnLogin.Location = new System.Drawing.Point(694, 378);
+            this.btnLogin.Location = new System.Drawing.Point(181, 378);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
             this.btnLogin.Size = new System.Drawing.Size(180, 45);
@@ -203,8 +216,8 @@
             // 
             this.lblHaveaccount.BackColor = System.Drawing.Color.Transparent;
             this.lblHaveaccount.Font = new System.Drawing.Font("Poppins Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHaveaccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
-            this.lblHaveaccount.Location = new System.Drawing.Point(703, 429);
+            this.lblHaveaccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblHaveaccount.Location = new System.Drawing.Point(191, 429);
             this.lblHaveaccount.Name = "lblHaveaccount";
             this.lblHaveaccount.Size = new System.Drawing.Size(109, 21);
             this.lblHaveaccount.TabIndex = 8;
@@ -214,8 +227,8 @@
             // 
             this.lblForgotpwd.AutoSize = true;
             this.lblForgotpwd.Font = new System.Drawing.Font("Poppins Light", 8.25F);
-            this.lblForgotpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblForgotpwd.Location = new System.Drawing.Point(792, 329);
+            this.lblForgotpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblForgotpwd.Location = new System.Drawing.Point(280, 329);
             this.lblForgotpwd.Name = "lblForgotpwd";
             this.lblForgotpwd.Size = new System.Drawing.Size(105, 19);
             this.lblForgotpwd.TabIndex = 11;
@@ -227,8 +240,8 @@
             // 
             this.lblSignin.AutoSize = true;
             this.lblSignin.Font = new System.Drawing.Font("Poppins Light", 8.25F);
-            this.lblSignin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblSignin.Location = new System.Drawing.Point(818, 429);
+            this.lblSignin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblSignin.Location = new System.Drawing.Point(306, 429);
             this.lblSignin.Name = "lblSignin";
             this.lblSignin.Size = new System.Drawing.Size(45, 19);
             this.lblSignin.TabIndex = 12;
@@ -239,8 +252,8 @@
             // 
             this.lblSingnage.BackColor = System.Drawing.Color.Transparent;
             this.lblSingnage.Font = new System.Drawing.Font("Poppins Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSingnage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(192)))), ((int)(((byte)(139)))));
-            this.lblSingnage.Location = new System.Drawing.Point(691, 116);
+            this.lblSingnage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblSingnage.Location = new System.Drawing.Point(170, 116);
             this.lblSingnage.Name = "lblSingnage";
             this.lblSingnage.Size = new System.Drawing.Size(181, 24);
             this.lblSingnage.TabIndex = 13;
@@ -259,7 +272,7 @@
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExit.ForeColor = System.Drawing.Color.Transparent;
             this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(966, 12);
+            this.btnExit.Location = new System.Drawing.Point(454, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.PressedColor = System.Drawing.Color.White;
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
@@ -267,19 +280,20 @@
             this.btnExit.TabIndex = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(150, 208);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // pnlLogin
             // 
+            this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.pnlLogin.Controls.Add(this.btnExit);
+            this.pnlLogin.Controls.Add(this.lblSignin);
+            this.pnlLogin.Controls.Add(this.lblSingnage);
+            this.pnlLogin.Controls.Add(this.lblForgotpwd);
+            this.pnlLogin.Controls.Add(this.lblHaveaccount);
+            this.pnlLogin.Controls.Add(this.lblSignintext);
+            this.pnlLogin.Controls.Add(this.btnLogin);
+            this.pnlLogin.Controls.Add(this.tbxUsername);
+            this.pnlLogin.Controls.Add(this.lblUsername);
+            this.pnlLogin.Controls.Add(this.lblPwd);
+            this.pnlLogin.Controls.Add(this.tbxPwd);
             this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlLogin.Location = new System.Drawing.Point(512, 0);
             this.pnlLogin.Name = "pnlLogin";
@@ -292,17 +306,6 @@
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(1013, 574);
-            this.Controls.Add(this.lblSingnage);
-            this.Controls.Add(this.lblSignin);
-            this.Controls.Add(this.lblForgotpwd);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.lblHaveaccount);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.tbxPwd);
-            this.Controls.Add(this.lblPwd);
-            this.Controls.Add(this.tbxUsername);
-            this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.lblSignintext);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.pnlLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -313,8 +316,9 @@
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
