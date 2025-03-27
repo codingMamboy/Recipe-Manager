@@ -64,7 +64,7 @@ namespace Recipe_Manager
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
-            tbxPwd.UseSystemPasswordChar = true;
+            tbxPwd.UseSystemPasswordChar = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
