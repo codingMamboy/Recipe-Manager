@@ -17,8 +17,6 @@ C:\Users\bryan\source\repos\Recipe Manager\Recipe Manager\obj\Debug\Recipe_Manag
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\Recipe Manager.exe.config
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\Recipe Manager.exe
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\Recipe Manager.pdb
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\ComponentFactory.Krypton.Ribbon.pdb
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.csproj.AssemblyReference.cache
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmLoginpage.resources
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.Properties.Resources.resources
@@ -27,3 +25,4 @@ C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe M.FFFAFD44.Up2Date
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.exe
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.pdb
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmSignuppage.resources

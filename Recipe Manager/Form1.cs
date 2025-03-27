@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Recipe_Manager
 {
-    public partial class frmLoginpage: Form
+    public partial class frmLoginpage : Form
     {
         public frmLoginpage()
         {
             InitializeComponent();
-            
+
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,7 +49,11 @@ namespace Recipe_Manager
 
         private void label2_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            frmSignuppage frm = new frmSignuppage();
+            frm.Show();
+
+
         }
 
         private void lblForgotpwd_Enter(object sender, EventArgs e)
@@ -70,6 +69,16 @@ namespace Recipe_Manager
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlLogin_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
