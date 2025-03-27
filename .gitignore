@@ -1,3 +1,28 @@
 node_modules/
 
 .vs/
+
+*.user
+*.suo
+*.vcxproj.user
+*.csproj.user
+
+# Build output
+bin/
+obj/
+
+# Dependencies
+packages/
+node_modules/
+
+# Environment variables
+*.env
+secrets.json
+appsettings.Local.json
+
+# Logs
+*.log
+
+# Database files (if using SQLite)
+*.sqlite
+*.db
