@@ -239,6 +239,7 @@
             this.btnSignup.Size = new System.Drawing.Size(180, 45);
             this.btnSignup.TabIndex = 30;
             this.btnSignup.Text = "Sign up";
+            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // tbxConfirmpwd
             // 

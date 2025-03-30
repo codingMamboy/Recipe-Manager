@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Recipe_Manager
 {
     public partial class frmForgotpwd: Form
     {
+        
         public frmForgotpwd()
         {
             InitializeComponent();
+           
         }
 
         private void btnBack2_Click(object sender, EventArgs e)

@@ -211,6 +211,7 @@
             this.btnLogin.Size = new System.Drawing.Size(180, 45);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Log in";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblHaveaccount
             // 
