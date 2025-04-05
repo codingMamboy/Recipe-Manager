@@ -93,6 +93,16 @@ namespace Recipe_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3643736_back_backward_left_mark_sign_icon__3_ {
+            get {
+                object obj = ResourceManager.GetObject("3643736_back_backward_left_mark_sign_icon (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _753958_chefs_cook_food_hat_restaurant_icon {
             get {
                 object obj = ResourceManager.GetObject("753958_chefs_cook_food_hat_restaurant_icon", resourceCulture);

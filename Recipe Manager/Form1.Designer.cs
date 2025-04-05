@@ -32,7 +32,6 @@
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblSlogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSignintext = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUsername = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -44,13 +43,14 @@
             this.lblForgotpwd = new System.Windows.Forms.Label();
             this.lblSignin = new System.Windows.Forms.Label();
             this.lblSingnage = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnlLogin = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.pnlLogin = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
+            this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -86,17 +86,6 @@
             this.lblSlogan.TabIndex = 2;
             this.lblSlogan.Text = "Your personal digital cookbook";
             this.lblSlogan.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(150, 208);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // lblTitile
             // 
@@ -261,26 +250,6 @@
             this.lblSingnage.Text = "Enter your credentials to log in";
             this.lblSingnage.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
-            // btnExit
-            // 
-            this.btnExit.Animated = true;
-            this.btnExit.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnExit.BorderColor = System.Drawing.Color.Transparent;
-            this.btnExit.CheckedState.Parent = this.btnExit;
-            this.btnExit.CustomImages.Parent = this.btnExit;
-            this.btnExit.FillColor = System.Drawing.Color.Empty;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(454, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.PressedColor = System.Drawing.Color.White;
-            this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(35, 32);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // pnlLogin
             // 
             this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
@@ -303,6 +272,37 @@
             this.pnlLogin.TabIndex = 14;
             this.pnlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLogin_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(150, 208);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Animated = true;
+            this.btnExit.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(454, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.PressedColor = System.Drawing.Color.White;
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(35, 32);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmLoginpage
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
@@ -315,10 +315,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

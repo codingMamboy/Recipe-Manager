@@ -44,9 +44,10 @@ namespace Recipe_Manager
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
             frmLoginpage frm = new frmLoginpage();
             frm.Show();
+            this.Hide();
         }
 
         private void tbxPwd2_TextChanged(object sender, EventArgs e)
@@ -121,12 +122,12 @@ namespace Recipe_Manager
                 if (result > 0)
                 {
                     MessageBox.Show("Account created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    this.Hide();
 
                     frmLoginpage frm = new frmLoginpage();
-                    this.Close();
+                   
                     frm.Show();
-
+                    this.Hide();
                 }
                 else
                 {

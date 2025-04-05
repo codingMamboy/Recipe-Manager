@@ -16,12 +16,15 @@ namespace Recipe_Manager
         {
             InitializeComponent();
             conn = new MySqlConnection(connectionString);
+            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             lblForgotpwd.Cursor = Cursors.Hand;
             lblSignin.Cursor = Cursors.Hand;
+            tbxPwd.UseSystemPasswordChar = true;
 
         }
 
@@ -51,18 +54,18 @@ namespace Recipe_Manager
         {
             lblForgotpwd.Cursor = Cursors.Hand;
 
-            this.Hide();
             frmForgotpwd frm2 = new frmForgotpwd();
             frm2.Show();
+            this.Hide();
+
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             frmSignuppage frm = new frmSignuppage();
             frm.Show();
-
-
+            this.Hide();
         }
 
         private void lblForgotpwd_Enter(object sender, EventArgs e)
@@ -72,7 +75,7 @@ namespace Recipe_Manager
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
-            tbxPwd.UseSystemPasswordChar = true;
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -120,7 +123,13 @@ namespace Recipe_Manager
                 if (reader.HasRows)
                 {
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
+                    frmHome frmhome = new frmHome();
+                    frmhome.Show();
+                    this.Hide();
+
+
+                } 
 
                 else
                 {

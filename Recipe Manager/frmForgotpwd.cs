@@ -22,10 +22,11 @@ namespace Recipe_Manager
 
         private void btnBack2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
 
             frmLoginpage frm = new frmLoginpage();
             frm.Show();
+            this.Close();
 
         }
 
@@ -43,6 +44,56 @@ namespace Recipe_Manager
         private void tbxConfirmpwd_TextChanged(object sender, EventArgs e)
         {
             tbxConfirmpwd2.UseSystemPasswordChar = true;
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblSignintext2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblConfirmpwd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNewpwd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxEmail3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmForgotpwd_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

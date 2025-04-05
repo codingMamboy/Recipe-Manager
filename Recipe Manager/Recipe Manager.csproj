@@ -121,6 +121,12 @@
     <Compile Include="frmForgotpwd.Designer.cs">
       <DependentUpon>frmForgotpwd.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSignuppage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmForgotpwd.resx">
       <DependentUpon>frmForgotpwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignuppage.resx">
       <DependentUpon>frmSignuppage.cs</DependentUpon>
@@ -194,6 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\output-onlinetools %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643736_back_backward_left_mark_sign_icon %283%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
