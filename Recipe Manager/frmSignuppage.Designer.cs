@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblSlogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbxUsername2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblUsername2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSignintext2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCodeVerification1 = new Guna.UI2.WinForms.Guna2Button();
+            this.tbxCode2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblCode2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnSignup = new Guna.UI2.WinForms.Guna2Button();
@@ -46,60 +45,16 @@
             this.lblPassword2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbxEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblSlogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
-            this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderThickness = 4;
-            this.guna2Panel1.Controls.Add(this.lblSlogan);
-            this.guna2Panel1.Controls.Add(this.pictureBox1);
-            this.guna2Panel1.Controls.Add(this.lblTitile);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.Location = new System.Drawing.Point(505, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(508, 574);
-            this.guna2Panel1.TabIndex = 1;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
-            // 
-            // lblSlogan
-            // 
-            this.lblSlogan.BackColor = System.Drawing.Color.Transparent;
-            this.lblSlogan.Font = new System.Drawing.Font("Poppins Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSlogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
-            this.lblSlogan.Location = new System.Drawing.Point(179, 293);
-            this.lblSlogan.Name = "lblSlogan";
-            this.lblSlogan.Size = new System.Drawing.Size(187, 24);
-            this.lblSlogan.TabIndex = 2;
-            this.lblSlogan.Text = "Your personal digital cookbook";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(109, 216);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblTitile
-            // 
-            this.lblTitile.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitile.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.lblTitile.Location = new System.Drawing.Point(175, 235);
-            this.lblTitile.Name = "lblTitile";
-            this.lblTitile.Size = new System.Drawing.Size(244, 86);
-            this.lblTitile.TabIndex = 0;
-            this.lblTitile.Text = "CookNest";
             // 
             // guna2HtmlLabel1
             // 
@@ -161,6 +116,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.panel1.Controls.Add(this.btnCodeVerification1);
+            this.panel1.Controls.Add(this.tbxCode2);
+            this.panel1.Controls.Add(this.lblCode2);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.btnExit2);
             this.panel1.Controls.Add(this.btnSignup);
@@ -177,9 +135,68 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(515, 574);
+            this.panel1.Size = new System.Drawing.Size(509, 658);
             this.panel1.TabIndex = 24;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnCodeVerification1
+            // 
+            this.btnCodeVerification1.Animated = true;
+            this.btnCodeVerification1.BackColor = System.Drawing.Color.Transparent;
+            this.btnCodeVerification1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCodeVerification1.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCodeVerification1.BorderRadius = 17;
+            this.btnCodeVerification1.CheckedState.Parent = this.btnCodeVerification1;
+            this.btnCodeVerification1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCodeVerification1.CustomImages.Parent = this.btnCodeVerification1;
+            this.btnCodeVerification1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
+            this.btnCodeVerification1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodeVerification1.ForeColor = System.Drawing.Color.White;
+            this.btnCodeVerification1.HoverState.Parent = this.btnCodeVerification1;
+            this.btnCodeVerification1.Location = new System.Drawing.Point(273, 319);
+            this.btnCodeVerification1.Name = "btnCodeVerification1";
+            this.btnCodeVerification1.ShadowDecoration.Parent = this.btnCodeVerification1;
+            this.btnCodeVerification1.Size = new System.Drawing.Size(94, 37);
+            this.btnCodeVerification1.TabIndex = 35;
+            this.btnCodeVerification1.Text = " Send code";
+            this.btnCodeVerification1.Click += new System.EventHandler(this.guna2Button1_Click_1);
+            // 
+            // tbxCode2
+            // 
+            this.tbxCode2.Animated = true;
+            this.tbxCode2.BackColor = System.Drawing.Color.Transparent;
+            this.tbxCode2.BorderRadius = 17;
+            this.tbxCode2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxCode2.DefaultText = "";
+            this.tbxCode2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxCode2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxCode2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxCode2.DisabledState.Parent = this.tbxCode2;
+            this.tbxCode2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxCode2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxCode2.FocusedState.Parent = this.tbxCode2;
+            this.tbxCode2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxCode2.HoverState.Parent = this.tbxCode2;
+            this.tbxCode2.Location = new System.Drawing.Point(136, 320);
+            this.tbxCode2.Name = "tbxCode2";
+            this.tbxCode2.PasswordChar = '\0';
+            this.tbxCode2.PlaceholderText = "";
+            this.tbxCode2.SelectedText = "";
+            this.tbxCode2.ShadowDecoration.Parent = this.tbxCode2;
+            this.tbxCode2.Size = new System.Drawing.Size(131, 36);
+            this.tbxCode2.TabIndex = 34;
+            this.tbxCode2.TextChanged += new System.EventHandler(this.tbxCode2_TextChanged);
+            // 
+            // lblCode2
+            // 
+            this.lblCode2.BackColor = System.Drawing.Color.Transparent;
+            this.lblCode2.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCode2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblCode2.Location = new System.Drawing.Point(136, 289);
+            this.lblCode2.Name = "lblCode2";
+            this.lblCode2.Size = new System.Drawing.Size(115, 25);
+            this.lblCode2.TabIndex = 33;
+            this.lblCode2.Text = "Verification Code";
             // 
             // btnBack
             // 
@@ -233,7 +250,7 @@
             this.btnSignup.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignup.ForeColor = System.Drawing.Color.White;
             this.btnSignup.HoverState.Parent = this.btnSignup;
-            this.btnSignup.Location = new System.Drawing.Point(160, 455);
+            this.btnSignup.Location = new System.Drawing.Point(156, 533);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.ShadowDecoration.Parent = this.btnSignup;
             this.btnSignup.Size = new System.Drawing.Size(180, 45);
@@ -256,7 +273,7 @@
             this.tbxConfirmpwd.FocusedState.Parent = this.tbxConfirmpwd;
             this.tbxConfirmpwd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxConfirmpwd.HoverState.Parent = this.tbxConfirmpwd;
-            this.tbxConfirmpwd.Location = new System.Drawing.Point(136, 393);
+            this.tbxConfirmpwd.Location = new System.Drawing.Point(136, 466);
             this.tbxConfirmpwd.Name = "tbxConfirmpwd";
             this.tbxConfirmpwd.PasswordChar = '\0';
             this.tbxConfirmpwd.PlaceholderText = "";
@@ -271,7 +288,7 @@
             this.lblConfirmpwd.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirmpwd.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
-            this.lblConfirmpwd.Location = new System.Drawing.Point(136, 362);
+            this.lblConfirmpwd.Location = new System.Drawing.Point(136, 435);
             this.lblConfirmpwd.Name = "lblConfirmpwd";
             this.lblConfirmpwd.Size = new System.Drawing.Size(121, 25);
             this.lblConfirmpwd.TabIndex = 28;
@@ -292,7 +309,7 @@
             this.tbxPwd2.FocusedState.Parent = this.tbxPwd2;
             this.tbxPwd2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxPwd2.HoverState.Parent = this.tbxPwd2;
-            this.tbxPwd2.Location = new System.Drawing.Point(136, 320);
+            this.tbxPwd2.Location = new System.Drawing.Point(136, 393);
             this.tbxPwd2.Name = "tbxPwd2";
             this.tbxPwd2.PasswordChar = '\0';
             this.tbxPwd2.PlaceholderText = "";
@@ -307,7 +324,7 @@
             this.lblPassword2.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword2.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
-            this.lblPassword2.Location = new System.Drawing.Point(136, 289);
+            this.lblPassword2.Location = new System.Drawing.Point(140, 362);
             this.lblPassword2.Name = "lblPassword2";
             this.lblPassword2.Size = new System.Drawing.Size(66, 25);
             this.lblPassword2.TabIndex = 26;
@@ -336,6 +353,7 @@
             this.tbxEmail.ShadowDecoration.Parent = this.tbxEmail;
             this.tbxEmail.Size = new System.Drawing.Size(231, 36);
             this.tbxEmail.TabIndex = 25;
+            this.tbxEmail.TextChanged += new System.EventHandler(this.tbxEmail_TextChanged);
             // 
             // lblEmail
             // 
@@ -349,11 +367,83 @@
             this.lblEmail.Text = "Email";
             this.lblEmail.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(90, 251);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.BorderThickness = 4;
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2Panel1.Controls.Add(this.pictureBox1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Location = new System.Drawing.Point(505, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(501, 658);
+            this.guna2Panel1.TabIndex = 1;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Poppins Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(164, 328);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(187, 24);
+            this.guna2HtmlLabel2.TabIndex = 4;
+            this.guna2HtmlLabel2.Text = "Your personal digital cookbook";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(160, 270);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(244, 86);
+            this.guna2HtmlLabel3.TabIndex = 3;
+            this.guna2HtmlLabel3.Text = "CookNest";
+            // 
+            // lblTitile
+            // 
+            this.lblTitile.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitile.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.lblTitile.Location = new System.Drawing.Point(175, 235);
+            this.lblTitile.Name = "lblTitile";
+            this.lblTitile.Size = new System.Drawing.Size(244, 86);
+            this.lblTitile.TabIndex = 0;
+            this.lblTitile.Text = "CookNest";
+            // 
+            // lblSlogan
+            // 
+            this.lblSlogan.BackColor = System.Drawing.Color.Transparent;
+            this.lblSlogan.Font = new System.Drawing.Font("Poppins Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSlogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
+            this.lblSlogan.Location = new System.Drawing.Point(179, 293);
+            this.lblSlogan.Name = "lblSlogan";
+            this.lblSlogan.Size = new System.Drawing.Size(187, 24);
+            this.lblSlogan.TabIndex = 2;
+            this.lblSlogan.Text = "Your personal digital cookbook";
+            // 
             // frmSignuppage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 574);
+            this.ClientSize = new System.Drawing.Size(1006, 658);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -361,21 +451,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSignuppage";
             this.Load += new System.EventHandler(this.frmSignuppage_Load);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblSlogan;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblTitile;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox tbxUsername2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblUsername2;
@@ -390,5 +475,14 @@
         private Guna.UI2.WinForms.Guna2Button btnSignup;
         private Guna.UI2.WinForms.Guna2Button btnExit2;
         private Guna.UI2.WinForms.Guna2Button btnBack;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTitile;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblSlogan;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2TextBox tbxCode2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblCode2;
+        private Guna.UI2.WinForms.Guna2Button btnCodeVerification1;
     }
 }

@@ -35,12 +35,13 @@
             this.btnExit3 = new Guna.UI2.WinForms.Guna2Button();
             this.btnBack2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnCodeVerification2 = new Guna.UI2.WinForms.Guna2Button();
             this.lblConfirmpwd = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNewpwd = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblCode = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblSignintext2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblEmail3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbxEmail3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblEmail3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblSignintext2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             this.tbxCode.PlaceholderText = "";
             this.tbxCode.SelectedText = "";
             this.tbxCode.ShadowDecoration.Parent = this.tbxCode;
-            this.tbxCode.Size = new System.Drawing.Size(231, 36);
+            this.tbxCode.Size = new System.Drawing.Size(131, 36);
             this.tbxCode.TabIndex = 29;
             this.tbxCode.TextChanged += new System.EventHandler(this.tbxCode_TextChanged);
             // 
@@ -182,6 +183,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.guna2Panel1.Controls.Add(this.btnCodeVerification2);
             this.guna2Panel1.Controls.Add(this.btnBack2);
             this.guna2Panel1.Controls.Add(this.btnExit3);
             this.guna2Panel1.Controls.Add(this.btnConfirm);
@@ -198,9 +200,31 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(331, 522);
+            this.guna2Panel1.Size = new System.Drawing.Size(332, 522);
             this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // btnCodeVerification2
+            // 
+            this.btnCodeVerification2.Animated = true;
+            this.btnCodeVerification2.BackColor = System.Drawing.Color.Transparent;
+            this.btnCodeVerification2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCodeVerification2.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCodeVerification2.BorderRadius = 17;
+            this.btnCodeVerification2.CheckedState.Parent = this.btnCodeVerification2;
+            this.btnCodeVerification2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCodeVerification2.CustomImages.Parent = this.btnCodeVerification2;
+            this.btnCodeVerification2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
+            this.btnCodeVerification2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodeVerification2.ForeColor = System.Drawing.Color.White;
+            this.btnCodeVerification2.HoverState.Parent = this.btnCodeVerification2;
+            this.btnCodeVerification2.Location = new System.Drawing.Point(192, 215);
+            this.btnCodeVerification2.Name = "btnCodeVerification2";
+            this.btnCodeVerification2.ShadowDecoration.Parent = this.btnCodeVerification2;
+            this.btnCodeVerification2.Size = new System.Drawing.Size(94, 37);
+            this.btnCodeVerification2.TabIndex = 37;
+            this.btnCodeVerification2.Text = " Send code";
+            this.btnCodeVerification2.Click += new System.EventHandler(this.btnCodeVerification2_Click_1);
             // 
             // lblConfirmpwd
             // 
@@ -238,30 +262,6 @@
             this.lblCode.Text = "Verification Code";
             this.lblCode.Click += new System.EventHandler(this.lblCode_Click);
             // 
-            // lblSignintext2
-            // 
-            this.lblSignintext2.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignintext2.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignintext2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
-            this.lblSignintext2.Location = new System.Drawing.Point(107, 49);
-            this.lblSignintext2.Name = "lblSignintext2";
-            this.lblSignintext2.Size = new System.Drawing.Size(134, 50);
-            this.lblSignintext2.TabIndex = 15;
-            this.lblSignintext2.Text = "Recovery";
-            this.lblSignintext2.Click += new System.EventHandler(this.lblSignintext2_Click);
-            // 
-            // lblEmail3
-            // 
-            this.lblEmail3.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail3.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
-            this.lblEmail3.Location = new System.Drawing.Point(55, 111);
-            this.lblEmail3.Name = "lblEmail3";
-            this.lblEmail3.Size = new System.Drawing.Size(38, 25);
-            this.lblEmail3.TabIndex = 26;
-            this.lblEmail3.Text = "Email";
-            this.lblEmail3.Click += new System.EventHandler(this.lblEmail3_Click);
-            // 
             // tbxEmail3
             // 
             this.tbxEmail3.Animated = true;
@@ -286,6 +286,30 @@
             this.tbxEmail3.Size = new System.Drawing.Size(231, 36);
             this.tbxEmail3.TabIndex = 27;
             this.tbxEmail3.TextChanged += new System.EventHandler(this.tbxEmail3_TextChanged);
+            // 
+            // lblEmail3
+            // 
+            this.lblEmail3.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail3.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblEmail3.Location = new System.Drawing.Point(55, 111);
+            this.lblEmail3.Name = "lblEmail3";
+            this.lblEmail3.Size = new System.Drawing.Size(38, 25);
+            this.lblEmail3.TabIndex = 26;
+            this.lblEmail3.Text = "Email";
+            this.lblEmail3.Click += new System.EventHandler(this.lblEmail3_Click);
+            // 
+            // lblSignintext2
+            // 
+            this.lblSignintext2.BackColor = System.Drawing.Color.Transparent;
+            this.lblSignintext2.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignintext2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblSignintext2.Location = new System.Drawing.Point(107, 49);
+            this.lblSignintext2.Name = "lblSignintext2";
+            this.lblSignintext2.Size = new System.Drawing.Size(134, 50);
+            this.lblSignintext2.TabIndex = 15;
+            this.lblSignintext2.Text = "Recovery";
+            this.lblSignintext2.Click += new System.EventHandler(this.lblSignintext2_Click);
             // 
             // frmForgotpwd
             // 
@@ -318,5 +342,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSignintext2;
         private Guna.UI2.WinForms.Guna2TextBox tbxEmail3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblEmail3;
+        private Guna.UI2.WinForms.Guna2Button btnCodeVerification2;
     }
 }

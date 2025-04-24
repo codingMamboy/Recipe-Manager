@@ -1,22 +1,24 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Drawing;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 
 
 namespace Recipe_Manager
+
 {
     public partial class frmLoginpage : Form
     {
-        private string connectionString = "server = localhost; uid = root; pwd = 12345; database = login";
+        private string connectionString = "server=localhost;uid=root;pwd=12345;database=login";
         private MySqlConnection conn;
 
         public frmLoginpage()
         {
             InitializeComponent();
             conn = new MySqlConnection(connectionString);
-            
+
 
         }
 
@@ -28,82 +30,12 @@ namespace Recipe_Manager
 
         }
 
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            lblForgotpwd.Cursor = Cursors.Hand;
-
-            frmForgotpwd frm2 = new frmForgotpwd();
-            frm2.Show();
-            this.Hide();
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            
-            frmSignuppage frm = new frmSignuppage();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void lblForgotpwd_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlLogin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = tbxUsername.Text.Trim();
-            string password = tbxPwd.Text.Trim();  
+            string password = tbxPwd.Text.Trim();
 
-            if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please input username and password");
                 return;
@@ -112,43 +44,98 @@ namespace Recipe_Manager
             try
             {
                 conn.Open();
-                string query = "SELECT * FROM users WHERE username = @username AND password = @password";
+                string query = "SELECT password_hash, password_salt FROM users WHERE username = @username";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-
-                if (reader.HasRows)
+                if (reader.Read())
                 {
-                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string storedHash = reader.GetString("password_hash");
+                    string storedSalt = reader.GetString("password_salt");
 
-                    frmHome frmhome = new frmHome();
-                    frmhome.Show();
-                    this.Hide();
+                    string enteredHash = HashPassword(password, storedSalt);
 
+                    if (enteredHash == storedHash)
+                    {
+                        MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frmHome home = new frmHome();
+                        home.Show();
+                        this.Hide();
 
-                } 
-
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
                 else
                 {
                     MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            
             }
-
-            catch (Exception ex) {
-
+            catch (Exception ex)
+            {
                 MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-
             finally
             {
                 conn.Close();
             }
+        }
+
+        private string HashPassword(string password, string salt)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                string combined = password + salt;
+                byte[] bytes = Encoding.UTF8.GetBytes(combined);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+
+            }
+
+
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            lblForgotpwd.Cursor = Cursors.Hand;
+            frmForgotpwd frm = new frmForgotpwd();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            frmSignuppage frm = new frmSignuppage();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void lblForgotpwd_Enter(object sender, EventArgs e) { }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e) { }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e) { }
+
+        private void pnlLogin_Paint(object sender, PaintEventArgs e) { }
+
+        private void lblUsername_Click(object sender, EventArgs e) { }
+
+        private void pictureBox1_Click(object sender, EventArgs e) { }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e) { }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e) { }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e) { }
     }
 }
