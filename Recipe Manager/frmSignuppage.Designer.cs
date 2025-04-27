@@ -45,15 +45,15 @@
             this.lblPassword2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbxEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSlogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -137,11 +137,11 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(509, 658);
             this.panel1.TabIndex = 24;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnCodeVerification1
             // 
             this.btnCodeVerification1.Animated = true;
+            this.btnCodeVerification1.AutoRoundedCorners = true;
             this.btnCodeVerification1.BackColor = System.Drawing.Color.Transparent;
             this.btnCodeVerification1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCodeVerification1.BorderColor = System.Drawing.Color.Transparent;
@@ -159,7 +159,7 @@
             this.btnCodeVerification1.Size = new System.Drawing.Size(94, 37);
             this.btnCodeVerification1.TabIndex = 35;
             this.btnCodeVerification1.Text = " Send code";
-            this.btnCodeVerification1.Click += new System.EventHandler(this.guna2Button1_Click_1);
+            this.btnCodeVerification1.Click += new System.EventHandler(this.btnCodeVerification1_Click);
             // 
             // tbxCode2
             // 
@@ -185,7 +185,6 @@
             this.tbxCode2.ShadowDecoration.Parent = this.tbxCode2;
             this.tbxCode2.Size = new System.Drawing.Size(131, 36);
             this.tbxCode2.TabIndex = 34;
-            this.tbxCode2.TextChanged += new System.EventHandler(this.tbxCode2_TextChanged);
             // 
             // lblCode2
             // 
@@ -216,7 +215,7 @@
             this.btnBack.ShadowDecoration.Parent = this.btnBack;
             this.btnBack.Size = new System.Drawing.Size(35, 32);
             this.btnBack.TabIndex = 32;
-            this.btnBack.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnExit2
             // 
@@ -241,8 +240,9 @@
             // btnSignup
             // 
             this.btnSignup.Animated = true;
+            this.btnSignup.AutoRoundedCorners = true;
             this.btnSignup.BorderColor = System.Drawing.Color.Empty;
-            this.btnSignup.BorderRadius = 17;
+            this.btnSignup.BorderRadius = 21;
             this.btnSignup.CheckedState.Parent = this.btnSignup;
             this.btnSignup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignup.CustomImages.Parent = this.btnSignup;
@@ -353,7 +353,6 @@
             this.tbxEmail.ShadowDecoration.Parent = this.tbxEmail;
             this.tbxEmail.Size = new System.Drawing.Size(231, 36);
             this.tbxEmail.TabIndex = 25;
-            this.tbxEmail.TextChanged += new System.EventHandler(this.tbxEmail_TextChanged);
             // 
             // lblEmail
             // 
@@ -365,18 +364,6 @@
             this.lblEmail.Size = new System.Drawing.Size(38, 25);
             this.lblEmail.TabIndex = 24;
             this.lblEmail.Text = "Email";
-            this.lblEmail.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(90, 251);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // guna2Panel1
             // 
@@ -393,7 +380,6 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(501, 658);
             this.guna2Panel1.TabIndex = 1;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2HtmlLabel2
             // 
@@ -416,6 +402,17 @@
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(244, 86);
             this.guna2HtmlLabel3.TabIndex = 3;
             this.guna2HtmlLabel3.Text = "CookNest";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(90, 251);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // lblTitile
             // 
@@ -453,9 +450,9 @@
             this.Load += new System.EventHandler(this.frmSignuppage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

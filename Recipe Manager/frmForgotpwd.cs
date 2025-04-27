@@ -17,7 +17,7 @@ namespace Recipe_Manager
 {
     public partial class frmForgotpwd : Form
     {
-        string connectionString = "server = localhost; uid = root; pwd = 12345; database = login";
+        string connectionString = "server = localhost; uid = root; pwd = 12345; database = recipe_managerv2";
         MySqlConnection conn;
         private string verificationCode;
 

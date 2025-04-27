@@ -32,24 +32,24 @@
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblSlogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSignintext = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUsername = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbxUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblPwd = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbxPwd = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.lblHaveaccount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblForgotpwd = new System.Windows.Forms.Label();
             this.lblSignin = new System.Windows.Forms.Label();
             this.lblSingnage = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlLogin = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel1.SuspendLayout();
-            this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +73,6 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(565, 581);
             this.guna2Panel1.TabIndex = 0;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // lblSlogan
             // 
@@ -85,7 +84,17 @@
             this.lblSlogan.Size = new System.Drawing.Size(187, 24);
             this.lblSlogan.TabIndex = 2;
             this.lblSlogan.Text = "Your personal digital cookbook";
-            this.lblSlogan.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(150, 208);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // lblTitile
             // 
@@ -119,7 +128,6 @@
             this.lblUsername.Size = new System.Drawing.Size(70, 25);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username";
-            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
             // 
             // tbxUsername
             // 
@@ -134,9 +142,11 @@
             this.tbxUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbxUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxUsername.FocusedState.Parent = this.tbxUsername;
+            this.tbxUsername.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbxUsername.HoverState.Parent = this.tbxUsername;
             this.tbxUsername.Location = new System.Drawing.Point(154, 217);
+            this.tbxUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.PasswordChar = '\0';
             this.tbxUsername.PlaceholderText = "";
@@ -144,7 +154,6 @@
             this.tbxUsername.ShadowDecoration.Parent = this.tbxUsername;
             this.tbxUsername.Size = new System.Drawing.Size(231, 36);
             this.tbxUsername.TabIndex = 3;
-            this.tbxUsername.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // lblPwd
             // 
@@ -180,27 +189,6 @@
             this.tbxPwd.ShadowDecoration.Parent = this.tbxPwd;
             this.tbxPwd.Size = new System.Drawing.Size(231, 36);
             this.tbxPwd.TabIndex = 5;
-            this.tbxPwd.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Animated = true;
-            this.btnLogin.BorderColor = System.Drawing.Color.Empty;
-            this.btnLogin.BorderRadius = 17;
-            this.btnLogin.CheckedState.Parent = this.btnLogin;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.CustomImages.Parent = this.btnLogin;
-            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
-            this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogin.HoverState.Parent = this.btnLogin;
-            this.btnLogin.Location = new System.Drawing.Point(181, 378);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
-            this.btnLogin.Size = new System.Drawing.Size(180, 45);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Log in";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblHaveaccount
             // 
@@ -224,7 +212,6 @@
             this.lblForgotpwd.TabIndex = 11;
             this.lblForgotpwd.Text = "Forgot password?";
             this.lblForgotpwd.Click += new System.EventHandler(this.label1_Click);
-            this.lblForgotpwd.Enter += new System.EventHandler(this.lblForgotpwd_Enter);
             // 
             // lblSignin
             // 
@@ -248,7 +235,6 @@
             this.lblSingnage.Size = new System.Drawing.Size(181, 24);
             this.lblSingnage.TabIndex = 13;
             this.lblSingnage.Text = "Enter your credentials to log in";
-            this.lblSingnage.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
             // pnlLogin
             // 
@@ -270,18 +256,6 @@
             this.pnlLogin.ShadowDecoration.Parent = this.pnlLogin;
             this.pnlLogin.Size = new System.Drawing.Size(501, 574);
             this.pnlLogin.TabIndex = 14;
-            this.pnlLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLogin_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(150, 208);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // btnExit
             // 
@@ -303,6 +277,27 @@
             this.btnExit.TabIndex = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnLogin
+            // 
+            this.btnLogin.Animated = true;
+            this.btnLogin.AutoRoundedCorners = true;
+            this.btnLogin.BorderColor = System.Drawing.Color.Empty;
+            this.btnLogin.BorderRadius = 21;
+            this.btnLogin.CheckedState.Parent = this.btnLogin;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.CustomImages.Parent = this.btnLogin;
+            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogin.HoverState.Parent = this.btnLogin;
+            this.btnLogin.Location = new System.Drawing.Point(181, 378);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
+            this.btnLogin.Size = new System.Drawing.Size(180, 45);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Log in";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // frmLoginpage
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
@@ -315,9 +310,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -337,13 +332,13 @@
         private Guna.UI2.WinForms.Guna2TextBox tbxUsername;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPwd;
         private Guna.UI2.WinForms.Guna2TextBox tbxPwd;
-        private Guna.UI2.WinForms.Guna2Button btnLogin;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblHaveaccount;
         private Guna.UI2.WinForms.Guna2Button btnExit;
         private System.Windows.Forms.Label lblForgotpwd;
         private System.Windows.Forms.Label lblSignin;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSingnage;
         private Guna.UI2.WinForms.Guna2Panel pnlLogin;
+        private Guna.UI2.WinForms.Guna2Button btnLogin;
     }
 }
 

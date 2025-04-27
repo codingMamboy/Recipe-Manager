@@ -63,6 +63,66 @@ namespace Recipe_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10772845_cook_book_recipe_food_and_icon {
+            get {
+                object obj = ResourceManager.GetObject("10772845_cook_book_recipe_food_and_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1904677_add_addition_calculate_charge_create_icon {
+            get {
+                object obj = ResourceManager.GetObject("1904677_add_addition_calculate_charge_create_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _211817_search_strong_icon {
+            get {
+                object obj = ResourceManager.GetObject("211817_search_strong_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _211817_search_strong_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("211817_search_strong_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _211817_search_strong_icon__2_ {
+            get {
+                object obj = ResourceManager.GetObject("211817_search_strong_icon (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2849830_multimedia_options_setting_settings_gear_icon {
+            get {
+                object obj = ResourceManager.GetObject("2849830_multimedia_options_setting_settings_gear_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3643736_back_backward_left_mark_sign_icon {
             get {
                 object obj = ResourceManager.GetObject("3643736_back_backward_left_mark_sign_icon", resourceCulture);
@@ -103,9 +163,69 @@ namespace Recipe_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3669170_home_ic_icon {
+            get {
+                object obj = ResourceManager.GetObject("3669170_home_ic_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _753958_chefs_cook_food_hat_restaurant_icon {
             get {
                 object obj = ResourceManager.GetObject("753958_chefs_cook_food_hat_restaurant_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _753958_chefs_cook_food_hat_restaurant_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("753958_chefs_cook_food_hat_restaurant_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _753958_chefs_cook_food_hat_restaurant_icon__2_ {
+            get {
+                object obj = ResourceManager.GetObject("753958_chefs_cook_food_hat_restaurant_icon (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _753958_chefs_cook_food_hat_restaurant_icon__3_ {
+            get {
+                object obj = ResourceManager.GetObject("753958_chefs_cook_food_hat_restaurant_icon (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7727575_planner_calendar_date_day_appointment_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("7727575_planner_calendar_date_day_appointment_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7853767_kashifarif_user_profile_person_account_icon {
+            get {
+                object obj = ResourceManager.GetObject("7853767_kashifarif_user_profile_person_account_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +266,46 @@ namespace Recipe_Manager.Properties {
         internal static System.Drawing.Bitmap output_onlinetools__1_ {
             get {
                 object obj = ResourceManager.GetObject("output-onlinetools (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap output_onlinetools__4_ {
+            get {
+                object obj = ResourceManager.GetObject("output-onlinetools (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap output_onlinetools__4_1 {
+            get {
+                object obj = ResourceManager.GetObject("output-onlinetools (4)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap output_onlinetools__5_ {
+            get {
+                object obj = ResourceManager.GetObject("output-onlinetools (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap output_onlinetools__5_1 {
+            get {
+                object obj = ResourceManager.GetObject("output-onlinetools (5)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

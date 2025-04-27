@@ -32,8 +32,6 @@
             this.tbxNewpwd = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxConfirmpwd2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExit3 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBack2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCodeVerification2 = new Guna.UI2.WinForms.Guna2Button();
             this.lblConfirmpwd = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -42,6 +40,8 @@
             this.tbxEmail3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblEmail3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSignintext2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnBack2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExit3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,8 +123,9 @@
             // btnConfirm
             // 
             this.btnConfirm.Animated = true;
+            this.btnConfirm.AutoRoundedCorners = true;
             this.btnConfirm.BorderColor = System.Drawing.Color.Empty;
-            this.btnConfirm.BorderRadius = 17;
+            this.btnConfirm.BorderRadius = 21;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.CustomImages.Parent = this.btnConfirm;
@@ -139,46 +140,6 @@
             this.btnConfirm.TabIndex = 34;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnExit3
-            // 
-            this.btnExit3.Animated = true;
-            this.btnExit3.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
-            this.btnExit3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnExit3.BorderColor = System.Drawing.Color.Transparent;
-            this.btnExit3.CheckedState.Parent = this.btnExit3;
-            this.btnExit3.CustomImages.Parent = this.btnExit3;
-            this.btnExit3.FillColor = System.Drawing.Color.Empty;
-            this.btnExit3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit3.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExit3.HoverState.Parent = this.btnExit3;
-            this.btnExit3.Location = new System.Drawing.Point(292, 12);
-            this.btnExit3.Name = "btnExit3";
-            this.btnExit3.PressedColor = System.Drawing.Color.White;
-            this.btnExit3.ShadowDecoration.Parent = this.btnExit3;
-            this.btnExit3.Size = new System.Drawing.Size(35, 32);
-            this.btnExit3.TabIndex = 35;
-            this.btnExit3.Click += new System.EventHandler(this.btnExit3_Click);
-            // 
-            // btnBack2
-            // 
-            this.btnBack2.Animated = true;
-            this.btnBack2.BackgroundImage = global::Recipe_Manager.Properties.Resources.output_onlinetools__1_;
-            this.btnBack2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack2.BorderColor = System.Drawing.Color.Transparent;
-            this.btnBack2.CheckedState.Parent = this.btnBack2;
-            this.btnBack2.CustomImages.Parent = this.btnBack2;
-            this.btnBack2.FillColor = System.Drawing.Color.Empty;
-            this.btnBack2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBack2.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBack2.HoverState.Parent = this.btnBack2;
-            this.btnBack2.Location = new System.Drawing.Point(12, 12);
-            this.btnBack2.Name = "btnBack2";
-            this.btnBack2.PressedColor = System.Drawing.Color.White;
-            this.btnBack2.ShadowDecoration.Parent = this.btnBack2;
-            this.btnBack2.Size = new System.Drawing.Size(35, 32);
-            this.btnBack2.TabIndex = 36;
-            this.btnBack2.Click += new System.EventHandler(this.btnBack2_Click);
             // 
             // guna2Panel1
             // 
@@ -310,6 +271,46 @@
             this.lblSignintext2.TabIndex = 15;
             this.lblSignintext2.Text = "Recovery";
             this.lblSignintext2.Click += new System.EventHandler(this.lblSignintext2_Click);
+            // 
+            // btnBack2
+            // 
+            this.btnBack2.Animated = true;
+            this.btnBack2.BackgroundImage = global::Recipe_Manager.Properties.Resources.output_onlinetools__1_;
+            this.btnBack2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack2.BorderColor = System.Drawing.Color.Transparent;
+            this.btnBack2.CheckedState.Parent = this.btnBack2;
+            this.btnBack2.CustomImages.Parent = this.btnBack2;
+            this.btnBack2.FillColor = System.Drawing.Color.Empty;
+            this.btnBack2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBack2.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBack2.HoverState.Parent = this.btnBack2;
+            this.btnBack2.Location = new System.Drawing.Point(12, 12);
+            this.btnBack2.Name = "btnBack2";
+            this.btnBack2.PressedColor = System.Drawing.Color.White;
+            this.btnBack2.ShadowDecoration.Parent = this.btnBack2;
+            this.btnBack2.Size = new System.Drawing.Size(35, 32);
+            this.btnBack2.TabIndex = 36;
+            this.btnBack2.Click += new System.EventHandler(this.btnBack2_Click);
+            // 
+            // btnExit3
+            // 
+            this.btnExit3.Animated = true;
+            this.btnExit3.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
+            this.btnExit3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit3.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit3.CheckedState.Parent = this.btnExit3;
+            this.btnExit3.CustomImages.Parent = this.btnExit3;
+            this.btnExit3.FillColor = System.Drawing.Color.Empty;
+            this.btnExit3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit3.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit3.HoverState.Parent = this.btnExit3;
+            this.btnExit3.Location = new System.Drawing.Point(292, 12);
+            this.btnExit3.Name = "btnExit3";
+            this.btnExit3.PressedColor = System.Drawing.Color.White;
+            this.btnExit3.ShadowDecoration.Parent = this.btnExit3;
+            this.btnExit3.Size = new System.Drawing.Size(35, 32);
+            this.btnExit3.TabIndex = 35;
+            this.btnExit3.Click += new System.EventHandler(this.btnExit3_Click);
             // 
             // frmForgotpwd
             // 

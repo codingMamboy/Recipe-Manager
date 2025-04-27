@@ -4,22 +4,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
-
-
 namespace Recipe_Manager
-
 {
     public partial class frmLoginpage : Form
     {
-        private string connectionString = "server=localhost;uid=root;pwd=12345;database=login";
+        private string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2"; // Update if needed
         private MySqlConnection conn;
 
         public frmLoginpage()
         {
             InitializeComponent();
             conn = new MySqlConnection(connectionString);
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,7 +22,6 @@ namespace Recipe_Manager
             lblForgotpwd.Cursor = Cursors.Hand;
             lblSignin.Cursor = Cursors.Hand;
             tbxPwd.UseSystemPasswordChar = true;
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -44,7 +38,8 @@ namespace Recipe_Manager
             try
             {
                 conn.Open();
-                string query = "SELECT password_hash, password_salt FROM users WHERE username = @username";
+                // Modified query to get password_hash only, using username
+                string query = "SELECT user_id, password_hash FROM users WHERE username = @username";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@username", username);
 
@@ -52,18 +47,19 @@ namespace Recipe_Manager
 
                 if (reader.Read())
                 {
+                    int userId = reader.GetInt32("user_id"); // Retrieve userId
                     string storedHash = reader.GetString("password_hash");
-                    string storedSalt = reader.GetString("password_salt");
 
-                    string enteredHash = HashPassword(password, storedSalt);
+                    string enteredHash = HashPassword(password); // Hash entered password to compare
 
                     if (enteredHash == storedHash)
                     {
                         MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        frmHome home = new frmHome();
+
+                        // Pass userId to frmHome and show it
+                        frmHome home = new frmHome(userId); // Pass the userId to frmHome
                         home.Show();
                         this.Hide();
-
                     }
                     else
                     {
@@ -85,19 +81,14 @@ namespace Recipe_Manager
             }
         }
 
-        private string HashPassword(string password, string salt)
+        private string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                string combined = password + salt;
-                byte[] bytes = Encoding.UTF8.GetBytes(combined);
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
                 byte[] hash = sha256.ComputeHash(bytes);
-                return Convert.ToBase64String(hash);
-
+                return Convert.ToBase64String(hash); // Return the hashed password as a Base64 string
             }
-
-
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -119,23 +110,5 @@ namespace Recipe_Manager
             frm.Show();
             this.Hide();
         }
-
-        private void lblForgotpwd_Enter(object sender, EventArgs e) { }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e) { }
-
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e) { }
-
-        private void pnlLogin_Paint(object sender, PaintEventArgs e) { }
-
-        private void lblUsername_Click(object sender, EventArgs e) { }
-
-        private void pictureBox1_Click(object sender, EventArgs e) { }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e) { }
-
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e) { }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e) { }
     }
 }

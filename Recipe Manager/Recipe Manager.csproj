@@ -127,6 +127,12 @@
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecipe.Designer.cs">
+      <DependentUpon>frmRecipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSignuppage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecipe.resx">
+      <DependentUpon>frmRecipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignuppage.resx">
       <DependentUpon>frmSignuppage.cs</DependentUpon>
@@ -206,6 +215,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3643736_back_backward_left_mark_sign_icon %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\753958_chefs_cook_food_hat_restaurant_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\753958_chefs_cook_food_hat_restaurant_icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\753958_chefs_cook_food_hat_restaurant_icon %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669170_home_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7727575_planner_calendar_date_day_appointment_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10772845_cook_book_recipe_food_and_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2849830_multimedia_options_setting_settings_gear_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7853767_kashifarif_user_profile_person_account_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1904677_add_addition_calculate_charge_create_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211817_search_strong_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211817_search_strong_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211817_search_strong_icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinetools %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinetools %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinetools %284%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinetools %285%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

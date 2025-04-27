@@ -3,7 +3,6 @@ using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
-
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -11,8 +10,10 @@ namespace Recipe_Manager
 {
     public partial class frmSignuppage : Form
     {
-        string connectionString = "server = localhost; uid = root; pwd = 12345; database = login";
-        MySqlConnection conn;
+        // Update to your database name
+        private string connectionString =
+            "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
+        private MySqlConnection conn;
         private string verificationCode;
 
         public frmSignuppage()
@@ -21,21 +22,19 @@ namespace Recipe_Manager
             conn = new MySqlConnection(connectionString);
         }
 
-        private void frmSignuppage_Load(object sender, EventArgs e) { }
+        private void frmSignuppage_Load(object sender, EventArgs e)
+        {
+            // any designer-time setup
+        }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e) { }
-
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e) { }
         private void btnExit2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnSignin_Click(object sender, EventArgs e)
         {
-
-            frmLoginpage frm = new frmLoginpage();
-            frm.Show();
+            new frmLoginpage().Show();
             this.Hide();
         }
 
@@ -44,101 +43,105 @@ namespace Recipe_Manager
             tbxPwd2.UseSystemPasswordChar = true;
         }
 
-        
         private void tbxConfirmpwd_TextChanged(object sender, EventArgs e)
         {
             tbxConfirmpwd.UseSystemPasswordChar = true;
         }
-       
-        private void panel1_Paint(object sender, PaintEventArgs e) { }
+
+
         private void btnSignup_Click(object sender, EventArgs e)
         {
-
+            // 1) Gather inputs
             string username = tbxUsername2.Text.Trim();
+            string email = tbxEmail.Text.Trim();      // Make sure you have a Full Name textbox
             string password = tbxPwd2.Text.Trim();
             string confirmPwd = tbxConfirmpwd.Text.Trim();
-            string email = tbxEmail.Text.Trim();
             string codeInput = tbxCode2.Text.Trim();
 
-
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) ||
-                string.IsNullOrEmpty(email) || string.IsNullOrEmpty(confirmPwd) || string.IsNullOrEmpty(codeInput))
-
+            // 2) Basic validation
+            if (string.IsNullOrEmpty(username) ||
+                string.IsNullOrEmpty(email) || 
+                string.IsNullOrEmpty(password) ||
+                string.IsNullOrEmpty(confirmPwd) ||
+                string.IsNullOrEmpty(codeInput))
             {
-                MessageBox.Show("Please fill all the inputs.", "No input detected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill all the inputs.", "No input detected",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             if (!email.Contains("@") || !email.Contains("."))
             {
-                MessageBox.Show("Please enter a valid email address.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid email address.", "Validation Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             if (password != confirmPwd)
             {
-                MessageBox.Show("Your password does not match, please try again", "Password Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Your passwords do not match. Please try again.", "Password Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             if (codeInput != verificationCode)
             {
-                MessageBox.Show("Incorrect verification code.", "Verification Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Incorrect verification code.", "Verification Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             try
             {
                 conn.Open();
-                string checkQuery = "SELECT COUNT(*) FROM users WHERE username = @username OR email = @email";
-                MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn);
 
+                // 3) Check for existing username/email
+                string checkQuery = @"
+                    SELECT COUNT(*) 
+                      FROM users 
+                     WHERE username = @username 
+                        OR email    = @email";
+                var checkCmd = new MySqlCommand(checkQuery, conn);
                 checkCmd.Parameters.AddWithValue("@username", username);
                 checkCmd.Parameters.AddWithValue("@email", email);
 
                 int userCount = Convert.ToInt32(checkCmd.ExecuteScalar());
-
                 if (userCount > 0)
                 {
-                    MessageBox.Show("Username or Email already taken.", "Sign-Up Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username or Email already taken.", "Sign-Up Failed",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                string salt = Guid.NewGuid().ToString();
-                string passwordHash = HashPassword(password, salt);
+                // 4) Hash password (no salt)
+                string passwordHash = HashPassword(password);
 
-                string insertQuery = "INSERT INTO users (username, email, password_hash, password_salt) VALUES (@username, @email, @password_hash, @password_salt)";
-                
-                MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
-
+                // 5) Insert user (no password_salt column)
+                string insertQuery = @"
+                    INSERT INTO users 
+                        (username, email, password_hash) 
+                    VALUES 
+                        (@username, @email, @password_hash)";
+                var insertCmd = new MySqlCommand(insertQuery, conn);
                 insertCmd.Parameters.AddWithValue("@username", username);
-                insertCmd.Parameters.AddWithValue("@email", email); 
+                insertCmd.Parameters.AddWithValue("@email", email);
                 insertCmd.Parameters.AddWithValue("@password_hash", passwordHash);
-                insertCmd.Parameters.AddWithValue("@password_salt", salt);
 
                 int result = insertCmd.ExecuteNonQuery();
-
                 if (result > 0)
                 {
-
-                    MessageBox.Show("Account created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    SendConfirmationEmail(email);
-                    frmLoginpage frm = new frmLoginpage();
-
-                    frm.Show();
+                    MessageBox.Show("Account created successfully!", "Success",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new frmLoginpage().Show();
                     this.Hide();
-
                 }
                 else
                 {
-                    MessageBox.Show("Sign-up failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Sign-up failed. Try again.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
-
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message, "Database Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -146,90 +149,76 @@ namespace Recipe_Manager
             }
         }
 
-        private string HashPassword(string password, string salt)
+        /// <summary>
+        /// Hashes a plain-text password using SHA256 (no salt).
+        /// </summary>
+        private string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                string combined = password + salt;
-                byte[] bytes = Encoding.UTF8.GetBytes(combined);
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
                 byte[] hash = sha256.ComputeHash(bytes);
                 return Convert.ToBase64String(hash);
             }
         }
 
-        private void SendConfirmationEmail(string recipientEmail)
+        /// <summary>
+        /// Sends either the verification code or registration confirmation email.
+        /// </summary>
+        private void SendConfirmationEmail(string recipientEmail, string code = null)
         {
             string senderEmail = "bryandelapaz66850@gmail.com";
-            string senderPassword = "lyui gelf lhxq flta"; // Use your Gmail App Password here
+            string senderPassword = "lyui gelf lhxq flta";  // Use an app-specific password
 
-            try
+            string subject = code == null
+                ? "Account Registration Confirmation"
+                : "Your Verification Code";
+            string body = code == null
+                ? "Thank you for registering. Your account has been successfully created!"
+                : $"Your verification code is: {code}";
+
+            using (var smtp = new SmtpClient("smtp.gmail.com", 587))
             {
-                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                smtp.EnableSsl = true;
+                smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
+
+                using (var mail = new MailMessage())
                 {
-                    smtp.EnableSsl = true;
-                    smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
-
-                    using (MailMessage mail = new MailMessage())
-                    {
-                        mail.From = new MailAddress(senderEmail);
-                        mail.To.Add(recipientEmail);
-                        mail.Subject = "Account Registration Confirmation";
-                        mail.Body = $"Thank you for registering. Your account has been successfully created!";
-
-                        smtp.Send(mail);
-                    }
+                    mail.From = new MailAddress(senderEmail);
+                    mail.To.Add(recipientEmail);
+                    mail.Subject = subject;
+                    mail.Body = body;
+                    smtp.Send(mail);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error sending email: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
+        private void btnCodeVerification1_Click(object sender, EventArgs e)
         {
+            // 1) Validate email
             string email = tbxEmail.Text.Trim();
-
             if (string.IsNullOrEmpty(email) || !email.Contains("@") || !email.Contains("."))
             {
-                MessageBox.Show("Please enter a valid email address.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid email address.", "Validation Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            Random rnd = new Random();
-            verificationCode = rnd.Next(100000, 999999).ToString();
+            // 2) Generate code
+            verificationCode = new Random().Next(100000, 999999).ToString();
 
-            try
-            {
-                string senderEmail = "bryandelapaz66850@gmail.com";
-                string senderPassword = "lyui gelf lhxq flta"; // Use your Gmail App Password here
-
-                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
-                {
-                    smtp.EnableSsl = true;
-                    smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
-
-                    using (MailMessage mail = new MailMessage())
-                    {
-                        mail.From = new MailAddress(senderEmail);
-                        mail.To.Add(email);
-                        mail.Subject = "Your Verification Code";
-                        mail.Body = $"Your verification code is: {verificationCode}";
-
-                        smtp.Send(mail);
-                    }
-                }
-
-                MessageBox.Show("Verification code sent. Please check your email.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error sending code: " + ex.Message, "Email Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // 3) Send it
+            SendConfirmationEmail(email, verificationCode);
+            MessageBox.Show("Verification code sent. Please check your email.", "Success",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void tbxCode2_TextChanged(object sender, EventArgs e) { }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            frmLoginpage loginpage = new frmLoginpage();
+            this.Hide();
+            loginpage.ShowDialog();
 
-        private void tbxEmail_TextChanged(object sender, EventArgs e) { }
+        }
     }
 }
