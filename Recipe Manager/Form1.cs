@@ -26,12 +26,19 @@ namespace Recipe_Manager
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            btnLogin.Text = "Loading...";
+            btnLogin.Enabled = false;
+
             string username = tbxUsername.Text.Trim();
             string password = tbxPwd.Text.Trim();
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please input username and password");
+
+                btnLogin.Text = "Log in";
+                btnLogin.Enabled = true;
+
                 return;
             }
 
@@ -64,21 +71,33 @@ namespace Recipe_Manager
                     else
                     {
                         MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        btnLogin.Text = "Log in";
+                        btnLogin.Enabled = true;
+
                     }
                 }
                 else
                 {
                     MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    btnLogin.Text = "Log in";
+                    btnLogin.Enabled = true;
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                btnLogin.Text = "Log in";
+                btnLogin.Enabled = true;
             }
             finally
             {
                 conn.Close();
             }
+
         }
 
         private string HashPassword(string password)

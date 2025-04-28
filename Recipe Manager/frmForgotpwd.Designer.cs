@@ -34,14 +34,14 @@
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCodeVerification2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBack2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExit3 = new Guna.UI2.WinForms.Guna2Button();
             this.lblConfirmpwd = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblNewpwd = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblCode = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tbxEmail3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblEmail3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSignintext2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnBack2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExit3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +68,7 @@
             this.tbxCode.ShadowDecoration.Parent = this.tbxCode;
             this.tbxCode.Size = new System.Drawing.Size(131, 36);
             this.tbxCode.TabIndex = 29;
-            this.tbxCode.TextChanged += new System.EventHandler(this.tbxCode_TextChanged);
+
             // 
             // tbxNewpwd
             // 
@@ -163,7 +163,6 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(332, 522);
             this.guna2Panel1.TabIndex = 0;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // btnCodeVerification2
             // 
@@ -186,91 +185,6 @@
             this.btnCodeVerification2.TabIndex = 37;
             this.btnCodeVerification2.Text = " Send code";
             this.btnCodeVerification2.Click += new System.EventHandler(this.btnCodeVerification2_Click_1);
-            // 
-            // lblConfirmpwd
-            // 
-            this.lblConfirmpwd.BackColor = System.Drawing.Color.Transparent;
-            this.lblConfirmpwd.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
-            this.lblConfirmpwd.Location = new System.Drawing.Point(55, 330);
-            this.lblConfirmpwd.Name = "lblConfirmpwd";
-            this.lblConfirmpwd.Size = new System.Drawing.Size(121, 25);
-            this.lblConfirmpwd.TabIndex = 33;
-            this.lblConfirmpwd.Text = "Confirm Password";
-            this.lblConfirmpwd.Click += new System.EventHandler(this.lblConfirmpwd_Click);
-            // 
-            // lblNewpwd
-            // 
-            this.lblNewpwd.BackColor = System.Drawing.Color.Transparent;
-            this.lblNewpwd.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
-            this.lblNewpwd.Location = new System.Drawing.Point(55, 257);
-            this.lblNewpwd.Name = "lblNewpwd";
-            this.lblNewpwd.Size = new System.Drawing.Size(100, 25);
-            this.lblNewpwd.TabIndex = 30;
-            this.lblNewpwd.Text = "New password";
-            this.lblNewpwd.Click += new System.EventHandler(this.lblNewpwd_Click);
-            // 
-            // lblCode
-            // 
-            this.lblCode.BackColor = System.Drawing.Color.Transparent;
-            this.lblCode.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
-            this.lblCode.Location = new System.Drawing.Point(55, 184);
-            this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(115, 25);
-            this.lblCode.TabIndex = 28;
-            this.lblCode.Text = "Verification Code";
-            this.lblCode.Click += new System.EventHandler(this.lblCode_Click);
-            // 
-            // tbxEmail3
-            // 
-            this.tbxEmail3.Animated = true;
-            this.tbxEmail3.BorderRadius = 17;
-            this.tbxEmail3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxEmail3.DefaultText = "";
-            this.tbxEmail3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbxEmail3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbxEmail3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxEmail3.DisabledState.Parent = this.tbxEmail3;
-            this.tbxEmail3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbxEmail3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxEmail3.FocusedState.Parent = this.tbxEmail3;
-            this.tbxEmail3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxEmail3.HoverState.Parent = this.tbxEmail3;
-            this.tbxEmail3.Location = new System.Drawing.Point(55, 142);
-            this.tbxEmail3.Name = "tbxEmail3";
-            this.tbxEmail3.PasswordChar = '\0';
-            this.tbxEmail3.PlaceholderText = "";
-            this.tbxEmail3.SelectedText = "";
-            this.tbxEmail3.ShadowDecoration.Parent = this.tbxEmail3;
-            this.tbxEmail3.Size = new System.Drawing.Size(231, 36);
-            this.tbxEmail3.TabIndex = 27;
-            this.tbxEmail3.TextChanged += new System.EventHandler(this.tbxEmail3_TextChanged);
-            // 
-            // lblEmail3
-            // 
-            this.lblEmail3.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail3.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
-            this.lblEmail3.Location = new System.Drawing.Point(55, 111);
-            this.lblEmail3.Name = "lblEmail3";
-            this.lblEmail3.Size = new System.Drawing.Size(38, 25);
-            this.lblEmail3.TabIndex = 26;
-            this.lblEmail3.Text = "Email";
-            this.lblEmail3.Click += new System.EventHandler(this.lblEmail3_Click);
-            // 
-            // lblSignintext2
-            // 
-            this.lblSignintext2.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignintext2.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignintext2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
-            this.lblSignintext2.Location = new System.Drawing.Point(107, 49);
-            this.lblSignintext2.Name = "lblSignintext2";
-            this.lblSignintext2.Size = new System.Drawing.Size(134, 50);
-            this.lblSignintext2.TabIndex = 15;
-            this.lblSignintext2.Text = "Recovery";
-            this.lblSignintext2.Click += new System.EventHandler(this.lblSignintext2_Click);
             // 
             // btnBack2
             // 
@@ -312,6 +226,88 @@
             this.btnExit3.TabIndex = 35;
             this.btnExit3.Click += new System.EventHandler(this.btnExit3_Click);
             // 
+            // lblConfirmpwd
+            // 
+            this.lblConfirmpwd.BackColor = System.Drawing.Color.Transparent;
+            this.lblConfirmpwd.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblConfirmpwd.Location = new System.Drawing.Point(55, 330);
+            this.lblConfirmpwd.Name = "lblConfirmpwd";
+            this.lblConfirmpwd.Size = new System.Drawing.Size(121, 25);
+            this.lblConfirmpwd.TabIndex = 33;
+            this.lblConfirmpwd.Text = "Confirm Password";
+            // 
+            // lblNewpwd
+            // 
+            this.lblNewpwd.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewpwd.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblNewpwd.Location = new System.Drawing.Point(55, 257);
+            this.lblNewpwd.Name = "lblNewpwd";
+            this.lblNewpwd.Size = new System.Drawing.Size(100, 25);
+            this.lblNewpwd.TabIndex = 30;
+            this.lblNewpwd.Text = "New password";
+            // 
+            // lblCode
+            // 
+            this.lblCode.BackColor = System.Drawing.Color.Transparent;
+            this.lblCode.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblCode.Location = new System.Drawing.Point(55, 184);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(115, 25);
+            this.lblCode.TabIndex = 28;
+            this.lblCode.Text = "Verification Code";
+            // 
+            // tbxEmail3
+            // 
+            this.tbxEmail3.Animated = true;
+            this.tbxEmail3.BorderRadius = 17;
+            this.tbxEmail3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxEmail3.DefaultText = "";
+            this.tbxEmail3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbxEmail3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbxEmail3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxEmail3.DisabledState.Parent = this.tbxEmail3;
+            this.tbxEmail3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbxEmail3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxEmail3.FocusedState.Parent = this.tbxEmail3;
+            this.tbxEmail3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxEmail3.HoverState.Parent = this.tbxEmail3;
+            this.tbxEmail3.Location = new System.Drawing.Point(55, 142);
+            this.tbxEmail3.Name = "tbxEmail3";
+            this.tbxEmail3.PasswordChar = '\0';
+            this.tbxEmail3.PlaceholderText = "";
+            this.tbxEmail3.SelectedText = "";
+            this.tbxEmail3.ShadowDecoration.Parent = this.tbxEmail3;
+            this.tbxEmail3.Size = new System.Drawing.Size(231, 36);
+            this.tbxEmail3.TabIndex = 27;
+
+            // 
+            // lblEmail3
+            // 
+            this.lblEmail3.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail3.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblEmail3.Location = new System.Drawing.Point(55, 111);
+            this.lblEmail3.Name = "lblEmail3";
+            this.lblEmail3.Size = new System.Drawing.Size(38, 25);
+            this.lblEmail3.TabIndex = 26;
+            this.lblEmail3.Text = "Email";
+
+            // 
+            // lblSignintext2
+            // 
+            this.lblSignintext2.BackColor = System.Drawing.Color.Transparent;
+            this.lblSignintext2.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignintext2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblSignintext2.Location = new System.Drawing.Point(107, 49);
+            this.lblSignintext2.Name = "lblSignintext2";
+            this.lblSignintext2.Size = new System.Drawing.Size(134, 50);
+            this.lblSignintext2.TabIndex = 15;
+            this.lblSignintext2.Text = "Recovery";
+
+            // 
             // frmForgotpwd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,7 +318,7 @@
             this.Name = "frmForgotpwd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmForgotpwd";
-            this.Load += new System.EventHandler(this.frmForgotpwd_Load);
+
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -41,7 +41,7 @@ namespace Recipe_Manager
                 if (reader.Read())
                 {
                     string username = reader["username"].ToString();
-                    lblWelcome.Text = "Welcome, " + username;
+                    btnWelcome.Text = "Welcome, " + username;
                 }
                 conn.Close();
             }
@@ -93,6 +93,8 @@ namespace Recipe_Manager
             // You can implement this function as needed for your planner or other functionalities
         }
 
-
     }
+
 }
+
+

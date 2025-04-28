@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
+            this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
             this.btnSetting = new Guna.UI2.WinForms.Guna2Button();
             this.btnRecipe = new Guna.UI2.WinForms.Guna2Button();
             this.btnPlanner = new Guna.UI2.WinForms.Guna2Button();
@@ -45,16 +45,17 @@
             this.lblScale = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cboMeasurement = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblMeasurement = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblDescription = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtDirection = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblDirection = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnAddIngre = new Guna.UI2.WinForms.Guna2Button();
             this.cboIngredients = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlAdd = new Guna.UI2.WinForms.Guna2Panel();
             this.lstIngredients = new System.Windows.Forms.CheckedListBox();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.btnUploadImage = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBoxRecipe = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnUploadRecipe = new Guna.UI2.WinForms.Guna2Button();
+            this.btnImportUrl = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBoxRecipe = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.pnlAdd.SuspendLayout();
@@ -64,7 +65,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
-            this.guna2Panel1.Controls.Add(this.btnProfile);
+            this.guna2Panel1.Controls.Add(this.btnWelcome);
             this.guna2Panel1.Controls.Add(this.btnSetting);
             this.guna2Panel1.Controls.Add(this.btnRecipe);
             this.guna2Panel1.Controls.Add(this.btnPlanner);
@@ -78,37 +79,38 @@
             this.guna2Panel1.Size = new System.Drawing.Size(229, 594);
             this.guna2Panel1.TabIndex = 1;
             // 
-            // btnProfile
+            // btnWelcome
             // 
-            this.btnProfile.Animated = true;
-            this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnProfile.BorderRadius = 3;
-            this.btnProfile.BorderThickness = 1;
-            this.btnProfile.CheckedState.Parent = this.btnProfile;
-            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfile.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnProfile.CustomImages.Parent = this.btnProfile;
-            this.btnProfile.FillColor = System.Drawing.Color.Transparent;
-            this.btnProfile.Font = new System.Drawing.Font("Poppins", 10F);
-            this.btnProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnProfile.HoverState.Parent = this.btnProfile;
-            this.btnProfile.Image = global::Recipe_Manager.Properties.Resources._7853767_kashifarif_user_profile_person_account_icon;
-            this.btnProfile.Location = new System.Drawing.Point(21, 540);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.PressedColor = System.Drawing.Color.Transparent;
-            this.btnProfile.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnProfile.ShadowDecoration.Parent = this.btnProfile;
-            this.btnProfile.Size = new System.Drawing.Size(180, 42);
-            this.btnProfile.TabIndex = 12;
-            this.btnProfile.Text = "Username";
+            this.btnWelcome.Animated = true;
+            this.btnWelcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnWelcome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.BorderRadius = 3;
+            this.btnWelcome.BorderThickness = 1;
+            this.btnWelcome.CheckedState.Parent = this.btnWelcome;
+            this.btnWelcome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWelcome.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.CustomImages.Parent = this.btnWelcome;
+            this.btnWelcome.FillColor = System.Drawing.Color.Transparent;
+            this.btnWelcome.Font = new System.Drawing.Font("Poppins", 10F);
+            this.btnWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.HoverState.Parent = this.btnWelcome;
+            this.btnWelcome.Image = global::Recipe_Manager.Properties.Resources._7853767_kashifarif_user_profile_person_account_icon;
+            this.btnWelcome.Location = new System.Drawing.Point(21, 540);
+            this.btnWelcome.Name = "btnWelcome";
+            this.btnWelcome.PressedColor = System.Drawing.Color.Transparent;
+            this.btnWelcome.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnWelcome.ShadowDecoration.Parent = this.btnWelcome;
+            this.btnWelcome.Size = new System.Drawing.Size(180, 42);
+            this.btnWelcome.TabIndex = 14;
+            this.btnWelcome.Text = "Username";
             // 
             // btnSetting
             // 
             this.btnSetting.Animated = true;
+            this.btnSetting.AutoRoundedCorners = true;
             this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSetting.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnSetting.BorderRadius = 3;
+            this.btnSetting.BorderRadius = 20;
             this.btnSetting.CheckedState.Parent = this.btnSetting;
             this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSetting.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
@@ -155,15 +157,15 @@
             this.btnRecipe.TabIndex = 10;
             this.btnRecipe.Text = "Recipe";
             this.btnRecipe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-
             // 
             // btnPlanner
             // 
             this.btnPlanner.Animated = true;
+            this.btnPlanner.AutoRoundedCorners = true;
             this.btnPlanner.BackColor = System.Drawing.Color.Transparent;
             this.btnPlanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPlanner.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnPlanner.BorderRadius = 3;
+            this.btnPlanner.BorderRadius = 20;
             this.btnPlanner.CheckedState.Parent = this.btnPlanner;
             this.btnPlanner.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlanner.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
@@ -398,43 +400,43 @@
             this.lblMeasurement.TabIndex = 24;
             this.lblMeasurement.Text = "Measurement";
             // 
-            // txtDescription
+            // txtDirection
             // 
-            this.txtDescription.AcceptsReturn = true;
-            this.txtDescription.Animated = true;
-            this.txtDescription.AutoScroll = true;
-            this.txtDescription.BorderRadius = 10;
-            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDescription.DefaultText = "";
-            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDescription.DisabledState.Parent = this.txtDescription;
-            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.FocusedState.Parent = this.txtDescription;
-            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(265, 159);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.PasswordChar = '\0';
-            this.txtDescription.PlaceholderText = "";
-            this.txtDescription.SelectedText = "";
-            this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
-            this.txtDescription.Size = new System.Drawing.Size(334, 289);
-            this.txtDescription.TabIndex = 25;
+            this.txtDirection.AcceptsReturn = true;
+            this.txtDirection.Animated = true;
+            this.txtDirection.AutoScroll = true;
+            this.txtDirection.BorderRadius = 10;
+            this.txtDirection.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDirection.DefaultText = "";
+            this.txtDirection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDirection.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDirection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDirection.DisabledState.Parent = this.txtDirection;
+            this.txtDirection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDirection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDirection.FocusedState.Parent = this.txtDirection;
+            this.txtDirection.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDirection.HoverState.Parent = this.txtDirection;
+            this.txtDirection.Location = new System.Drawing.Point(265, 159);
+            this.txtDirection.Multiline = true;
+            this.txtDirection.Name = "txtDirection";
+            this.txtDirection.PasswordChar = '\0';
+            this.txtDirection.PlaceholderText = "";
+            this.txtDirection.SelectedText = "";
+            this.txtDirection.ShadowDecoration.Parent = this.txtDirection;
+            this.txtDirection.Size = new System.Drawing.Size(334, 289);
+            this.txtDirection.TabIndex = 25;
             // 
-            // lblDescription
+            // lblDirection
             // 
-            this.lblDescription.BackColor = System.Drawing.Color.Transparent;
-            this.lblDescription.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
-            this.lblDescription.Location = new System.Drawing.Point(265, 128);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(76, 25);
-            this.lblDescription.TabIndex = 26;
-            this.lblDescription.Text = "Description";
+            this.lblDirection.BackColor = System.Drawing.Color.Transparent;
+            this.lblDirection.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblDirection.Location = new System.Drawing.Point(265, 128);
+            this.lblDirection.Name = "lblDirection";
+            this.lblDirection.Size = new System.Drawing.Size(67, 25);
+            this.lblDirection.TabIndex = 26;
+            this.lblDirection.Text = "Directions";
             // 
             // btnAddIngre
             // 
@@ -573,17 +575,6 @@
             this.btnUploadImage.Text = "Upload Image";
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click_1);
             // 
-            // pictureBoxRecipe
-            // 
-            this.pictureBoxRecipe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxRecipe.Location = new System.Drawing.Point(1067, 271);
-            this.pictureBoxRecipe.Name = "pictureBoxRecipe";
-            this.pictureBoxRecipe.ShadowDecoration.Parent = this.pictureBoxRecipe;
-            this.pictureBoxRecipe.Size = new System.Drawing.Size(142, 122);
-            this.pictureBoxRecipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxRecipe.TabIndex = 33;
-            this.pictureBoxRecipe.TabStop = false;
-            // 
             // btnUploadRecipe
             // 
             this.btnUploadRecipe.Animated = true;
@@ -605,12 +596,45 @@
             this.btnUploadRecipe.Text = "Upload Recipe";
             this.btnUploadRecipe.Click += new System.EventHandler(this.btnUploadRecipe_Click);
             // 
+            // btnImportUrl
+            // 
+            this.btnImportUrl.Animated = true;
+            this.btnImportUrl.AutoRoundedCorners = true;
+            this.btnImportUrl.BorderColor = System.Drawing.Color.Empty;
+            this.btnImportUrl.BorderRadius = 17;
+            this.btnImportUrl.CheckedState.Parent = this.btnImportUrl;
+            this.btnImportUrl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImportUrl.CustomImages.Parent = this.btnImportUrl;
+            this.btnImportUrl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.btnImportUrl.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportUrl.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnImportUrl.HoverState.Parent = this.btnImportUrl;
+            this.btnImportUrl.Location = new System.Drawing.Point(265, 505);
+            this.btnImportUrl.Name = "btnImportUrl";
+            this.btnImportUrl.ShadowDecoration.Parent = this.btnImportUrl;
+            this.btnImportUrl.Size = new System.Drawing.Size(210, 36);
+            this.btnImportUrl.TabIndex = 35;
+            this.btnImportUrl.Text = "Import Recipe From Web";
+            this.btnImportUrl.Click += new System.EventHandler(this.btnImportUrl_Click);
+            // 
+            // pictureBoxRecipe
+            // 
+            this.pictureBoxRecipe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxRecipe.Location = new System.Drawing.Point(1067, 271);
+            this.pictureBoxRecipe.Name = "pictureBoxRecipe";
+            this.pictureBoxRecipe.ShadowDecoration.Parent = this.pictureBoxRecipe;
+            this.pictureBoxRecipe.Size = new System.Drawing.Size(142, 122);
+            this.pictureBoxRecipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxRecipe.TabIndex = 33;
+            this.pictureBoxRecipe.TabStop = false;
+            // 
             // frmRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(1263, 594);
+            this.Controls.Add(this.btnImportUrl);
             this.Controls.Add(this.btnUploadRecipe);
             this.Controls.Add(this.pictureBoxRecipe);
             this.Controls.Add(this.btnUploadImage);
@@ -618,8 +642,8 @@
             this.Controls.Add(this.pnlAdd);
             this.Controls.Add(this.cboIngredients);
             this.Controls.Add(this.btnAddIngre);
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.lblDirection);
+            this.Controls.Add(this.txtDirection);
             this.Controls.Add(this.lblMeasurement);
             this.Controls.Add(this.cboMeasurement);
             this.Controls.Add(this.lblScale);
@@ -634,6 +658,7 @@
             this.Name = "frmRecipe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRecipe";
+            this.Load += new System.EventHandler(this.frmRecipe_Load_1);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -647,7 +672,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button btnProfile;
         private Guna.UI2.WinForms.Guna2Button btnSetting;
         private Guna.UI2.WinForms.Guna2Button btnRecipe;
         private Guna.UI2.WinForms.Guna2Button btnPlanner;
@@ -663,8 +687,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblScale;
         private Guna.UI2.WinForms.Guna2ComboBox cboMeasurement;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblMeasurement;
-        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblDescription;
+        private Guna.UI2.WinForms.Guna2TextBox txtDirection;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDirection;
         private Guna.UI2.WinForms.Guna2Button btnAddIngre;
         private Guna.UI2.WinForms.Guna2ComboBox cboIngredients;
         private Guna.UI2.WinForms.Guna2Panel pnlAdd;
@@ -673,5 +697,7 @@
         private Guna.UI2.WinForms.Guna2Button btnUploadImage;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxRecipe;
         private Guna.UI2.WinForms.Guna2Button btnUploadRecipe;
+        private Guna.UI2.WinForms.Guna2Button btnImportUrl;
+        private Guna.UI2.WinForms.Guna2Button btnWelcome;
     }
 }

@@ -61,3 +61,7 @@ C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmHome.resources
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmRecipe.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmImportPage.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.dll
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.xml

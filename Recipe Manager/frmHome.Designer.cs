@@ -37,7 +37,7 @@
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.lblAddmenu = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnAddmenu = new Guna.UI2.WinForms.Guna2Button();
-            this.lblWelcome = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
-            this.guna2Panel1.Controls.Add(this.lblWelcome);
+            this.guna2Panel1.Controls.Add(this.btnWelcome);
             this.guna2Panel1.Controls.Add(this.btnSetting);
             this.guna2Panel1.Controls.Add(this.btnRecipe);
             this.guna2Panel1.Controls.Add(this.btnPlanner);
@@ -62,9 +62,10 @@
             // btnSetting
             // 
             this.btnSetting.Animated = true;
+            this.btnSetting.AutoRoundedCorners = true;
             this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSetting.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnSetting.BorderRadius = 3;
+            this.btnSetting.BorderRadius = 20;
             this.btnSetting.CheckedState.Parent = this.btnSetting;
             this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSetting.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
@@ -88,9 +89,10 @@
             // btnRecipe
             // 
             this.btnRecipe.Animated = true;
+            this.btnRecipe.AutoRoundedCorners = true;
             this.btnRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnRecipe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnRecipe.BorderRadius = 3;
+            this.btnRecipe.BorderRadius = 20;
             this.btnRecipe.CheckedState.Parent = this.btnRecipe;
             this.btnRecipe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecipe.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
@@ -115,10 +117,11 @@
             // btnPlanner
             // 
             this.btnPlanner.Animated = true;
+            this.btnPlanner.AutoRoundedCorners = true;
             this.btnPlanner.BackColor = System.Drawing.Color.Transparent;
             this.btnPlanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPlanner.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnPlanner.BorderRadius = 3;
+            this.btnPlanner.BorderRadius = 20;
             this.btnPlanner.CheckedState.Parent = this.btnPlanner;
             this.btnPlanner.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlanner.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
@@ -229,14 +232,30 @@
             this.btnAddmenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAddmenu.Click += new System.EventHandler(this.btnAddbreakfast_Click);
             // 
-            // lblWelcome
+            // btnWelcome
             // 
-            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcome.Location = new System.Drawing.Point(63, 567);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(58, 15);
-            this.lblWelcome.TabIndex = 12;
-            this.lblWelcome.Text = "lblWelcome";
+            this.btnWelcome.Animated = true;
+            this.btnWelcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnWelcome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.BorderRadius = 3;
+            this.btnWelcome.BorderThickness = 1;
+            this.btnWelcome.CheckedState.Parent = this.btnWelcome;
+            this.btnWelcome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWelcome.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.CustomImages.Parent = this.btnWelcome;
+            this.btnWelcome.FillColor = System.Drawing.Color.Transparent;
+            this.btnWelcome.Font = new System.Drawing.Font("Poppins", 10F);
+            this.btnWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.HoverState.Parent = this.btnWelcome;
+            this.btnWelcome.Image = global::Recipe_Manager.Properties.Resources._7853767_kashifarif_user_profile_person_account_icon;
+            this.btnWelcome.Location = new System.Drawing.Point(21, 540);
+            this.btnWelcome.Name = "btnWelcome";
+            this.btnWelcome.PressedColor = System.Drawing.Color.Transparent;
+            this.btnWelcome.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnWelcome.ShadowDecoration.Parent = this.btnWelcome;
+            this.btnWelcome.Size = new System.Drawing.Size(180, 42);
+            this.btnWelcome.TabIndex = 13;
+            this.btnWelcome.Text = "Username";
             // 
             // frmHome
             // 
@@ -271,6 +290,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAddmenu;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblAddmenu;
         private Guna.UI2.WinForms.Guna2Button btnRecipe;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblWelcome;
+        private Guna.UI2.WinForms.Guna2Button btnWelcome;
     }
 }
