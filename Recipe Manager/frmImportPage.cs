@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HtmlAgilityPack;  // Make sure this is only here
-using System.Linq;
+using HtmlAgilityPack;
 
 namespace Recipe_Manager
 {
@@ -33,17 +33,16 @@ namespace Recipe_Manager
 
             try
             {
-                ImportedRecipe = await GetRecipeFromUrlAsync(url);
+                ImportedRecipe = await ImportRecipeAsync(url);
 
                 if (ImportedRecipe != null)
                 {
-
-                    using (var recipeForm = new frmRecipe(userId, ImportedRecipe))
-                    {
-                        this.Hide();
-                        recipeForm.ShowDialog();
-                        this.Close();
-                    }
+                    // Manually manage form creation and disposal without 'using' keyword
+                    frmRecipe recipeForm = new frmRecipe(userId, ImportedRecipe);
+                    Hide();
+                    recipeForm.ShowDialog();
+                    recipeForm.Dispose();  // Dispose the form manually after it's closed
+                    Close();
                 }
                 else
                 {
@@ -65,49 +64,95 @@ namespace Recipe_Manager
             }
         }
 
-        private async Task<Recipe> GetRecipeFromUrlAsync(string url)
+        private async Task<Recipe> ImportRecipeAsync(string url)
         {
-            using (HttpClient client = new HttpClient())
+            HttpClient client = new HttpClient();
+            client.Timeout = TimeSpan.FromSeconds(15);
+
+            try
             {
-                client.Timeout = TimeSpan.FromSeconds(10);
+                string htmlContent = await client.GetStringAsync(url);
 
-                var html = await client.GetStringAsync(url);
+                var document = new HtmlAgilityPack.HtmlDocument();
+                document.LoadHtml(htmlContent);
 
-                var doc = new HtmlAgilityPack.HtmlDocument();  // Use fully qualified name
-                doc.LoadHtml(html);  // Load the HTML from the URL
-
-                var recipe = new Recipe
+                return new Recipe
                 {
-                    Name = ExtractText(doc, "//h1") ?? ExtractText(doc, "//title") ?? "Untitled Recipe",
-                    Ingredients = ExtractList(doc, "//li[contains(@class,'ingredient')]") ?? "Ingredients not found.",
-                    Instructions = ExtractList(doc, "//li[contains(@class,'instruction') or contains(@class,'step')]") ?? "Instructions not found.",
-                    ImageUrl = ExtractImageUrl(doc) ?? string.Empty
-                };
+                    Name = ExtractFirstMatch(document, new[]
+                    {
+                        "//h1",
+                        "//meta[@property='og:title']/@content",
+                        "//title"
+                    }) ?? "Untitled Recipe",
 
-                return recipe;
+                    Ingredients = ExtractList(document, new[]
+                    {
+                        "//li[contains(@class,'ingredient')]",
+                        "//ul[contains(@class,'ingredients')]/li",
+                        "//section[contains(@class,'ingredients')]//li",
+                        "//div[contains(@class,'ingredient')]",
+                        "//li[contains(text(),'cup') or contains(text(),'tsp') or contains(text(),'tablespoon') or contains(text(),'gram')]"
+                    }) ?? "Ingredients not found.",
+
+                    Instructions = ExtractList(document, new[]
+                    {
+                        "//li[contains(@class,'instruction')]",
+                        "//li[contains(@class,'step')]",
+                        "//ol[contains(@class,'instructions')]/li",
+                        "//section[contains(@class,'instructions')]//li",
+                        "//div[contains(@class,'instruction')]",
+                        "//p[contains(text(),'step') or contains(text(),'instruction') or contains(text(),'Step')]"
+                    }) ?? "Instructions not found.",
+
+                    ImageUrl = ExtractFirstMatch(document, new[]
+                    {
+                        "//meta[@property='og:image']/@content",
+                        "//meta[@name='twitter:image']/@content",
+                        "//img[contains(@class,'recipe')]/@src",
+                        "//img[contains(@src,'recipe')]/@src"
+                    }) ?? string.Empty
+                };
+            }
+            finally
+            {
+                // Make sure to dispose the HttpClient after the operation
+                client.Dispose();
             }
         }
 
-        private static string ExtractText(HtmlAgilityPack.HtmlDocument doc, string xpath)
+        private static string ExtractFirstMatch(HtmlAgilityPack.HtmlDocument document, string[] xpaths)
         {
-            var node = doc.DocumentNode.SelectSingleNode(xpath);
-            return node?.InnerText.Trim();
-        }
-
-        private static string ExtractList(HtmlAgilityPack.HtmlDocument doc, string xpath)
-        {
-            var nodes = doc.DocumentNode.SelectNodes(xpath);
-            if (nodes != null && nodes.Any())
+            foreach (string xpath in xpaths)
             {
-                return string.Join(Environment.NewLine, nodes.Select(n => n.InnerText.Trim()));
+                var node = document.DocumentNode.SelectSingleNode(xpath);
+
+                if (node != null)
+                {
+                    if (xpath.Contains("@"))
+                    {
+                        string attrName = xpath.Split('@').Last();
+                        return node.GetAttributeValue(attrName, null)?.Trim();
+                    }
+                    else
+                    {
+                        return node.InnerText.Trim();
+                    }
+                }
             }
             return null;
         }
 
-        private static string ExtractImageUrl(HtmlAgilityPack.HtmlDocument doc)
+        private static string ExtractList(HtmlAgilityPack.HtmlDocument document, string[] xpaths)
         {
-            var imgNode = doc.DocumentNode.SelectSingleNode("//meta[@property='og:image']");
-            return imgNode?.GetAttributeValue("content", null);
+            foreach (string xpath in xpaths)
+            {
+                var nodes = document.DocumentNode.SelectNodes(xpath);
+                if (nodes != null && nodes.Any())
+                {
+                    return string.Join(Environment.NewLine, nodes.Select(n => n.InnerText.Trim()));
+                }
+            }
+            return null;
         }
 
         public class Recipe

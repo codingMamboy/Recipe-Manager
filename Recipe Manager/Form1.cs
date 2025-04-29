@@ -14,6 +14,7 @@ namespace Recipe_Manager
         public frmLoginpage()
         {
             InitializeComponent();
+            this.AcceptButton = btnLogin;
             conn = new MySqlConnection(connectionString);
         }
 
@@ -34,7 +35,7 @@ namespace Recipe_Manager
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please input username and password");
+                MessageBox.Show("Please input username and password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 btnLogin.Text = "Log in";
                 btnLogin.Enabled = true;
@@ -128,6 +129,11 @@ namespace Recipe_Manager
             frmSignuppage frm = new frmSignuppage();
             frm.Show();
             this.Hide();
+        }
+
+        private void btnLogin_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

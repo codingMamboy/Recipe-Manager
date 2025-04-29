@@ -1,13 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
+using System.Linq;
 
 namespace Recipe_Manager
 {
@@ -17,20 +14,19 @@ namespace Recipe_Manager
         private MySqlConnection conn;
         private int userId;
 
-        // Constructor that accepts the userId
-        public frmHome(int userId) 
+        public frmHome(int userId)
         {
             InitializeComponent();
             conn = new MySqlConnection(connectionString);
-            this.userId = userId; // Store the userId for later use in other forms
-           
+            this.userId = userId;
         }
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+
             try
             {
-                // Example: Load user name or data
+                // Load the username
                 string query = "SELECT username FROM users WHERE user_id = @userId";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@userId", userId);
@@ -43,7 +39,11 @@ namespace Recipe_Manager
                     string username = reader["username"].ToString();
                     btnWelcome.Text = "Welcome, " + username;
                 }
+
                 conn.Close();
+
+                // Load user's recipes as buttons
+                LoadRecipesToPanel();
             }
             catch (Exception ex)
             {
@@ -51,50 +51,101 @@ namespace Recipe_Manager
             }
         }
 
+        private void LoadRecipesToPanel()
+        {
+
+            try
+            {
+                conn.Open();
+                string query = @"SELECT r.recipe_id, r.recipe_name FROM recipes r WHERE r.user_id = @userId";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@userId", userId);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int recipeId = Convert.ToInt32(reader["recipe_id"]);
+                    string recipeName = reader["recipe_name"].ToString();
+
+                    Guna2Button recipeButton = new Guna2Button
+                    {
+                        Width = 180,
+                        Height = 70,
+                        Font = new Font("Poppins", 10, FontStyle.Bold),
+                        FillColor = Color.FromArgb(65, 100, 74),
+                        ForeColor = Color.White,
+                        Text = recipeName,
+                        Tag = recipeId,
+                        Margin = new Padding(10),
+                        BorderRadius = 3,
+                        Cursor = Cursors.Hand
+                    };
+
+                    recipeButton.Click += (s, e) =>
+                    {
+                        frmViewRecipe frm = new frmViewRecipe(recipeId);
+                        this.Hide();
+                        frm.Show();
+                    };
+
+                    flowRecipeMenu.Controls.Add(recipeButton);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load recipes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+
+        }
+
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
         {
-            // Event handler for any label click, you can implement this as needed
+            // Optional label event
         }
 
         private void guna2HtmlLabel3_Click(object sender, EventArgs e)
         {
-            // Event handler for another label click, implement as necessary
+            // Optional label event
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            // Event handler for a picture click, if applicable
+            // Optional image event
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            // Stay on this page
+            // Stay on this form
         }
 
-        // Navigate to the Recipe form when the Add Breakfast button is clicked
         private void btnAddbreakfast_Click(object sender, EventArgs e)
         {
-            frmRecipe frmRecipe = new frmRecipe(userId); // Pass userId to frmRecipe
-            this.Hide(); // Hide the current form (Home)
-            frmRecipe.Show(); // Show the Recipe form
+            frmRecipe frmRecipe = new frmRecipe(userId);
+            this.Hide();
+            frmRecipe.Show();
         }
 
-        // Navigate to the Recipe form when the Recipe button is clicked
         private void btnRecipe_Click(object sender, EventArgs e)
         {
-            frmRecipe frmRecipe = new frmRecipe(userId); // Pass userId to frmRecipe
-            this.Hide(); // Hide the current form (Home)
-            frmRecipe.Show(); // Show the Recipe form
+            frmRecipe frmRecipe = new frmRecipe(userId);
+            this.Hide();
+            frmRecipe.Show();
         }
 
         private void btnPlanner_Click(object sender, EventArgs e)
         {
-            // You can implement this function as needed for your planner or other functionalities
+            // Implement as needed
         }
 
+        private void btnViewRecipe_Click(object sender, EventArgs e)
+        {
+            // No functionality assigned here for the moment
+        }
     }
-
 }
-
-

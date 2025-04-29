@@ -65,3 +65,4 @@ C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.dll
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.xml
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmViewRecipe.resources

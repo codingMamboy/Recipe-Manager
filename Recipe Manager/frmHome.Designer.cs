@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
             this.btnSetting = new Guna.UI2.WinForms.Guna2Button();
             this.btnRecipe = new Guna.UI2.WinForms.Guna2Button();
             this.btnPlanner = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
-            this.lblAddmenu = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnAddmenu = new Guna.UI2.WinForms.Guna2Button();
-            this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
+            this.flowRecipeMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +57,31 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(229, 594);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // btnWelcome
+            // 
+            this.btnWelcome.Animated = true;
+            this.btnWelcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnWelcome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.BorderRadius = 3;
+            this.btnWelcome.BorderThickness = 1;
+            this.btnWelcome.CheckedState.Parent = this.btnWelcome;
+            this.btnWelcome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWelcome.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.CustomImages.Parent = this.btnWelcome;
+            this.btnWelcome.FillColor = System.Drawing.Color.Transparent;
+            this.btnWelcome.Font = new System.Drawing.Font("Poppins", 10F);
+            this.btnWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.HoverState.Parent = this.btnWelcome;
+            this.btnWelcome.Image = global::Recipe_Manager.Properties.Resources._7853767_kashifarif_user_profile_person_account_icon;
+            this.btnWelcome.Location = new System.Drawing.Point(21, 540);
+            this.btnWelcome.Name = "btnWelcome";
+            this.btnWelcome.PressedColor = System.Drawing.Color.Transparent;
+            this.btnWelcome.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnWelcome.ShadowDecoration.Parent = this.btnWelcome;
+            this.btnWelcome.Size = new System.Drawing.Size(180, 42);
+            this.btnWelcome.TabIndex = 13;
+            this.btnWelcome.Text = "Username";
             // 
             // btnSetting
             // 
@@ -195,67 +219,13 @@
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // lblAddmenu
+            // flowRecipeMenu
             // 
-            this.lblAddmenu.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddmenu.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddmenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
-            this.lblAddmenu.Location = new System.Drawing.Point(348, 254);
-            this.lblAddmenu.Name = "lblAddmenu";
-            this.lblAddmenu.Size = new System.Drawing.Size(70, 25);
-            this.lblAddmenu.TabIndex = 10;
-            this.lblAddmenu.Text = "Add menu";
-            // 
-            // btnAddmenu
-            // 
-            this.btnAddmenu.Animated = true;
-            this.btnAddmenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddmenu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnAddmenu.BorderRadius = 3;
-            this.btnAddmenu.CheckedState.Parent = this.btnAddmenu;
-            this.btnAddmenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddmenu.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnAddmenu.CustomImages.Parent = this.btnAddmenu;
-            this.btnAddmenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
-            this.btnAddmenu.Font = new System.Drawing.Font("Poppins", 10F);
-            this.btnAddmenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnAddmenu.HoverState.Parent = this.btnAddmenu;
-            this.btnAddmenu.Image = global::Recipe_Manager.Properties.Resources._1904677_add_addition_calculate_charge_create_icon;
-            this.btnAddmenu.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnAddmenu.Location = new System.Drawing.Point(292, 94);
-            this.btnAddmenu.Name = "btnAddmenu";
-            this.btnAddmenu.PressedColor = System.Drawing.Color.Transparent;
-            this.btnAddmenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAddmenu.ShadowDecoration.Parent = this.btnAddmenu;
-            this.btnAddmenu.Size = new System.Drawing.Size(179, 154);
-            this.btnAddmenu.TabIndex = 9;
-            this.btnAddmenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddmenu.Click += new System.EventHandler(this.btnAddbreakfast_Click);
-            // 
-            // btnWelcome
-            // 
-            this.btnWelcome.Animated = true;
-            this.btnWelcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnWelcome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnWelcome.BorderRadius = 3;
-            this.btnWelcome.BorderThickness = 1;
-            this.btnWelcome.CheckedState.Parent = this.btnWelcome;
-            this.btnWelcome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWelcome.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnWelcome.CustomImages.Parent = this.btnWelcome;
-            this.btnWelcome.FillColor = System.Drawing.Color.Transparent;
-            this.btnWelcome.Font = new System.Drawing.Font("Poppins", 10F);
-            this.btnWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnWelcome.HoverState.Parent = this.btnWelcome;
-            this.btnWelcome.Image = global::Recipe_Manager.Properties.Resources._7853767_kashifarif_user_profile_person_account_icon;
-            this.btnWelcome.Location = new System.Drawing.Point(21, 540);
-            this.btnWelcome.Name = "btnWelcome";
-            this.btnWelcome.PressedColor = System.Drawing.Color.Transparent;
-            this.btnWelcome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnWelcome.ShadowDecoration.Parent = this.btnWelcome;
-            this.btnWelcome.Size = new System.Drawing.Size(180, 42);
-            this.btnWelcome.TabIndex = 13;
-            this.btnWelcome.Text = "Username";
+            this.flowRecipeMenu.AutoScroll = true;
+            this.flowRecipeMenu.Location = new System.Drawing.Point(256, 78);
+            this.flowRecipeMenu.Name = "flowRecipeMenu";
+            this.flowRecipeMenu.Size = new System.Drawing.Size(296, 420);
+            this.flowRecipeMenu.TabIndex = 11;
             // 
             // frmHome
             // 
@@ -263,8 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(1072, 594);
-            this.Controls.Add(this.lblAddmenu);
-            this.Controls.Add(this.btnAddmenu);
+            this.Controls.Add(this.flowRecipeMenu);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHome";
@@ -275,7 +244,6 @@
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -287,9 +255,8 @@
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnPlanner;
         private Guna.UI2.WinForms.Guna2Button btnSetting;
-        private Guna.UI2.WinForms.Guna2Button btnAddmenu;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblAddmenu;
         private Guna.UI2.WinForms.Guna2Button btnRecipe;
         private Guna.UI2.WinForms.Guna2Button btnWelcome;
+        private System.Windows.Forms.FlowLayoutPanel flowRecipeMenu;
     }
 }
