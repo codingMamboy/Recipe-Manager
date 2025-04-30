@@ -106,7 +106,7 @@
             // 
             this.lblSignintext2.BackColor = System.Drawing.Color.Transparent;
             this.lblSignintext2.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignintext2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblSignintext2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
             this.lblSignintext2.Location = new System.Drawing.Point(202, 51);
             this.lblSignintext2.Name = "lblSignintext2";
             this.lblSignintext2.Size = new System.Drawing.Size(106, 50);
@@ -149,7 +149,7 @@
             this.btnCodeVerification1.CheckedState.Parent = this.btnCodeVerification1;
             this.btnCodeVerification1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCodeVerification1.CustomImages.Parent = this.btnCodeVerification1;
-            this.btnCodeVerification1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.btnCodeVerification1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.btnCodeVerification1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCodeVerification1.ForeColor = System.Drawing.Color.White;
             this.btnCodeVerification1.HoverState.Parent = this.btnCodeVerification1;
@@ -246,7 +246,7 @@
             this.btnSignup.CheckedState.Parent = this.btnSignup;
             this.btnSignup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignup.CustomImages.Parent = this.btnSignup;
-            this.btnSignup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.btnSignup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
             this.btnSignup.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignup.ForeColor = System.Drawing.Color.White;
             this.btnSignup.HoverState.Parent = this.btnSignup;
@@ -367,7 +367,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderThickness = 4;
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);

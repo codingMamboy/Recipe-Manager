@@ -233,6 +233,26 @@ namespace Recipe_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _9041636_button_add_icon {
+            get {
+                object obj = ResourceManager.GetObject("9041636_button_add_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9041687_button_minus_icon {
+            get {
+                object obj = ResourceManager.GetObject("9041687_button_minus_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9356052_logout_exit_icon__2_ {
             get {
                 object obj = ResourceManager.GetObject("9356052_logout_exit_icon (2)", resourceCulture);

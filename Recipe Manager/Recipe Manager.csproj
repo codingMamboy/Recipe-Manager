@@ -142,6 +142,12 @@
     <Compile Include="frmRecipe.Designer.cs">
       <DependentUpon>frmRecipe.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRemoveRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRemoveRecipe.Designer.cs">
+      <DependentUpon>frmRemoveRecipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSignuppage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRecipe.resx">
       <DependentUpon>frmRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRemoveRecipe.resx">
+      <DependentUpon>frmRemoveRecipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignuppage.resx">
       <DependentUpon>frmSignuppage.cs</DependentUpon>
@@ -299,6 +308,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\output-onlinetools %289%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9041636_button_add_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9041687_button_minus_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

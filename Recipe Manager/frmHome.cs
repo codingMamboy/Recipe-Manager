@@ -22,6 +22,7 @@ namespace Recipe_Manager
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+     
             try
             {
                 // Load the username
@@ -79,7 +80,7 @@ namespace Recipe_Manager
                             ForeColor = Color.White,
                             Text = recipeName,
                             Tag = recipeId,
-                            Margin = new Padding(10),
+                            Margin = new Padding(18),
                             BorderRadius = 3,
                             Cursor = Cursors.Hand
                         };
@@ -119,16 +120,19 @@ namespace Recipe_Manager
             addForm.Show();
         }
 
-        private void btnHome_Click(object sender, EventArgs e) { }
-        private void btnPlanner_Click(object sender, EventArgs e) { }
-        private void btnViewRecipe_Click(object sender, EventArgs e) { }
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e) { }
-        private void guna2HtmlLabel3_Click(object sender, EventArgs e) { }
-        private void pictureBox1_Click(object sender, EventArgs e) { }
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e) { }
-
-        private void guna2HtmlLabel2_Click_1(object sender, EventArgs e)
+        private void btnAddRecipe_Click(object sender, EventArgs e)
         {
+            var addForm = new frmRecipe(userId);
+            this.Hide();
+            addForm.Show();
+        }
+
+        private void btnRemoveRecipe_Click(object sender, EventArgs e)
+        {
+            frmRemoveRecipe removeForm = new frmRemoveRecipe(userId);
+           
+            removeForm.Show();
+
 
         }
     }

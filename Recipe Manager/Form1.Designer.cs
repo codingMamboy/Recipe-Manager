@@ -32,6 +32,7 @@
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblSlogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSignintext = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblUsername = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -43,13 +44,12 @@
             this.lblSignin = new System.Windows.Forms.Label();
             this.lblSingnage = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlLogin = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel1.SuspendLayout();
-            this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderThickness = 4;
             this.guna2Panel1.Controls.Add(this.lblSlogan);
@@ -85,6 +85,17 @@
             this.lblSlogan.TabIndex = 2;
             this.lblSlogan.Text = "Your personal digital cookbook";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(150, 208);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblTitile
             // 
             this.lblTitile.BackColor = System.Drawing.Color.Transparent;
@@ -100,7 +111,7 @@
             // 
             this.lblSignintext.BackColor = System.Drawing.Color.Transparent;
             this.lblSignintext.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignintext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblSignintext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
             this.lblSignintext.Location = new System.Drawing.Point(140, 60);
             this.lblSignintext.Name = "lblSignintext";
             this.lblSignintext.Size = new System.Drawing.Size(254, 50);
@@ -197,7 +208,7 @@
             // 
             this.lblForgotpwd.AutoSize = true;
             this.lblForgotpwd.Font = new System.Drawing.Font("Poppins Light", 8.25F);
-            this.lblForgotpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblForgotpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
             this.lblForgotpwd.Location = new System.Drawing.Point(280, 329);
             this.lblForgotpwd.Name = "lblForgotpwd";
             this.lblForgotpwd.Size = new System.Drawing.Size(105, 19);
@@ -209,7 +220,7 @@
             // 
             this.lblSignin.AutoSize = true;
             this.lblSignin.Font = new System.Drawing.Font("Poppins Light", 8.25F);
-            this.lblSignin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblSignin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
             this.lblSignin.Location = new System.Drawing.Point(306, 429);
             this.lblSignin.Name = "lblSignin";
             this.lblSignin.Size = new System.Drawing.Size(45, 19);
@@ -248,39 +259,6 @@
             this.pnlLogin.Size = new System.Drawing.Size(501, 574);
             this.pnlLogin.TabIndex = 14;
             // 
-            // btnLogin
-            // 
-            this.btnLogin.Animated = true;
-            this.btnLogin.AutoRoundedCorners = true;
-            this.btnLogin.BorderColor = System.Drawing.Color.Empty;
-            this.btnLogin.BorderRadius = 21;
-            this.btnLogin.CheckedState.Parent = this.btnLogin;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.CustomImages.Parent = this.btnLogin;
-            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
-            this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogin.HoverState.Parent = this.btnLogin;
-            this.btnLogin.Location = new System.Drawing.Point(181, 378);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
-            this.btnLogin.Size = new System.Drawing.Size(180, 45);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Log in";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            this.btnLogin.Enter += new System.EventHandler(this.btnLogin_Enter);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(150, 208);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnExit
             // 
             this.btnExit.Animated = true;
@@ -301,6 +279,28 @@
             this.btnExit.TabIndex = 10;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnLogin
+            // 
+            this.btnLogin.Animated = true;
+            this.btnLogin.AutoRoundedCorners = true;
+            this.btnLogin.BorderColor = System.Drawing.Color.Empty;
+            this.btnLogin.BorderRadius = 21;
+            this.btnLogin.CheckedState.Parent = this.btnLogin;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.CustomImages.Parent = this.btnLogin;
+            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
+            this.btnLogin.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnLogin.HoverState.Parent = this.btnLogin;
+            this.btnLogin.Location = new System.Drawing.Point(181, 378);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
+            this.btnLogin.Size = new System.Drawing.Size(180, 45);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Log in";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Enter += new System.EventHandler(this.btnLogin_Enter);
+            // 
             // frmLoginpage
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
@@ -313,9 +313,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 

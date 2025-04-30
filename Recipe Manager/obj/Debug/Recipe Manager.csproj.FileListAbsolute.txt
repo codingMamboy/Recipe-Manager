@@ -66,3 +66,4 @@ C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.xml
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmViewRecipe.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmRemoveRecipe.resources
