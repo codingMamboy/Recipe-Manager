@@ -1,4 +1,5 @@
-﻿using System;
+﻿// [Same using directives and namespace declaration]
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,6 @@ namespace Recipe_Manager
         private int userId;
         private string uploadedImagePath = string.Empty;
 
-        // Constructor for regular use
         public frmRecipe(int userId)
         {
             InitializeComponent();
@@ -27,7 +27,6 @@ namespace Recipe_Manager
             this.userId = userId;
         }
 
-        // Constructor for imported recipe
         public frmRecipe(int userId, frmImportPage.Recipe importedRecipe) : this(userId)
         {
             txtDishname.Text = importedRecipe.Name;
@@ -284,10 +283,31 @@ namespace Recipe_Manager
 
         private bool ValidateRecipeInputs()
         {
-            return !string.IsNullOrEmpty(txtDishname.Text.Trim())
-                && !string.IsNullOrEmpty(txtDirection.Text.Trim())
-                && lstIngredients.Items.Count > 0
-                && cboCourses.SelectedItem != null;
+            if (string.IsNullOrWhiteSpace(txtDishname.Text))
+            {
+                MessageBox.Show("Dish name is required.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDirection.Text))
+            {
+                MessageBox.Show("Directions are required.", "Missing Field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (lstIngredients.Items.Count == 0)
+            {
+                MessageBox.Show("Please add at least one ingredient.", "Missing Ingredients", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (cboCourses.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a course.", "Missing Category", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
 
         private void ResetForm()

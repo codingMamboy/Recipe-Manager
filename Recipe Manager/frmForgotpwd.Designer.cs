@@ -68,7 +68,6 @@
             this.tbxCode.ShadowDecoration.Parent = this.tbxCode;
             this.tbxCode.Size = new System.Drawing.Size(131, 36);
             this.tbxCode.TabIndex = 29;
-
             // 
             // tbxNewpwd
             // 
@@ -174,7 +173,7 @@
             this.btnCodeVerification2.CheckedState.Parent = this.btnCodeVerification2;
             this.btnCodeVerification2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCodeVerification2.CustomImages.Parent = this.btnCodeVerification2;
-            this.btnCodeVerification2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
+            this.btnCodeVerification2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
             this.btnCodeVerification2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCodeVerification2.ForeColor = System.Drawing.Color.White;
             this.btnCodeVerification2.HoverState.Parent = this.btnCodeVerification2;
@@ -230,7 +229,7 @@
             // 
             this.lblConfirmpwd.BackColor = System.Drawing.Color.Transparent;
             this.lblConfirmpwd.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblConfirmpwd.ForeColor = System.Drawing.Color.Black;
             this.lblConfirmpwd.Location = new System.Drawing.Point(55, 330);
             this.lblConfirmpwd.Name = "lblConfirmpwd";
             this.lblConfirmpwd.Size = new System.Drawing.Size(121, 25);
@@ -241,7 +240,7 @@
             // 
             this.lblNewpwd.BackColor = System.Drawing.Color.Transparent;
             this.lblNewpwd.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewpwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblNewpwd.ForeColor = System.Drawing.Color.Black;
             this.lblNewpwd.Location = new System.Drawing.Point(55, 257);
             this.lblNewpwd.Name = "lblNewpwd";
             this.lblNewpwd.Size = new System.Drawing.Size(100, 25);
@@ -252,7 +251,7 @@
             // 
             this.lblCode.BackColor = System.Drawing.Color.Transparent;
             this.lblCode.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblCode.ForeColor = System.Drawing.Color.Black;
             this.lblCode.Location = new System.Drawing.Point(55, 184);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(115, 25);
@@ -282,19 +281,17 @@
             this.tbxEmail3.ShadowDecoration.Parent = this.tbxEmail3;
             this.tbxEmail3.Size = new System.Drawing.Size(231, 36);
             this.tbxEmail3.TabIndex = 27;
-
             // 
             // lblEmail3
             // 
             this.lblEmail3.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail3.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(21)))));
+            this.lblEmail3.ForeColor = System.Drawing.Color.Black;
             this.lblEmail3.Location = new System.Drawing.Point(55, 111);
             this.lblEmail3.Name = "lblEmail3";
             this.lblEmail3.Size = new System.Drawing.Size(38, 25);
             this.lblEmail3.TabIndex = 26;
             this.lblEmail3.Text = "Email";
-
             // 
             // lblSignintext2
             // 
@@ -306,7 +303,6 @@
             this.lblSignintext2.Size = new System.Drawing.Size(134, 50);
             this.lblSignintext2.TabIndex = 15;
             this.lblSignintext2.Text = "Recovery";
-
             // 
             // frmForgotpwd
             // 
@@ -318,7 +314,6 @@
             this.Name = "frmForgotpwd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmForgotpwd";
-
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);

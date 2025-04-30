@@ -31,8 +31,8 @@
             this.btnUploadUrl = new Guna.UI2.WinForms.Guna2Button();
             this.txtUrl = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSlogan = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitile = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,16 +85,27 @@
             // 
             this.lblSlogan.BackColor = System.Drawing.Color.Transparent;
             this.lblSlogan.Font = new System.Drawing.Font("Poppins Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSlogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(245)))), ((int)(((byte)(233)))));
+            this.lblSlogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
             this.lblSlogan.Location = new System.Drawing.Point(282, 138);
             this.lblSlogan.Name = "lblSlogan";
             this.lblSlogan.Size = new System.Drawing.Size(187, 24);
             this.lblSlogan.TabIndex = 40;
             this.lblSlogan.Text = "Your personal digital cookbook";
             // 
+            // lblTitile
+            // 
+            this.lblTitile.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitile.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
+            this.lblTitile.Location = new System.Drawing.Point(278, 76);
+            this.lblTitile.Name = "lblTitile";
+            this.lblTitile.Size = new System.Drawing.Size(244, 86);
+            this.lblTitile.TabIndex = 38;
+            this.lblTitile.Text = "CookNest";
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon;
+            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources.output_onlinetools__9_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(212, 61);
             this.pictureBox1.Name = "pictureBox1";
@@ -103,22 +114,11 @@
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
             // 
-            // lblTitile
-            // 
-            this.lblTitile.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitile.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.lblTitile.Location = new System.Drawing.Point(278, 80);
-            this.lblTitile.Name = "lblTitile";
-            this.lblTitile.Size = new System.Drawing.Size(244, 86);
-            this.lblTitile.TabIndex = 38;
-            this.lblTitile.Text = "CookNest";
-            // 
             // frmImportPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(100)))), ((int)(((byte)(74)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(734, 391);
             this.Controls.Add(this.lblSlogan);
             this.Controls.Add(this.pictureBox1);
