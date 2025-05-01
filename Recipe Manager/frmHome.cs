@@ -12,6 +12,7 @@ namespace Recipe_Manager
         private MySqlConnection conn;
         private int userId;
 
+
         public frmHome(int userId)
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace Recipe_Manager
             this.userId = userId;
             txtSearchbar.TextChanged += txtSearchbar_TextChanged;
         }
+
 
         private void frmHome_Load(object sender, EventArgs e)
         {
@@ -80,14 +82,14 @@ namespace Recipe_Manager
                             ForeColor = Color.White,
                             Text = recipeName,
                             Tag = recipeId,
-                            Margin = new Padding(18),
+                            Margin = new Padding(19),
                             BorderRadius = 3,
                             Cursor = Cursors.Hand
                         };
 
                         recipeButton.Click += (s, e) =>
                         {
-                            var viewForm = new frmViewRecipe(recipeId);
+                            var viewForm = new frmViewRecipe(recipeId, userId);
                             this.Hide();
                             viewForm.Show();
                         };
@@ -134,6 +136,11 @@ namespace Recipe_Manager
             removeForm.Show();
 
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

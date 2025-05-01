@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSetting = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRecipe = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPlanner = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.flowRecipeMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtSearchbar = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnRemoveRecipe = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddRecipe = new Guna.UI2.WinForms.Guna2Button();
-            this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSetting = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRecipe = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPlanner = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,125 +62,6 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(229, 594);
             this.guna2Panel1.TabIndex = 0;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(63, 39);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(138, 50);
-            this.guna2HtmlLabel3.TabIndex = 6;
-            this.guna2HtmlLabel3.Text = "CookNest";
-            // 
-            // flowRecipeMenu
-            // 
-            this.flowRecipeMenu.AutoScroll = true;
-            this.flowRecipeMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(232)))), ((int)(((byte)(217)))));
-            this.flowRecipeMenu.Location = new System.Drawing.Point(316, 140);
-            this.flowRecipeMenu.Name = "flowRecipeMenu";
-            this.flowRecipeMenu.Size = new System.Drawing.Size(672, 364);
-            this.flowRecipeMenu.TabIndex = 11;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(316, 88);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(120, 36);
-            this.guna2HtmlLabel1.TabIndex = 12;
-            this.guna2HtmlLabel1.Text = "Your Recipe:";
-            // 
-            // txtSearchbar
-            // 
-            this.txtSearchbar.AutoRoundedCorners = true;
-            this.txtSearchbar.BorderRadius = 14;
-            this.txtSearchbar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearchbar.DefaultText = "";
-            this.txtSearchbar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearchbar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearchbar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchbar.DisabledState.Parent = this.txtSearchbar;
-            this.txtSearchbar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchbar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchbar.FocusedState.Parent = this.txtSearchbar;
-            this.txtSearchbar.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchbar.ForeColor = System.Drawing.Color.Black;
-            this.txtSearchbar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchbar.HoverState.Parent = this.txtSearchbar;
-            this.txtSearchbar.Location = new System.Drawing.Point(812, 88);
-            this.txtSearchbar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSearchbar.Name = "txtSearchbar";
-            this.txtSearchbar.PasswordChar = '\0';
-            this.txtSearchbar.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtSearchbar.PlaceholderText = "";
-            this.txtSearchbar.SelectedText = "";
-            this.txtSearchbar.ShadowDecoration.Parent = this.txtSearchbar;
-            this.txtSearchbar.Size = new System.Drawing.Size(176, 31);
-            this.txtSearchbar.TabIndex = 13;
-            this.txtSearchbar.TextChanged += new System.EventHandler(this.txtSearchbar_TextChanged);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
-            this.guna2Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guna2Button2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.Empty;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(953, 12);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.PressedColor = System.Drawing.Color.White;
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(35, 32);
-            this.guna2Button2.TabIndex = 16;
-            // 
-            // btnRemoveRecipe
-            // 
-            this.btnRemoveRecipe.Animated = true;
-            this.btnRemoveRecipe.BackgroundImage = global::Recipe_Manager.Properties.Resources._9041687_button_minus_icon;
-            this.btnRemoveRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRemoveRecipe.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRemoveRecipe.CheckedState.Parent = this.btnRemoveRecipe;
-            this.btnRemoveRecipe.CustomImages.Parent = this.btnRemoveRecipe;
-            this.btnRemoveRecipe.FillColor = System.Drawing.Color.Empty;
-            this.btnRemoveRecipe.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRemoveRecipe.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRemoveRecipe.HoverState.Parent = this.btnRemoveRecipe;
-            this.btnRemoveRecipe.Location = new System.Drawing.Point(465, 92);
-            this.btnRemoveRecipe.Name = "btnRemoveRecipe";
-            this.btnRemoveRecipe.PressedColor = System.Drawing.Color.White;
-            this.btnRemoveRecipe.ShadowDecoration.Parent = this.btnRemoveRecipe;
-            this.btnRemoveRecipe.Size = new System.Drawing.Size(23, 28);
-            this.btnRemoveRecipe.TabIndex = 15;
-            this.btnRemoveRecipe.Click += new System.EventHandler(this.btnRemoveRecipe_Click);
-            // 
-            // btnAddRecipe
-            // 
-            this.btnAddRecipe.Animated = true;
-            this.btnAddRecipe.BackgroundImage = global::Recipe_Manager.Properties.Resources._9041636_button_add_icon;
-            this.btnAddRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddRecipe.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAddRecipe.CheckedState.Parent = this.btnAddRecipe;
-            this.btnAddRecipe.CustomImages.Parent = this.btnAddRecipe;
-            this.btnAddRecipe.FillColor = System.Drawing.Color.Empty;
-            this.btnAddRecipe.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAddRecipe.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAddRecipe.HoverState.Parent = this.btnAddRecipe;
-            this.btnAddRecipe.Location = new System.Drawing.Point(439, 92);
-            this.btnAddRecipe.Name = "btnAddRecipe";
-            this.btnAddRecipe.PressedColor = System.Drawing.Color.White;
-            this.btnAddRecipe.ShadowDecoration.Parent = this.btnAddRecipe;
-            this.btnAddRecipe.Size = new System.Drawing.Size(23, 28);
-            this.btnAddRecipe.TabIndex = 14;
-            this.btnAddRecipe.Click += new System.EventHandler(this.btnAddRecipe_Click);
             // 
             // btnWelcome
             // 
@@ -290,6 +171,17 @@
             this.btnPlanner.Text = "Planner";
             this.btnPlanner.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(63, 39);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(138, 50);
+            this.guna2HtmlLabel3.TabIndex = 6;
+            this.guna2HtmlLabel3.Text = "CookNest";
+            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -328,6 +220,116 @@
             this.btnHome.TabIndex = 8;
             this.btnHome.Text = "Home";
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // flowRecipeMenu
+            // 
+            this.flowRecipeMenu.AutoScroll = true;
+            this.flowRecipeMenu.BackColor = System.Drawing.Color.White;
+            this.flowRecipeMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowRecipeMenu.Location = new System.Drawing.Point(316, 140);
+            this.flowRecipeMenu.Name = "flowRecipeMenu";
+            this.flowRecipeMenu.Size = new System.Drawing.Size(672, 364);
+            this.flowRecipeMenu.TabIndex = 11;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(316, 88);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(120, 36);
+            this.guna2HtmlLabel1.TabIndex = 12;
+            this.guna2HtmlLabel1.Text = "Your Recipe:";
+            // 
+            // txtSearchbar
+            // 
+            this.txtSearchbar.AutoRoundedCorners = true;
+            this.txtSearchbar.BorderRadius = 14;
+            this.txtSearchbar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchbar.DefaultText = "";
+            this.txtSearchbar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearchbar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearchbar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchbar.DisabledState.Parent = this.txtSearchbar;
+            this.txtSearchbar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchbar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchbar.FocusedState.Parent = this.txtSearchbar;
+            this.txtSearchbar.Font = new System.Drawing.Font("Poppins Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchbar.ForeColor = System.Drawing.Color.Black;
+            this.txtSearchbar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchbar.HoverState.Parent = this.txtSearchbar;
+            this.txtSearchbar.Location = new System.Drawing.Point(812, 88);
+            this.txtSearchbar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearchbar.Name = "txtSearchbar";
+            this.txtSearchbar.PasswordChar = '\0';
+            this.txtSearchbar.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtSearchbar.PlaceholderText = "";
+            this.txtSearchbar.SelectedText = "";
+            this.txtSearchbar.ShadowDecoration.Parent = this.txtSearchbar;
+            this.txtSearchbar.Size = new System.Drawing.Size(176, 31);
+            this.txtSearchbar.TabIndex = 13;
+            this.txtSearchbar.TextChanged += new System.EventHandler(this.txtSearchbar_TextChanged);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
+            this.guna2Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.guna2Button2.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.Empty;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(1025, 12);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.PressedColor = System.Drawing.Color.White;
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(35, 32);
+            this.guna2Button2.TabIndex = 16;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // btnRemoveRecipe
+            // 
+            this.btnRemoveRecipe.Animated = true;
+            this.btnRemoveRecipe.BackgroundImage = global::Recipe_Manager.Properties.Resources._9041687_button_minus_icon;
+            this.btnRemoveRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRemoveRecipe.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRemoveRecipe.CheckedState.Parent = this.btnRemoveRecipe;
+            this.btnRemoveRecipe.CustomImages.Parent = this.btnRemoveRecipe;
+            this.btnRemoveRecipe.FillColor = System.Drawing.Color.Empty;
+            this.btnRemoveRecipe.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRemoveRecipe.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRemoveRecipe.HoverState.Parent = this.btnRemoveRecipe;
+            this.btnRemoveRecipe.Location = new System.Drawing.Point(465, 92);
+            this.btnRemoveRecipe.Name = "btnRemoveRecipe";
+            this.btnRemoveRecipe.PressedColor = System.Drawing.Color.White;
+            this.btnRemoveRecipe.ShadowDecoration.Parent = this.btnRemoveRecipe;
+            this.btnRemoveRecipe.Size = new System.Drawing.Size(23, 28);
+            this.btnRemoveRecipe.TabIndex = 15;
+            this.btnRemoveRecipe.Click += new System.EventHandler(this.btnRemoveRecipe_Click);
+            // 
+            // btnAddRecipe
+            // 
+            this.btnAddRecipe.Animated = true;
+            this.btnAddRecipe.BackgroundImage = global::Recipe_Manager.Properties.Resources._9041636_button_add_icon;
+            this.btnAddRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddRecipe.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAddRecipe.CheckedState.Parent = this.btnAddRecipe;
+            this.btnAddRecipe.CustomImages.Parent = this.btnAddRecipe;
+            this.btnAddRecipe.FillColor = System.Drawing.Color.Empty;
+            this.btnAddRecipe.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddRecipe.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAddRecipe.HoverState.Parent = this.btnAddRecipe;
+            this.btnAddRecipe.Location = new System.Drawing.Point(439, 92);
+            this.btnAddRecipe.Name = "btnAddRecipe";
+            this.btnAddRecipe.PressedColor = System.Drawing.Color.White;
+            this.btnAddRecipe.ShadowDecoration.Parent = this.btnAddRecipe;
+            this.btnAddRecipe.Size = new System.Drawing.Size(23, 28);
+            this.btnAddRecipe.TabIndex = 14;
+            this.btnAddRecipe.Click += new System.EventHandler(this.btnAddRecipe_Click);
             // 
             // frmHome
             // 

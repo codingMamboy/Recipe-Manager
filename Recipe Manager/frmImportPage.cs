@@ -162,5 +162,12 @@ namespace Recipe_Manager
             public string Instructions { get; set; }
             public string ImageUrl { get; set; }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            frmRecipe recipeForm = new frmRecipe(userId);
+            this.Hide();
+            recipeForm.Show();
+        }
     }
 }

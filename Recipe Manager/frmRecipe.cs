@@ -343,7 +343,6 @@ namespace Recipe_Manager
         private void btnImportUrl_Click(object sender, EventArgs e)
         {
             frmImportPage frmImportPage = new frmImportPage(userId);
-            this.Hide();
             frmImportPage.ShowDialog();
 
             if (frmImportPage.ImportedRecipe != null)
@@ -381,6 +380,11 @@ namespace Recipe_Manager
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

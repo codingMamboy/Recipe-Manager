@@ -30,7 +30,6 @@
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSetting = new Guna.UI2.WinForms.Guna2Button();
             this.btnRecipe = new Guna.UI2.WinForms.Guna2Button();
             this.btnPlanner = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -56,6 +55,7 @@
             this.btnImportUrl = new Guna.UI2.WinForms.Guna2Button();
             this.cboCourses = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pictureBoxRecipe = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.pnlAdd.SuspendLayout();
@@ -66,7 +66,6 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.guna2Panel1.Controls.Add(this.btnWelcome);
-            this.guna2Panel1.Controls.Add(this.btnSetting);
             this.guna2Panel1.Controls.Add(this.btnRecipe);
             this.guna2Panel1.Controls.Add(this.btnPlanner);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
@@ -103,33 +102,6 @@
             this.btnWelcome.Size = new System.Drawing.Size(180, 42);
             this.btnWelcome.TabIndex = 14;
             this.btnWelcome.Text = "Username";
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Animated = true;
-            this.btnSetting.AutoRoundedCorners = true;
-            this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSetting.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnSetting.BorderRadius = 20;
-            this.btnSetting.CheckedState.Parent = this.btnSetting;
-            this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSetting.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnSetting.CustomImages.Parent = this.btnSetting;
-            this.btnSetting.FillColor = System.Drawing.Color.Transparent;
-            this.btnSetting.Font = new System.Drawing.Font("Poppins", 10F);
-            this.btnSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnSetting.HoverState.Parent = this.btnSetting;
-            this.btnSetting.Image = global::Recipe_Manager.Properties.Resources._2849830_multimedia_options_setting_settings_gear_icon;
-            this.btnSetting.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnSetting.Location = new System.Drawing.Point(21, 312);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.PressedColor = System.Drawing.Color.Transparent;
-            this.btnSetting.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSetting.ShadowDecoration.Parent = this.btnSetting;
-            this.btnSetting.Size = new System.Drawing.Size(180, 42);
-            this.btnSetting.TabIndex = 11;
-            this.btnSetting.Text = "Setting";
-            this.btnSetting.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // btnRecipe
             // 
@@ -250,6 +222,8 @@
             this.txtDishname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDishname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDishname.FocusedState.Parent = this.txtDishname;
+            this.txtDishname.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDishname.ForeColor = System.Drawing.Color.Black;
             this.txtDishname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDishname.HoverState.Parent = this.txtDishname;
             this.txtDishname.Location = new System.Drawing.Point(265, 70);
@@ -309,6 +283,7 @@
             this.txtScale.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtScale.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtScale.FocusedState.Parent = this.txtScale;
+            this.txtScale.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScale.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtScale.HoverState.Parent = this.txtScale;
             this.txtScale.Location = new System.Drawing.Point(811, 70);
@@ -343,7 +318,7 @@
             this.cboMeasurement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMeasurement.FocusedColor = System.Drawing.Color.Empty;
             this.cboMeasurement.FocusedState.Parent = this.cboMeasurement;
-            this.cboMeasurement.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboMeasurement.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMeasurement.ForeColor = System.Drawing.Color.Black;
             this.cboMeasurement.FormattingEnabled = true;
             this.cboMeasurement.HoverState.Parent = this.cboMeasurement;
@@ -391,6 +366,7 @@
             this.txtDirection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDirection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDirection.FocusedState.Parent = this.txtDirection;
+            this.txtDirection.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDirection.ForeColor = System.Drawing.Color.Black;
             this.txtDirection.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDirection.HoverState.Parent = this.txtDirection;
@@ -447,7 +423,7 @@
             this.cboIngredients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboIngredients.FocusedColor = System.Drawing.Color.Empty;
             this.cboIngredients.FocusedState.Parent = this.cboIngredients;
-            this.cboIngredients.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboIngredients.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboIngredients.ForeColor = System.Drawing.Color.Black;
             this.cboIngredients.FormattingEnabled = true;
             this.cboIngredients.HoverState.Parent = this.cboIngredients;
@@ -604,7 +580,7 @@
             this.cboCourses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCourses.FocusedColor = System.Drawing.Color.Empty;
             this.cboCourses.FocusedState.Parent = this.cboCourses;
-            this.cboCourses.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboCourses.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCourses.ForeColor = System.Drawing.Color.Black;
             this.cboCourses.FormattingEnabled = true;
             this.cboCourses.HoverState.Parent = this.cboCourses;
@@ -627,12 +603,33 @@
             this.pictureBoxRecipe.TabIndex = 33;
             this.pictureBoxRecipe.TabStop = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.Animated = true;
+            this.btnExit.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(1174, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.PressedColor = System.Drawing.Color.White;
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(35, 32);
+            this.btnExit.TabIndex = 36;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(1263, 594);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnImportUrl);
             this.Controls.Add(this.btnUploadRecipe);
             this.Controls.Add(this.pictureBoxRecipe);
@@ -671,7 +668,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button btnSetting;
         private Guna.UI2.WinForms.Guna2Button btnRecipe;
         private Guna.UI2.WinForms.Guna2Button btnPlanner;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
@@ -698,5 +694,6 @@
         private Guna.UI2.WinForms.Guna2Button btnImportUrl;
         private Guna.UI2.WinForms.Guna2Button btnWelcome;
         private Guna.UI2.WinForms.Guna2ComboBox cboCourses;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

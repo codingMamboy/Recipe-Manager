@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 
 namespace Recipe_Manager
@@ -10,43 +11,18 @@ namespace Recipe_Manager
     public partial class frmViewRecipe : Form
     {
         private int recipeId;
+        private int userId;
 
-        public frmViewRecipe(int recipeId)
+        public frmViewRecipe(int recipeId, int userId)
         {
             InitializeComponent();
             this.recipeId = recipeId;
+            this.userId = userId;
             this.Load += frmViewRecipe_Load;
         }
 
         private void frmViewRecipe_Load(object sender, EventArgs e)
         {
-
-
-            txtIngredients.Multiline = true;
-            txtInstructions.Multiline = true;
-
-            // Set font
-            txtIngredients.Font = new Font("Segoe UI", 10);
-            txtInstructions.Font = new Font("Segoe UI", 10);
-
-            // Optional: Word wrap happens automatically in Guna2TextBox
-            // Set ReadOnly if it's just for viewing
-            txtIngredients.ReadOnly = true;
-            txtInstructions.ReadOnly = true;
-
-            // Set background and foreground colors for visibility
-            txtIngredients.FillColor = Color.White;
-            txtIngredients.ForeColor = Color.Black;
-
-            txtInstructions.FillColor = Color.White;
-            txtInstructions.ForeColor = Color.Black;
-
-            // Optional: Set border radius or shadow for aesthetics
-            txtIngredients.BorderRadius = 5;
-            txtInstructions.BorderRadius = 5;
-
-            txtIngredients.ReadOnly = true;
-            txtInstructions.ReadOnly = true;
 
             string connectionString = @"server=localhost;user=root;password=12345;database=recipe_managerv2;";
             string query = @"SELECT r.recipe_name, r.ingredients, r.instructions, r.image_path, c.category_name 
@@ -111,6 +87,13 @@ namespace Recipe_Manager
         private void frmViewRecipe_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            frmHome frmHome = new frmHome(userId);
+            this.Close();
+            frmHome.ShowDialog();
         }
     }
 }
