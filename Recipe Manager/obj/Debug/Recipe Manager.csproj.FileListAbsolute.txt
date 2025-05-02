@@ -17,18 +17,9 @@ C:\Users\bryan\source\repos\Recipe Manager\Recipe Manager\obj\Debug\Recipe_Manag
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\Recipe Manager.exe.config
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\Recipe Manager.exe
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\Recipe Manager.pdb
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.csproj.AssemblyReference.cache
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmLoginpage.resources
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.Properties.Resources.resources
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.csproj.GenerateResource.cache
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.csproj.CoreCompileInputs.cache
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe M.FFFAFD44.Up2Date
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.exe
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.pdb
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmSignuppage.resources
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmForgotpwd.resources
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\Google.Protobuf.dll
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.dll
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\K4os.Compression.LZ4.Streams.dll
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\K4os.Hash.xxHash.dll
@@ -46,6 +37,8 @@ C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\Google.Protobuf.pdb
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\Google.Protobuf.xml
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.xml
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\K4os.Compression.LZ4.xml
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\K4os.Compression.LZ4.Streams.xml
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\K4os.Hash.xxHash.xml
@@ -59,11 +52,22 @@ C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.csproj.AssemblyReference.cache
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmLoginpage.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmChangeEmail.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmChangePassword.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmEditUsername.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmForgotpwd.resources
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmHome.resources
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmRecipe.resources
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmImportPage.resources
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.dll
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.pdb
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\bin\Debug\HtmlAgilityPack.xml
-C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmViewRecipe.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmProfile.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmRecipe.resources
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmRemoveRecipe.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmSignuppage.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmViewRecipe.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.Properties.Resources.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.csproj.GenerateResource.cache
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.csproj.CoreCompileInputs.cache
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe M.FFFAFD44.Up2Date
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.exe
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.pdb

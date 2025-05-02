@@ -30,7 +30,6 @@
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSetting = new Guna.UI2.WinForms.Guna2Button();
             this.btnRecipe = new Guna.UI2.WinForms.Guna2Button();
             this.btnPlanner = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -50,7 +49,6 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.guna2Panel1.Controls.Add(this.btnWelcome);
-            this.guna2Panel1.Controls.Add(this.btnSetting);
             this.guna2Panel1.Controls.Add(this.btnRecipe);
             this.guna2Panel1.Controls.Add(this.btnPlanner);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
@@ -87,33 +85,7 @@
             this.btnWelcome.Size = new System.Drawing.Size(180, 42);
             this.btnWelcome.TabIndex = 13;
             this.btnWelcome.Text = "Username";
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Animated = true;
-            this.btnSetting.AutoRoundedCorners = true;
-            this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSetting.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnSetting.BorderRadius = 20;
-            this.btnSetting.CheckedState.Parent = this.btnSetting;
-            this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSetting.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnSetting.CustomImages.Parent = this.btnSetting;
-            this.btnSetting.FillColor = System.Drawing.Color.Transparent;
-            this.btnSetting.Font = new System.Drawing.Font("Poppins", 10F);
-            this.btnSetting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnSetting.HoverState.Parent = this.btnSetting;
-            this.btnSetting.Image = global::Recipe_Manager.Properties.Resources._2849830_multimedia_options_setting_settings_gear_icon;
-            this.btnSetting.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnSetting.Location = new System.Drawing.Point(21, 312);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.PressedColor = System.Drawing.Color.Transparent;
-            this.btnSetting.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSetting.ShadowDecoration.Parent = this.btnSetting;
-            this.btnSetting.Size = new System.Drawing.Size(180, 42);
-            this.btnSetting.TabIndex = 11;
-            this.btnSetting.Text = "Setting";
-            this.btnSetting.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnWelcome.Click += new System.EventHandler(this.btnWelcome_Click);
             // 
             // btnRecipe
             // 
@@ -364,7 +336,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnPlanner;
-        private Guna.UI2.WinForms.Guna2Button btnSetting;
         private Guna.UI2.WinForms.Guna2Button btnRecipe;
         private Guna.UI2.WinForms.Guna2Button btnWelcome;
         private System.Windows.Forms.FlowLayoutPanel flowRecipeMenu;

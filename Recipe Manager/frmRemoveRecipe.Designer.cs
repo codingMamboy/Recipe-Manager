@@ -30,8 +30,9 @@
         {
             this.comboBoxRecipes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.lblSignintext = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // comboBoxRecipes
@@ -71,6 +72,17 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // lblSignintext
+            // 
+            this.lblSignintext.BackColor = System.Drawing.Color.Transparent;
+            this.lblSignintext.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignintext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
+            this.lblSignintext.Location = new System.Drawing.Point(71, 48);
+            this.lblSignintext.Name = "lblSignintext";
+            this.lblSignintext.Size = new System.Drawing.Size(218, 50);
+            this.lblSignintext.TabIndex = 34;
+            this.lblSignintext.Text = "Remove Recipe";
+            // 
             // btnBack
             // 
             this.btnBack.Animated = true;
@@ -91,22 +103,33 @@
             this.btnBack.TabIndex = 33;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // lblSignintext
+            // btnExit
             // 
-            this.lblSignintext.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignintext.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignintext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
-            this.lblSignintext.Location = new System.Drawing.Point(71, 48);
-            this.lblSignintext.Name = "lblSignintext";
-            this.lblSignintext.Size = new System.Drawing.Size(218, 50);
-            this.lblSignintext.TabIndex = 34;
-            this.lblSignintext.Text = "Remove Recipe";
+            this.btnExit.Animated = true;
+            this.btnExit.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(295, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.PressedColor = System.Drawing.Color.White;
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(35, 32);
+            this.btnExit.TabIndex = 35;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmRemoveRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(347, 310);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblSignintext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDelete);
@@ -126,5 +149,6 @@
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnBack;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSignintext;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

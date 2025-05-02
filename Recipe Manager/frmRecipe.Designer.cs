@@ -102,6 +102,7 @@
             this.btnWelcome.Size = new System.Drawing.Size(180, 42);
             this.btnWelcome.TabIndex = 14;
             this.btnWelcome.Text = "Username";
+            this.btnWelcome.Click += new System.EventHandler(this.btnWelcome_Click);
             // 
             // btnRecipe
             // 
@@ -227,6 +228,7 @@
             this.txtDishname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDishname.HoverState.Parent = this.txtDishname;
             this.txtDishname.Location = new System.Drawing.Point(265, 70);
+            this.txtDishname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDishname.Name = "txtDishname";
             this.txtDishname.PasswordChar = '\0';
             this.txtDishname.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -287,6 +289,7 @@
             this.txtScale.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtScale.HoverState.Parent = this.txtScale;
             this.txtScale.Location = new System.Drawing.Point(811, 70);
+            this.txtScale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtScale.Name = "txtScale";
             this.txtScale.PasswordChar = '\0';
             this.txtScale.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -371,6 +374,7 @@
             this.txtDirection.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDirection.HoverState.Parent = this.txtDirection;
             this.txtDirection.Location = new System.Drawing.Point(265, 159);
+            this.txtDirection.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDirection.Multiline = true;
             this.txtDirection.Name = "txtDirection";
             this.txtDirection.PasswordChar = '\0';
@@ -527,7 +531,6 @@
             this.btnUploadImage.Size = new System.Drawing.Size(142, 36);
             this.btnUploadImage.TabIndex = 32;
             this.btnUploadImage.Text = "Upload Image";
-            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click_1);
             // 
             // btnUploadRecipe
             // 
@@ -585,6 +588,11 @@
             this.cboCourses.FormattingEnabled = true;
             this.cboCourses.HoverState.Parent = this.cboCourses;
             this.cboCourses.ItemHeight = 30;
+            this.cboCourses.Items.AddRange(new object[] {
+            "Breakfast",
+            "Main Dish",
+            "Snack",
+            "Dessert"});
             this.cboCourses.ItemsAppearance.Parent = this.cboCourses;
             this.cboCourses.Location = new System.Drawing.Point(459, 70);
             this.cboCourses.Name = "cboCourses";
@@ -654,7 +662,7 @@
             this.Name = "frmRecipe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRecipe";
-            this.Load += new System.EventHandler(this.frmRecipe_Load_1);
+            this.Load += new System.EventHandler(this.frmRecipe_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

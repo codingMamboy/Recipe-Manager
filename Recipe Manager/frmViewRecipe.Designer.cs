@@ -40,6 +40,7 @@
             this.txtIngredients = new System.Windows.Forms.RichTextBox();
             this.txtInstructions = new System.Windows.Forms.RichTextBox();
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureboxRecipe)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -188,12 +189,33 @@
             this.btnBack.TabIndex = 42;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.Animated = true;
+            this.btnExit.BackgroundImage = global::Recipe_Manager.Properties.Resources._9356052_logout_exit_icon__3_;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.Color.Empty;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(668, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.PressedColor = System.Drawing.Color.White;
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(35, 32);
+            this.btnExit.TabIndex = 43;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmViewRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(1076, 611);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtInstructions);
             this.Controls.Add(this.txtIngredients);
@@ -231,5 +253,6 @@
         private System.Windows.Forms.RichTextBox txtIngredients;
         private System.Windows.Forms.RichTextBox txtInstructions;
         private Guna.UI2.WinForms.Guna2Button btnBack;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

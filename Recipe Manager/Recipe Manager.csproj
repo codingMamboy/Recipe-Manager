@@ -118,6 +118,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChangeEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeEmail.Designer.cs">
+      <DependentUpon>frmChangeEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditUsername.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditUsername.Designer.cs">
+      <DependentUpon>frmEditUsername.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmForgotpwd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +153,12 @@
     </Compile>
     <Compile Include="frmImportPage.Designer.cs">
       <DependentUpon>frmImportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfile.Designer.cs">
+      <DependentUpon>frmProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRecipe.cs">
       <SubType>Form</SubType>
@@ -165,6 +189,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeEmail.resx">
+      <DependentUpon>frmChangeEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditUsername.resx">
+      <DependentUpon>frmEditUsername.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmForgotpwd.resx">
       <DependentUpon>frmForgotpwd.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmImportPage.resx">
       <DependentUpon>frmImportPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProfile.resx">
+      <DependentUpon>frmProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRecipe.resx">
       <DependentUpon>frmRecipe.cs</DependentUpon>

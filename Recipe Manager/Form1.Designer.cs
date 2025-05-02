@@ -299,7 +299,6 @@
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Log in";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            this.btnLogin.Enter += new System.EventHandler(this.btnLogin_Enter);
             // 
             // frmLoginpage
             // 
