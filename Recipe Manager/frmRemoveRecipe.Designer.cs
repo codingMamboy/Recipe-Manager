@@ -53,6 +53,7 @@
             this.comboBoxRecipes.ShadowDecoration.Parent = this.comboBoxRecipes;
             this.comboBoxRecipes.Size = new System.Drawing.Size(140, 36);
             this.comboBoxRecipes.TabIndex = 0;
+           
             // 
             // btnDelete
             // 

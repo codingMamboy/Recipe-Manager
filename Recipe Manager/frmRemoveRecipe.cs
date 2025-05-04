@@ -137,6 +137,8 @@ namespace Recipe_Manager
         {
             Application.Exit();
         }
+
+
     }
 
     // Simple class to hold a recipe's ID and Name.

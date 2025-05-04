@@ -42,6 +42,8 @@ namespace Recipe_Manager
                     // Display welcome message using username
                     btnWelcome.Text = "Welcome, " + reader["username"].ToString();
                 }
+
+                reader.Close();  // Close the reader before executing other queries
                 conn.Close();
 
                 // Load the list of recipes into the panel
@@ -54,8 +56,6 @@ namespace Recipe_Manager
             }
         }
 
-        // Load recipes belonging to the current user into the panel
-        // Optional search term can filter recipes by name
         private void LoadRecipesToPanel(string search = "")
         {
             // Clear existing controls to refresh the panel
@@ -67,10 +67,10 @@ namespace Recipe_Manager
 
                 // SQL query to fetch recipe names and IDs matching the search keyword
                 string query = @"
-                    SELECT recipe_id, recipe_name
-                    FROM recipes
-                    WHERE user_id = @userId
-                      AND recipe_name LIKE @search";
+            SELECT recipe_id, recipe_name
+            FROM recipes
+            WHERE user_id = @userId
+              AND recipe_name LIKE @search";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@userId", userId);
@@ -95,7 +95,8 @@ namespace Recipe_Manager
                             Tag = recipeId,
                             Margin = new Padding(18),
                             BorderRadius = 3,
-                            Cursor = Cursors.Hand
+                            Cursor = Cursors.Hand,
+                            Animated = true
                         };
 
                         // Event handler to open the selected recipe
@@ -122,6 +123,7 @@ namespace Recipe_Manager
             }
         }
 
+
         // Real-time search: triggers whenever text changes in the search bar
         private void txtSearchbar_TextChanged(object sender, EventArgs e)
         {
@@ -132,7 +134,7 @@ namespace Recipe_Manager
         private void btnRecipe_Click(object sender, EventArgs e)
         {
             var addForm = new frmRecipe(userId);
-            this.Hide();
+            this.Close();
             addForm.Show();
         }
 
@@ -140,7 +142,7 @@ namespace Recipe_Manager
         private void btnAddRecipe_Click(object sender, EventArgs e)
         {
             var addForm = new frmRecipe(userId);
-            this.Hide();
+            this.Close();
             addForm.Show();
         }
 
@@ -148,6 +150,7 @@ namespace Recipe_Manager
         private void btnRemoveRecipe_Click(object sender, EventArgs e)
         {
             var removeForm = new frmRemoveRecipe(userId);
+            this.Close();
             removeForm.Show();
         }
 
@@ -161,8 +164,15 @@ namespace Recipe_Manager
         private void btnWelcome_Click(object sender, EventArgs e)
         {
             var frmProfile = new frmProfile(userId);
-            this.Hide();
+            this.Close();
             frmProfile.Show();
+        }
+
+        private void btnPlanner_Click(object sender, EventArgs e)
+        {
+            var frmPlanner = new frmPlanner(userId);
+            this.Close();
+            frmPlanner.Show();
         }
     }
 }

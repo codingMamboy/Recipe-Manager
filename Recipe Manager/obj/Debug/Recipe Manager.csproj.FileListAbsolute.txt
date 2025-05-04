@@ -71,3 +71,5 @@ C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe M.FFFAFD44.Up2Date
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.exe
 C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe Manager.pdb
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmPlanner.resources
+C:\Users\bryan\OneDrive\Documents\GitHub\Recipe-Manager\Recipe Manager\obj\Debug\Recipe_Manager.frmViewPlan.resources

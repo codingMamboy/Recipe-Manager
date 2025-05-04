@@ -142,6 +142,7 @@
             this.btnPlanner.TabIndex = 9;
             this.btnPlanner.Text = "Planner";
             this.btnPlanner.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPlanner.Click += new System.EventHandler(this.btnPlanner_Click);
             // 
             // guna2HtmlLabel3
             // 

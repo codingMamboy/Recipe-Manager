@@ -121,14 +121,14 @@
   <data name="3643736_back_backward_left_mark_sign_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3643736_back_backward_left_mark_sign_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="output-onlinetools (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\output-onlinetools (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Screenshot 2025-03-26 2221012" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot 2025-03-26 2221012.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="output-onlinetools (4)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinetools (4)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="9356052_logout_exit_icon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9356052_logout_exit_icon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2849830_multimedia_options_setting_settings_gear_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2849830_multimedia_options_setting_settings_gear_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,9 +147,6 @@
   </data>
   <data name="7853767_kashifarif_user_profile_person_account_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7853767_kashifarif_user_profile_person_account_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="7727575_planner_calendar_date_day_appointment_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7727575_planner_calendar_date_day_appointment_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="753958_chefs_cook_food_hat_restaurant_icon (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\753958_chefs_cook_food_hat_restaurant_icon (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +178,12 @@
   <data name="3643736_back_backward_left_mark_sign_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3643736_back_backward_left_mark_sign_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="9041687_button_minus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9041687_button_minus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3643736_back_backward_left_mark_sign_icon (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3643736_back_backward_left_mark_sign_icon (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="9041636_button_add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9041636_button_add_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,8 +199,8 @@
   <data name="753958_chefs_cook_food_hat_restaurant_icon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\753958_chefs_cook_food_hat_restaurant_icon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="output-onlinetools (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\output-onlinetools (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="9356052_logout_exit_icon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9356052_logout_exit_icon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="output-onlinetools (5)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinetools (5)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,13 +214,13 @@
   <data name="Screenshot 2025-03-26 2221011" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot 2025-03-26 2221011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3643736_back_backward_left_mark_sign_icon (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3643736_back_backward_left_mark_sign_icon (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="7727575_planner_calendar_date_day_appointment_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7727575_planner_calendar_date_day_appointment_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="10772845_cook_book_recipe_food_and_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10772845_cook_book_recipe_food_and_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="9041687_button_minus_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9041687_button_minus_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="6599587_course_e-learning_education_learning_online_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6599587_course_e-learning_education_learning_online_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

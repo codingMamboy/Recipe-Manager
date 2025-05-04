@@ -90,7 +90,6 @@ namespace Recipe_Manager
             Task.Run(() =>
             {
                 LoadUser();
-                LoadIngredients();
                 LoadCourses();
             });
         }
@@ -149,22 +148,6 @@ namespace Recipe_Manager
         }
 
         // Populate the ingredients dropdown
-        private void LoadIngredients()
-        {
-            LoadData(
-                "SELECT ingredient_name FROM ingredients",
-                null,
-                reader =>
-                {
-                    Invoke((Action)(() =>
-                    {
-                        cboIngredients.Items.Clear();
-                        while (reader.Read())
-                            cboIngredients.Items.Add(reader.GetString(0));
-                    }));
-                }
-            );
-        }
 
         // Populate the course/category dropdown
         private void LoadCourses()
@@ -187,8 +170,9 @@ namespace Recipe_Manager
         // Navigate back to the home form
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Hide();
-            new frmHome(userId).Show();
+            var frmHome = new frmHome(userId);
+            this.Close();
+            frmHome.Show();
         }
 
         // Add the selected ingredient entry to the checklist
@@ -241,41 +225,6 @@ namespace Recipe_Manager
             ClearInputs();
         }
 
-        // Allow the user to upload and display a local image
-        private void btnUploadImage_Click(object sender, EventArgs e)
-        {
-            using (var ofd = new OpenFileDialog
-            {
-                Title = "Select an Image",
-                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
-            })
-            {
-                if (ofd.ShowDialog() != DialogResult.OK) return;
-
-                var fileInfo = new FileInfo(ofd.FileName);
-                // Enforce a 2MB size limit
-                if (fileInfo.Length > 2 * 1024 * 1024)
-                {
-                    MessageBox.Show(
-                        "Select an image under 2MB.",
-                        "File Too Large",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-                    return;
-                }
-
-                // Copy into an “Images” folder inside the app directory
-                string imagesDir = Path.Combine(Application.StartupPath, "Images");
-                Directory.CreateDirectory(imagesDir);
-
-                string destPath = Path.Combine(imagesDir, fileInfo.Name);
-                File.Copy(ofd.FileName, destPath, true);
-
-                uploadedImagePath = Path.Combine("Images", fileInfo.Name);
-                pictureBoxRecipe.Image = Image.FromFile(destPath);
-            }
-        }
 
         // Handle the “Upload Recipe” button click asynchronously
         private async void btnUploadRecipe_Click(object sender, EventArgs e)
@@ -465,8 +414,50 @@ namespace Recipe_Manager
         private void btnWelcome_Click(object sender, EventArgs e)
         {
             var frmProfile = new frmProfile(userId);
-            this.Hide();
+            this.Close();
             frmProfile.Show();
+        }
+
+        private void btnPlanner_Click(object sender, EventArgs e)
+        {
+            var frmPlanner = new frmPlanner(userId);
+            this.Close();
+            frmPlanner.Show();
+        }
+
+        private void btnUploadImage_Click_1(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog
+            {
+                Title = "Select an Image",
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
+            })
+            {
+                if (ofd.ShowDialog() != DialogResult.OK) return;
+
+                var fileInfo = new FileInfo(ofd.FileName);
+                // Enforce a 2MB size limit
+                if (fileInfo.Length > 2 * 1024 * 1024)
+                {
+                    MessageBox.Show(
+                        "Select an image under 2MB.",
+                        "File Too Large",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return;
+                }
+
+                // Copy into an “Images” folder inside the app directory
+                string imagesDir = Path.Combine(Application.StartupPath, "Images");
+                Directory.CreateDirectory(imagesDir);
+
+                string destPath = Path.Combine(imagesDir, fileInfo.Name);
+                File.Copy(ofd.FileName, destPath, true);
+
+                uploadedImagePath = Path.Combine("Images", fileInfo.Name);
+                pictureBoxRecipe.Image = Image.FromFile(destPath);
+            }
         }
     }
 }

@@ -154,6 +154,12 @@
     <Compile Include="frmImportPage.Designer.cs">
       <DependentUpon>frmImportPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanner.Designer.cs">
+      <DependentUpon>frmPlanner.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     </Compile>
     <Compile Include="frmSignuppage.Designer.cs">
       <DependentUpon>frmSignuppage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewPlan.Designer.cs">
+      <DependentUpon>frmViewPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmViewRecipe.cs">
       <SubType>Form</SubType>
@@ -207,6 +219,9 @@
     <EmbeddedResource Include="frmImportPage.resx">
       <DependentUpon>frmImportPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanner.resx">
+      <DependentUpon>frmPlanner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProfile.resx">
       <DependentUpon>frmProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignuppage.resx">
       <DependentUpon>frmSignuppage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewPlan.resx">
+      <DependentUpon>frmViewPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewRecipe.resx">
       <DependentUpon>frmViewRecipe.cs</DependentUpon>
@@ -350,6 +368,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\9041687_button_minus_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6599587_course_e-learning_education_learning_online_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

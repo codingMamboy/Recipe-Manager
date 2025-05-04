@@ -173,6 +173,16 @@ namespace Recipe_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6599587_course_e_learning_education_learning_online_icon {
+            get {
+                object obj = ResourceManager.GetObject("6599587_course_e-learning_education_learning_online_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _753958_chefs_cook_food_hat_restaurant_icon {
             get {
                 object obj = ResourceManager.GetObject("753958_chefs_cook_food_hat_restaurant_icon", resourceCulture);
