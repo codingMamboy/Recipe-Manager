@@ -30,7 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRecipe = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPlanner = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.txtDishname = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblDIsh = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblCourse = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -53,15 +58,10 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBoxRecipe = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnWelcome = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRecipe = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPlanner = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.pnlAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRecipe)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -80,6 +80,88 @@
             this.guna2Panel1.Size = new System.Drawing.Size(229, 594);
             this.guna2Panel1.TabIndex = 1;
             // 
+            // btnWelcome
+            // 
+            this.btnWelcome.Animated = true;
+            this.btnWelcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnWelcome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.BorderRadius = 3;
+            this.btnWelcome.BorderThickness = 1;
+            this.btnWelcome.CheckedState.Parent = this.btnWelcome;
+            this.btnWelcome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWelcome.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.CustomImages.Parent = this.btnWelcome;
+            this.btnWelcome.FillColor = System.Drawing.Color.Transparent;
+            this.btnWelcome.Font = new System.Drawing.Font("Poppins", 10F);
+            this.btnWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnWelcome.HoverState.Parent = this.btnWelcome;
+            this.btnWelcome.Image = global::Recipe_Manager.Properties.Resources._7853767_kashifarif_user_profile_person_account_icon;
+            this.btnWelcome.Location = new System.Drawing.Point(21, 540);
+            this.btnWelcome.Name = "btnWelcome";
+            this.btnWelcome.PressedColor = System.Drawing.Color.Transparent;
+            this.btnWelcome.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnWelcome.ShadowDecoration.Parent = this.btnWelcome;
+            this.btnWelcome.Size = new System.Drawing.Size(180, 42);
+            this.btnWelcome.TabIndex = 14;
+            this.btnWelcome.Text = "Username";
+            this.btnWelcome.Click += new System.EventHandler(this.btnWelcome_Click);
+            // 
+            // btnRecipe
+            // 
+            this.btnRecipe.Animated = true;
+            this.btnRecipe.AutoRoundedCorners = true;
+            this.btnRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRecipe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnRecipe.BorderRadius = 20;
+            this.btnRecipe.CheckedState.Parent = this.btnRecipe;
+            this.btnRecipe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecipe.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnRecipe.CustomImages.Parent = this.btnRecipe;
+            this.btnRecipe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnRecipe.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecipe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
+            this.btnRecipe.HoverState.Parent = this.btnRecipe;
+            this.btnRecipe.Image = global::Recipe_Manager.Properties.Resources.output_onlinetools__5_1;
+            this.btnRecipe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnRecipe.Location = new System.Drawing.Point(21, 255);
+            this.btnRecipe.Name = "btnRecipe";
+            this.btnRecipe.PressedColor = System.Drawing.Color.Transparent;
+            this.btnRecipe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRecipe.ShadowDecoration.Parent = this.btnRecipe;
+            this.btnRecipe.Size = new System.Drawing.Size(180, 42);
+            this.btnRecipe.TabIndex = 10;
+            this.btnRecipe.Text = "Recipe";
+            this.btnRecipe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // btnPlanner
+            // 
+            this.btnPlanner.Animated = true;
+            this.btnPlanner.AutoRoundedCorners = true;
+            this.btnPlanner.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPlanner.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnPlanner.BorderRadius = 20;
+            this.btnPlanner.CheckedState.Parent = this.btnPlanner;
+            this.btnPlanner.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlanner.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnPlanner.CustomImages.Parent = this.btnPlanner;
+            this.btnPlanner.FillColor = System.Drawing.Color.Transparent;
+            this.btnPlanner.Font = new System.Drawing.Font("Poppins", 10F);
+            this.btnPlanner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnPlanner.HoverState.Parent = this.btnPlanner;
+            this.btnPlanner.Image = global::Recipe_Manager.Properties.Resources._7727575_planner_calendar_date_day_appointment_icon__1_;
+            this.btnPlanner.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnPlanner.Location = new System.Drawing.Point(21, 197);
+            this.btnPlanner.Name = "btnPlanner";
+            this.btnPlanner.PressedColor = System.Drawing.Color.Transparent;
+            this.btnPlanner.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnPlanner.ShadowDecoration.Parent = this.btnPlanner;
+            this.btnPlanner.Size = new System.Drawing.Size(180, 42);
+            this.btnPlanner.TabIndex = 9;
+            this.btnPlanner.Text = "Planner";
+            this.btnPlanner.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPlanner.Click += new System.EventHandler(this.btnPlanner_Click);
+            // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
@@ -90,6 +172,46 @@
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(138, 50);
             this.guna2HtmlLabel3.TabIndex = 6;
             this.guna2HtmlLabel3.Text = "CookNest";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon__3_;
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 12);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(74, 90);
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Animated = true;
+            this.btnHome.AutoRoundedCorners = true;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnHome.BorderRadius = 20;
+            this.btnHome.CheckedState.Parent = this.btnHome;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnHome.CustomImages.Parent = this.btnHome;
+            this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
+            this.btnHome.Font = new System.Drawing.Font("Poppins", 10F);
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
+            this.btnHome.HoverState.Parent = this.btnHome;
+            this.btnHome.Image = global::Recipe_Manager.Properties.Resources._3669170_home_ic_icon;
+            this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnHome.Location = new System.Drawing.Point(21, 140);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.PressedColor = System.Drawing.Color.Transparent;
+            this.btnHome.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnHome.ShadowDecoration.Parent = this.btnHome;
+            this.btnHome.Size = new System.Drawing.Size(180, 42);
+            this.btnHome.TabIndex = 8;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // txtDishname
             // 
@@ -315,7 +437,216 @@
             this.cboIngredients.IntegralHeight = false;
             this.cboIngredients.ItemHeight = 30;
             this.cboIngredients.Items.AddRange(new object[] {
-            "sd"});
+            "Acorn Squash  ",
+            "Agar-Agar  ",
+            "Almond Milk  ",
+            "Almonds  ",
+            "Anchovy  ",
+            "Apple  ",
+            "Apple Cider Vinegar  ",
+            "Apricot  ",
+            "Arrowroot  ",
+            "Artichoke  ",
+            "Arugula  ",
+            "Asparagus  ",
+            "Avocado  ",
+            "Bacon  ",
+            "Baking Powder  ",
+            "Baking Soda  ",
+            "Balsamic Vinegar  ",
+            "Banana  ",
+            "Barley  ",
+            "Basil  ",
+            "Bay Leaf  ",
+            "BBQ Sauce  ",
+            "Beef  ",
+            "Beetroot  ",
+            "Bell Pepper  ",
+            "Black Beans  ",
+            "Blueberry  ",
+            "Bread  ",
+            "Breadcrumbs  ",
+            "Broccoli  ",
+            "Brown Sugar  ",
+            "Bulgur  ",
+            "Butter  ",
+            "Butternut Squash  ",
+            "Carrot  ",
+            "Cashews  ",
+            "Cauliflower  ",
+            "Celery  ",
+            "Cheddar  ",
+            "Cheese  ",
+            "Chia Seeds  ",
+            "Chicken  ",
+            "Chickpeas  ",
+            "Chili Garlic Sauce  ",
+            "Chili Powder  ",
+            "Chives  ",
+            "Chorizo  ",
+            "Cinnamon  ",
+            "Clams  ",
+            "Cloves  ",
+            "Coconut  ",
+            "Coconut Milk  ",
+            "Condensed Milk  ",
+            "Coriander  ",
+            "Corn  ",
+            "Cornstarch  ",
+            "Couscous  ",
+            "Crab  ",
+            "Cranberries  ",
+            "Cream Cheese  ",
+            "Croutons  ",
+            "Cucumber  ",
+            "Cumin  ",
+            "Date  ",
+            "Duck  ",
+            "Eggplant  ",
+            "Eggs  ",
+            "Evaporated Milk  ",
+            "Feta  ",
+            "Fig  ",
+            "Fish  ",
+            "Fish Sauce  ",
+            "Flaxseeds  ",
+            "Flour  ",
+            "Game Meat  ",
+            "Garlic  ",
+            "Gelatin  ",
+            "Ginger  ",
+            "Grapes  ",
+            "Green Beans  ",
+            "Green Curry Paste  ",
+            "Green Lentils  ",
+            "Green Onion  ",
+            "Ground Beef  ",
+            "Ground Chicken  ",
+            "Ground Pork  ",
+            "Guava  ",
+            "Habanero  ",
+            "Ham  ",
+            "Hazelnuts  ",
+            "Heavy Cream  ",
+            "Hoisin Sauce  ",
+            "Honey  ",
+            "Iceberg Lettuce  ",
+            "Jalapeño  ",
+            "Kale  ",
+            "Ketchup  ",
+            "Kidney Beans  ",
+            "Kiwi  ",
+            "Lamb  ",
+            "Leeks  ",
+            "Lemon  ",
+            "Lemon Juice  ",
+            "Lentils  ",
+            "Lettuce  ",
+            "Lime  ",
+            "Lime  ",
+            "Lobster  ",
+            "Lychee  ",
+            "Mango  ",
+            "Maple Syrup  ",
+            "Mayonnaise  ",
+            "Melon  ",
+            "Milk  ",
+            "Miso  ",
+            "Mozzarella  ",
+            "Mung Beans  ",
+            "Mussels  ",
+            "Mustard  ",
+            "Nectarine  ",
+            "Nori  ",
+            "Nutmeg  ",
+            "Oat Milk  ",
+            "Oats  ",
+            "Okra  ",
+            "Olive Oil  ",
+            "Onion  ",
+            "Orange  ",
+            "Oregano  ",
+            "Oyster Sauce  ",
+            "Pancetta  ",
+            "Papaya  ",
+            "Paprika  ",
+            "Parmesan  ",
+            "Parsley  ",
+            "Passion Fruit  ",
+            "Pasta  ",
+            "Peach  ",
+            "Peanut Butter  ",
+            "Peanuts  ",
+            "Peas  ",
+            "Pecans  ",
+            "Pepper  ",
+            "Pineapple  ",
+            "Pistachios  ",
+            "Plum  ",
+            "Polenta  ",
+            "Pomegranate  ",
+            "Pork  ",
+            "Potato  ",
+            "Pumpkin  ",
+            "Quinoa  ",
+            "Radish  ",
+            "Raisins  ",
+            "Raspberry  ",
+            "Red Curry Paste  ",
+            "Red Lentils  ",
+            "Red Onion  ",
+            "Red Wine Vinegar  ",
+            "Rice  ",
+            "Rice Milk  ",
+            "Romaine Lettuce  ",
+            "Rutabaga  ",
+            "Salami  ",
+            "Salmon  ",
+            "Salt  ",
+            "Sardines  ",
+            "Sausage  ",
+            "Scallions  ",
+            "Scallops  ",
+            "Seaweed  ",
+            "Serrano Pepper  ",
+            "Sesame Seeds  ",
+            "Shallots  ",
+            "Shrimp  ",
+            "Sour Cream  ",
+            "Soy Milk  ",
+            "Soy Sauce  ",
+            "Spinach  ",
+            "Squid  ",
+            "Sriracha  ",
+            "Strawberry  ",
+            "Sugar  ",
+            "Sunflower Seeds  ",
+            "Sweet Potato  ",
+            "Swiss Chard  ",
+            "Tahini  ",
+            "Tapioca  ",
+            "Tempeh  ",
+            "Teriyaki Sauce  ",
+            "Thyme  ",
+            "Tilapia  ",
+            "Tofu  ",
+            "Tomato  ",
+            "Tuna  ",
+            "Turkey  ",
+            "Turnip  ",
+            "Vanilla Extract  ",
+            "Veal  ",
+            "Vinegar  ",
+            "Walnuts  ",
+            "Wasabi  ",
+            "Watermelon  ",
+            "White Beans  ",
+            "White Vinegar  ",
+            "Worcestershire Sauce  ",
+            "Yam  ",
+            "Yeast  ",
+            "Yellow Curry Paste  ",
+            "Zucchini  "});
             this.cboIngredients.ItemsAppearance.Parent = this.cboIngredients;
             this.cboIngredients.Location = new System.Drawing.Point(649, 70);
             this.cboIngredients.MaxLength = 5;
@@ -497,128 +828,6 @@
             this.pictureBoxRecipe.TabIndex = 33;
             this.pictureBoxRecipe.TabStop = false;
             // 
-            // btnWelcome
-            // 
-            this.btnWelcome.Animated = true;
-            this.btnWelcome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnWelcome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnWelcome.BorderRadius = 3;
-            this.btnWelcome.BorderThickness = 1;
-            this.btnWelcome.CheckedState.Parent = this.btnWelcome;
-            this.btnWelcome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnWelcome.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnWelcome.CustomImages.Parent = this.btnWelcome;
-            this.btnWelcome.FillColor = System.Drawing.Color.Transparent;
-            this.btnWelcome.Font = new System.Drawing.Font("Poppins", 10F);
-            this.btnWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnWelcome.HoverState.Parent = this.btnWelcome;
-            this.btnWelcome.Image = global::Recipe_Manager.Properties.Resources._7853767_kashifarif_user_profile_person_account_icon;
-            this.btnWelcome.Location = new System.Drawing.Point(21, 540);
-            this.btnWelcome.Name = "btnWelcome";
-            this.btnWelcome.PressedColor = System.Drawing.Color.Transparent;
-            this.btnWelcome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnWelcome.ShadowDecoration.Parent = this.btnWelcome;
-            this.btnWelcome.Size = new System.Drawing.Size(180, 42);
-            this.btnWelcome.TabIndex = 14;
-            this.btnWelcome.Text = "Username";
-            this.btnWelcome.Click += new System.EventHandler(this.btnWelcome_Click);
-            // 
-            // btnRecipe
-            // 
-            this.btnRecipe.Animated = true;
-            this.btnRecipe.AutoRoundedCorners = true;
-            this.btnRecipe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRecipe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnRecipe.BorderRadius = 20;
-            this.btnRecipe.CheckedState.Parent = this.btnRecipe;
-            this.btnRecipe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecipe.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnRecipe.CustomImages.Parent = this.btnRecipe;
-            this.btnRecipe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnRecipe.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecipe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
-            this.btnRecipe.HoverState.Parent = this.btnRecipe;
-            this.btnRecipe.Image = global::Recipe_Manager.Properties.Resources.output_onlinetools__5_1;
-            this.btnRecipe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnRecipe.Location = new System.Drawing.Point(21, 255);
-            this.btnRecipe.Name = "btnRecipe";
-            this.btnRecipe.PressedColor = System.Drawing.Color.Transparent;
-            this.btnRecipe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnRecipe.ShadowDecoration.Parent = this.btnRecipe;
-            this.btnRecipe.Size = new System.Drawing.Size(180, 42);
-            this.btnRecipe.TabIndex = 10;
-            this.btnRecipe.Text = "Recipe";
-            this.btnRecipe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // btnPlanner
-            // 
-            this.btnPlanner.Animated = true;
-            this.btnPlanner.AutoRoundedCorners = true;
-            this.btnPlanner.BackColor = System.Drawing.Color.Transparent;
-            this.btnPlanner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPlanner.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnPlanner.BorderRadius = 20;
-            this.btnPlanner.CheckedState.Parent = this.btnPlanner;
-            this.btnPlanner.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPlanner.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnPlanner.CustomImages.Parent = this.btnPlanner;
-            this.btnPlanner.FillColor = System.Drawing.Color.Transparent;
-            this.btnPlanner.Font = new System.Drawing.Font("Poppins", 10F);
-            this.btnPlanner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnPlanner.HoverState.Parent = this.btnPlanner;
-            this.btnPlanner.Image = global::Recipe_Manager.Properties.Resources._7727575_planner_calendar_date_day_appointment_icon__1_;
-            this.btnPlanner.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnPlanner.Location = new System.Drawing.Point(21, 197);
-            this.btnPlanner.Name = "btnPlanner";
-            this.btnPlanner.PressedColor = System.Drawing.Color.Transparent;
-            this.btnPlanner.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPlanner.ShadowDecoration.Parent = this.btnPlanner;
-            this.btnPlanner.Size = new System.Drawing.Size(180, 42);
-            this.btnPlanner.TabIndex = 9;
-            this.btnPlanner.Text = "Planner";
-            this.btnPlanner.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnPlanner.Click += new System.EventHandler(this.btnPlanner_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon__3_;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 12);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(74, 90);
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // btnHome
-            // 
-            this.btnHome.Animated = true;
-            this.btnHome.AutoRoundedCorners = true;
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnHome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnHome.BorderRadius = 20;
-            this.btnHome.CheckedState.Parent = this.btnHome;
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnHome.CustomImages.Parent = this.btnHome;
-            this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
-            this.btnHome.Font = new System.Drawing.Font("Poppins", 10F);
-            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.btnHome.HoverState.Parent = this.btnHome;
-            this.btnHome.Image = global::Recipe_Manager.Properties.Resources._3669170_home_ic_icon;
-            this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnHome.Location = new System.Drawing.Point(21, 140);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.PressedColor = System.Drawing.Color.Transparent;
-            this.btnHome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnHome.ShadowDecoration.Parent = this.btnHome;
-            this.btnHome.Size = new System.Drawing.Size(180, 42);
-            this.btnHome.TabIndex = 8;
-            this.btnHome.Text = "Home";
-            this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
             // frmRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -653,9 +862,9 @@
             this.Load += new System.EventHandler(this.frmRecipe_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.pnlAdd.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRecipe)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
