@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -7,34 +6,35 @@ namespace Recipe_Manager
 {
     public partial class frmRemoveRecipe : Form
     {
-        // Connection string to the recipe manager database
         private readonly string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
-        private readonly int userId;  // Currently logged-in user's ID
+        private readonly int userId;
 
-        // Constructor: stores the userId and immediately loads their recipes
         public frmRemoveRecipe(int userId)
         {
             InitializeComponent();
             this.userId = userId;
+        }
+
+        private void frmRemoveRecipe_Load(object sender, EventArgs e)
+        {
             LoadUserRecipes();
         }
 
-        // Fetches all recipes belonging to the current user
-        // and populates the comboBoxRecipes dropdown.
         private void LoadUserRecipes()
         {
-            comboBoxRecipes.Items.Clear();  // Clear any existing items
+            comboBoxRecipes.Items.Clear();
 
-            using (var conn = new MySqlConnection(connectionString))
+            try
             {
-                try
+                using (var conn = new MySqlConnection(connectionString))
                 {
-                    conn.Open();  // Open DB connection
+                    conn.Open();
 
                     string query = @"
                         SELECT recipe_id, recipe_name
-                          FROM recipes
-                         WHERE user_id = @userId";
+                        FROM recipes
+                        WHERE user_id = @userId";
+
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
@@ -45,32 +45,24 @@ namespace Recipe_Manager
                             {
                                 int recipeId = reader.GetInt32("recipe_id");
                                 string recipeName = reader.GetString("recipe_name");
-
                                 comboBoxRecipes.Items.Add(new RecipeItem(recipeId, recipeName));
                             }
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(
-                        "Error loading recipes: " + ex.Message,
-                        "Database Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
-                }
-            }
 
-            // If we got at least one recipe, select the first by default
-            if (comboBoxRecipes.Items.Count > 0)
-                comboBoxRecipes.SelectedIndex = 0;
+                if (comboBoxRecipes.Items.Count > 0)
+                    comboBoxRecipes.SelectedIndex = 0;
+                else
+                    comboBoxRecipes.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading recipes: " + ex.Message,
+                                "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        // Handles the Delete button click:
-        // 1) Confirms deletion,
-        // 2) Deletes the record from the database,
-        // 3) Reloads the combo box.
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (!(comboBoxRecipes.SelectedItem is RecipeItem selectedRecipe))
@@ -85,64 +77,82 @@ namespace Recipe_Manager
             if (result != DialogResult.Yes)
                 return;
 
-            using (var conn = new MySqlConnection(connectionString))
+            try
             {
-                try
+                using (var conn = new MySqlConnection(connectionString))
                 {
-                    conn.Open();  // Open DB connection
+                    conn.Open();
+
+                    // Check for linked plans
+                    string checkSql = @"
+                        SELECT COUNT(*)
+                        FROM plans
+                        WHERE recipe_id = @recipeId";
+
+                    using (var checkCmd = new MySqlCommand(checkSql, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@recipeId", selectedRecipe.Id);
+                        int planCount = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                        if (planCount > 0)
+                        {
+                            var cascadeResult = MessageBox.Show(
+                                $"This recipe is used in {planCount} plan(s). Deleting it will also remove those plans. Continue?",
+                                "Cascade Delete Warning",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning
+                            );
+                            if (cascadeResult != DialogResult.Yes)
+                                return;
+                        }
+                    }
 
                     string deleteSql = @"
                         DELETE FROM recipes
-                         WHERE recipe_id = @recipeId
-                           AND user_id = @userId";
-                    using (var cmd = new MySqlCommand(deleteSql, conn))
+                        WHERE recipe_id = @recipeId
+                        AND user_id = @userId";
+
+                    using (var deleteCmd = new MySqlCommand(deleteSql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@recipeId", selectedRecipe.Id);
-                        cmd.Parameters.AddWithValue("@userId", userId);
+                        deleteCmd.Parameters.AddWithValue("@recipeId", selectedRecipe.Id);
+                        deleteCmd.Parameters.AddWithValue("@userId", userId);
 
-                        cmd.ExecuteNonQuery();  // Execute deletion
+                        int rowsAffected = deleteCmd.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            MessageBox.Show("No recipe was deleted. Please check recipe ID and user ID.",
+                                            "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Recipe deleted successfully.",
+                                            "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadUserRecipes();
+                        }
                     }
-
-                    MessageBox.Show(
-                        "Recipe deleted successfully.",
-                        "Deleted",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
-                    LoadUserRecipes();  // Reload combo box to reflect changes
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(
-                        "Error deleting recipe: " + ex.Message,
-                        "Database Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting recipe: " + ex.Message,
+                                "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // Handles the Back button click:
-        // hides this form and returns to the main home screen.
         private void btnBack_Click(object sender, EventArgs e)
         {
             var homeForm = new frmHome(userId);
-            Hide();       // Hide current form
+            this.Close();
             homeForm.Show();
         }
 
-        // Handles the Exit button click by terminating the application.
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-
     }
 
-    // Simple class to hold a recipe's ID and Name.
-    // Overriding ToString() allows the combo box to display the name.
     public class RecipeItem
     {
         public int Id { get; }

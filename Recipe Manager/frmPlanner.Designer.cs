@@ -38,13 +38,13 @@
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.lblDIsh = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cboRecipes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtRecipeNotes = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.flowRecipeMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUploadRecipe = new Guna.UI2.WinForms.Guna2Button();
             this.lblCourse = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCourse = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cboRecipes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -241,239 +241,6 @@
             this.guna2HtmlLabel2.TabIndex = 23;
             this.guna2HtmlLabel2.Text = "Recipe";
             // 
-            // cboRecipes
-            // 
-            this.cboRecipes.AutoRoundedCorners = true;
-            this.cboRecipes.BackColor = System.Drawing.Color.Transparent;
-            this.cboRecipes.BorderRadius = 17;
-            this.cboRecipes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboRecipes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboRecipes.FocusedColor = System.Drawing.Color.Empty;
-            this.cboRecipes.FocusedState.Parent = this.cboRecipes;
-            this.cboRecipes.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRecipes.ForeColor = System.Drawing.Color.Black;
-            this.cboRecipes.FormattingEnabled = true;
-            this.cboRecipes.HoverState.Parent = this.cboRecipes;
-            this.cboRecipes.ItemHeight = 30;
-            this.cboRecipes.Items.AddRange(new object[] {
-            "Salt  ",
-            "Pepper  ",
-            "Garlic  ",
-            "Onion  ",
-            "Tomato  ",
-            "Olive Oil  ",
-            "Butter  ",
-            "Sugar  ",
-            "Eggs  ",
-            "Flour  ",
-            "Milk  ",
-            "Cheese  ",
-            "Basil  ",
-            "Oregano  ",
-            "Chicken  ",
-            "Beef  ",
-            "Pork  ",
-            "Fish  ",
-            "Soy Sauce  ",
-            "Vinegar  ",
-            "Paprika  ",
-            "Cumin  ",
-            "Coriander  ",
-            "Ginger  ",
-            "Thyme  ",
-            "Parsley  ",
-            "Celery  ",
-            "Carrot  ",
-            "Potato  ",
-            "Bell Pepper  ",
-            "Chili Powder  ",
-            "Cinnamon  ",
-            "Nutmeg  ",
-            "Cloves  ",
-            "Bay Leaf  ",
-            "Mustard  ",
-            "Mayonnaise  ",
-            "Ketchup  ",
-            "Worcestershire Sauce  ",
-            "Lemon Juice  ",
-            "Lime  ",
-            "Spinach  ",
-            "Broccoli  ",
-            "Cauliflower  ",
-            "Zucchini  ",
-            "Cucumber  ",
-            "Lettuce  ",
-            "Green Beans  ",
-            "Peas  ",
-            "Corn  ",
-            "Rice  ",
-            "Pasta  ",
-            "Bread  ",
-            "Yeast  ",
-            "Baking Powder  ",
-            "Baking Soda  ",
-            "Vanilla Extract  ",
-            "Honey  ",
-            "Maple Syrup  ",
-            "Brown Sugar  ",
-            "Ground Beef  ",
-            "Ground Pork  ",
-            "Ground Chicken  ",
-            "Shrimp  ",
-            "Crab  ",
-            "Squid  ",
-            "Tuna  ",
-            "Salmon  ",
-            "Tilapia  ",
-            "Mussels  ",
-            "Tofu  ",
-            "Tempeh  ",
-            "Chickpeas  ",
-            "Lentils  ",
-            "Kidney Beans  ",
-            "Black Beans  ",
-            "White Beans  ",
-            "Red Lentils  ",
-            "Green Lentils  ",
-            "Mung Beans  ",
-            "Coconut Milk  ",
-            "Evaporated Milk  ",
-            "Condensed Milk  ",
-            "Cream Cheese  ",
-            "Sour Cream  ",
-            "Heavy Cream  ",
-            "Mozzarella  ",
-            "Cheddar  ",
-            "Parmesan  ",
-            "Feta  ",
-            "Romaine Lettuce  ",
-            "Iceberg Lettuce  ",
-            "Arugula  ",
-            "Kale  ",
-            "Swiss Chard  ",
-            "Leeks  ",
-            "Shallots  ",
-            "Scallions  ",
-            "Chives  ",
-            "Red Onion  ",
-            "Green Onion  ",
-            "Jalapeño  ",
-            "Habanero  ",
-            "Serrano Pepper  ",
-            "Sweet Potato  ",
-            "Yam  ",
-            "Eggplant  ",
-            "Okra  ",
-            "Asparagus  ",
-            "Artichoke  ",
-            "Radish  ",
-            "Beetroot  ",
-            "Turnip  ",
-            "Rutabaga  ",
-            "Butternut Squash  ",
-            "Acorn Squash  ",
-            "Pumpkin  ",
-            "Avocado  ",
-            "Pineapple  ",
-            "Apple  ",
-            "Banana  ",
-            "Orange  ",
-            "Lemon  ",
-            "Lime  ",
-            "Grapes  ",
-            "Watermelon  ",
-            "Melon  ",
-            "Strawberry  ",
-            "Blueberry  ",
-            "Raspberry  ",
-            "Coconut  ",
-            "Mango  ",
-            "Papaya  ",
-            "Guava  ",
-            "Lychee  ",
-            "Passion Fruit  ",
-            "Pomegranate  ",
-            "Kiwi  ",
-            "Peach  ",
-            "Plum  ",
-            "Apricot  ",
-            "Nectarine  ",
-            "Date  ",
-            "Fig  ",
-            "Raisins  ",
-            "Cranberries  ",
-            "Walnuts  ",
-            "Almonds  ",
-            "Cashews  ",
-            "Peanuts  ",
-            "Hazelnuts  ",
-            "Pistachios  ",
-            "Pecans  ",
-            "Sunflower Seeds  ",
-            "Chia Seeds  ",
-            "Flaxseeds  ",
-            "Sesame Seeds  ",
-            "Oats  ",
-            "Barley  ",
-            "Quinoa  ",
-            "Polenta  ",
-            "Couscous  ",
-            "Bulgur  ",
-            "Tapioca  ",
-            "Cornstarch  ",
-            "Arrowroot  ",
-            "Agar-Agar  ",
-            "Gelatin  ",
-            "Nori  ",
-            "Miso  ",
-            "Tahini  ",
-            "Peanut Butter  ",
-            "Soy Milk  ",
-            "Almond Milk  ",
-            "Oat Milk  ",
-            "Rice Milk  ",
-            "Apple Cider Vinegar  ",
-            "Balsamic Vinegar  ",
-            "Red Wine Vinegar  ",
-            "White Vinegar  ",
-            "Green Curry Paste  ",
-            "Red Curry Paste  ",
-            "Yellow Curry Paste  ",
-            "Sriracha  ",
-            "Chili Garlic Sauce  ",
-            "Hoisin Sauce  ",
-            "Oyster Sauce  ",
-            "Fish Sauce  ",
-            "Teriyaki Sauce  ",
-            "BBQ Sauce  ",
-            "Breadcrumbs  ",
-            "Croutons  ",
-            "Pancetta  ",
-            "Bacon  ",
-            "Sausage  ",
-            "Ham  ",
-            "Chorizo  ",
-            "Salami  ",
-            "Turkey  ",
-            "Duck  ",
-            "Lamb  ",
-            "Veal  ",
-            "Game Meat  ",
-            "Anchovy  ",
-            "Sardines  ",
-            "Clams  ",
-            "Scallops  ",
-            "Lobster  ",
-            "Seaweed  ",
-            "Wasabi  "});
-            this.cboRecipes.ItemsAppearance.Parent = this.cboRecipes;
-            this.cboRecipes.Location = new System.Drawing.Point(526, 76);
-            this.cboRecipes.Name = "cboRecipes";
-            this.cboRecipes.ShadowDecoration.Parent = this.cboRecipes;
-            this.cboRecipes.Size = new System.Drawing.Size(155, 36);
-            this.cboRecipes.TabIndex = 24;
-            this.cboRecipes.SelectedIndexChanged += new System.EventHandler(this.cboRecipes_SelectedIndexChanged);
-            // 
             // txtRecipeNotes
             // 
             this.txtRecipeNotes.AcceptsReturn = true;
@@ -589,19 +356,256 @@
             this.txtCourse.Size = new System.Drawing.Size(155, 38);
             this.txtCourse.TabIndex = 38;
             // 
+            // cboRecipes
+            // 
+            this.cboRecipes.Animated = true;
+            this.cboRecipes.AutoRoundedCorners = true;
+            this.cboRecipes.BackColor = System.Drawing.Color.Transparent;
+            this.cboRecipes.BorderRadius = 17;
+            this.cboRecipes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboRecipes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRecipes.FocusedColor = System.Drawing.Color.Empty;
+            this.cboRecipes.FocusedState.Parent = this.cboRecipes;
+            this.cboRecipes.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRecipes.ForeColor = System.Drawing.Color.Black;
+            this.cboRecipes.FormattingEnabled = true;
+            this.cboRecipes.HoverState.Parent = this.cboRecipes;
+            this.cboRecipes.IntegralHeight = false;
+            this.cboRecipes.ItemHeight = 30;
+            this.cboRecipes.Items.AddRange(new object[] {
+            "Acorn Squash  ",
+            "Agar-Agar  ",
+            "Almond Milk  ",
+            "Almonds  ",
+            "Anchovy  ",
+            "Apple  ",
+            "Apple Cider Vinegar  ",
+            "Apricot  ",
+            "Arrowroot  ",
+            "Artichoke  ",
+            "Arugula  ",
+            "Asparagus  ",
+            "Avocado  ",
+            "Bacon  ",
+            "Baking Powder  ",
+            "Baking Soda  ",
+            "Balsamic Vinegar  ",
+            "Banana  ",
+            "Barley  ",
+            "Basil  ",
+            "Bay Leaf  ",
+            "BBQ Sauce  ",
+            "Beef  ",
+            "Beetroot  ",
+            "Bell Pepper  ",
+            "Black Beans  ",
+            "Blueberry  ",
+            "Bread  ",
+            "Breadcrumbs  ",
+            "Broccoli  ",
+            "Brown Sugar  ",
+            "Bulgur  ",
+            "Butter  ",
+            "Butternut Squash  ",
+            "Carrot  ",
+            "Cashews  ",
+            "Cauliflower  ",
+            "Celery  ",
+            "Cheddar  ",
+            "Cheese  ",
+            "Chia Seeds  ",
+            "Chicken  ",
+            "Chickpeas  ",
+            "Chili Garlic Sauce  ",
+            "Chili Powder  ",
+            "Chives  ",
+            "Chorizo  ",
+            "Cinnamon  ",
+            "Clams  ",
+            "Cloves  ",
+            "Coconut  ",
+            "Coconut Milk  ",
+            "Condensed Milk  ",
+            "Coriander  ",
+            "Corn  ",
+            "Cornstarch  ",
+            "Couscous  ",
+            "Crab  ",
+            "Cranberries  ",
+            "Cream Cheese  ",
+            "Croutons  ",
+            "Cucumber  ",
+            "Cumin  ",
+            "Date  ",
+            "Duck  ",
+            "Eggplant  ",
+            "Eggs  ",
+            "Evaporated Milk  ",
+            "Feta  ",
+            "Fig  ",
+            "Fish  ",
+            "Fish Sauce  ",
+            "Flaxseeds  ",
+            "Flour  ",
+            "Game Meat  ",
+            "Garlic  ",
+            "Gelatin  ",
+            "Ginger  ",
+            "Grapes  ",
+            "Green Beans  ",
+            "Green Curry Paste  ",
+            "Green Lentils  ",
+            "Green Onion  ",
+            "Ground Beef  ",
+            "Ground Chicken  ",
+            "Ground Pork  ",
+            "Guava  ",
+            "Habanero  ",
+            "Ham  ",
+            "Hazelnuts  ",
+            "Heavy Cream  ",
+            "Hoisin Sauce  ",
+            "Honey  ",
+            "Iceberg Lettuce  ",
+            "Jalapeño  ",
+            "Kale  ",
+            "Ketchup  ",
+            "Kidney Beans  ",
+            "Kiwi  ",
+            "Lamb  ",
+            "Leeks  ",
+            "Lemon  ",
+            "Lemon Juice  ",
+            "Lentils  ",
+            "Lettuce  ",
+            "Lime  ",
+            "Lime  ",
+            "Lobster  ",
+            "Lychee  ",
+            "Mango  ",
+            "Maple Syrup  ",
+            "Mayonnaise  ",
+            "Melon  ",
+            "Milk  ",
+            "Miso  ",
+            "Mozzarella  ",
+            "Mung Beans  ",
+            "Mussels  ",
+            "Mustard  ",
+            "Nectarine  ",
+            "Nori  ",
+            "Nutmeg  ",
+            "Oat Milk  ",
+            "Oats  ",
+            "Okra  ",
+            "Olive Oil  ",
+            "Onion  ",
+            "Orange  ",
+            "Oregano  ",
+            "Oyster Sauce  ",
+            "Pancetta  ",
+            "Papaya  ",
+            "Paprika  ",
+            "Parmesan  ",
+            "Parsley  ",
+            "Passion Fruit  ",
+            "Pasta  ",
+            "Peach  ",
+            "Peanut Butter  ",
+            "Peanuts  ",
+            "Peas  ",
+            "Pecans  ",
+            "Pepper  ",
+            "Pineapple  ",
+            "Pistachios  ",
+            "Plum  ",
+            "Polenta  ",
+            "Pomegranate  ",
+            "Pork  ",
+            "Potato  ",
+            "Pumpkin  ",
+            "Quinoa  ",
+            "Radish  ",
+            "Raisins  ",
+            "Raspberry  ",
+            "Red Curry Paste  ",
+            "Red Lentils  ",
+            "Red Onion  ",
+            "Red Wine Vinegar  ",
+            "Rice  ",
+            "Rice Milk  ",
+            "Romaine Lettuce  ",
+            "Rutabaga  ",
+            "Salami  ",
+            "Salmon  ",
+            "Salt  ",
+            "Sardines  ",
+            "Sausage  ",
+            "Scallions  ",
+            "Scallops  ",
+            "Seaweed  ",
+            "Serrano Pepper  ",
+            "Sesame Seeds  ",
+            "Shallots  ",
+            "Shrimp  ",
+            "Sour Cream  ",
+            "Soy Milk  ",
+            "Soy Sauce  ",
+            "Spinach  ",
+            "Squid  ",
+            "Sriracha  ",
+            "Strawberry  ",
+            "Sugar  ",
+            "Sunflower Seeds  ",
+            "Sweet Potato  ",
+            "Swiss Chard  ",
+            "Tahini  ",
+            "Tapioca  ",
+            "Tempeh  ",
+            "Teriyaki Sauce  ",
+            "Thyme  ",
+            "Tilapia  ",
+            "Tofu  ",
+            "Tomato  ",
+            "Tuna  ",
+            "Turkey  ",
+            "Turnip  ",
+            "Vanilla Extract  ",
+            "Veal  ",
+            "Vinegar  ",
+            "Walnuts  ",
+            "Wasabi  ",
+            "Watermelon  ",
+            "White Beans  ",
+            "White Vinegar  ",
+            "Worcestershire Sauce  ",
+            "Yam  ",
+            "Yeast  ",
+            "Yellow Curry Paste  ",
+            "Zucchini  "});
+            this.cboRecipes.ItemsAppearance.Parent = this.cboRecipes;
+            this.cboRecipes.Location = new System.Drawing.Point(526, 76);
+            this.cboRecipes.MaxLength = 5;
+            this.cboRecipes.Name = "cboRecipes";
+            this.cboRecipes.ShadowDecoration.Parent = this.cboRecipes;
+            this.cboRecipes.Size = new System.Drawing.Size(155, 36);
+            this.cboRecipes.Sorted = true;
+            this.cboRecipes.TabIndex = 39;
+            this.cboRecipes.SelectedIndexChanged += new System.EventHandler(this.cboRecipes_SelectedIndexChanged);
+            // 
             // frmPlanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(1072, 594);
+            this.Controls.Add(this.cboRecipes);
             this.Controls.Add(this.txtCourse);
             this.Controls.Add(this.lblCourse);
             this.Controls.Add(this.btnUploadRecipe);
             this.Controls.Add(this.flowRecipeMenu);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.txtRecipeNotes);
-            this.Controls.Add(this.cboRecipes);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.lblDIsh);
             this.Controls.Add(this.guna2Panel1);
@@ -631,12 +635,12 @@
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDIsh;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2ComboBox cboRecipes;
         private Guna.UI2.WinForms.Guna2TextBox txtRecipeNotes;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.FlowLayoutPanel flowRecipeMenu;
         private Guna.UI2.WinForms.Guna2Button btnUploadRecipe;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCourse;
         private Guna.UI2.WinForms.Guna2TextBox txtCourse;
+        private Guna.UI2.WinForms.Guna2ComboBox cboRecipes;
     }
 }

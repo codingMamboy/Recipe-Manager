@@ -53,7 +53,6 @@
             this.comboBoxRecipes.ShadowDecoration.Parent = this.comboBoxRecipes;
             this.comboBoxRecipes.Size = new System.Drawing.Size(140, 36);
             this.comboBoxRecipes.TabIndex = 0;
-           
             // 
             // btnDelete
             // 
@@ -139,6 +138,7 @@
             this.Name = "frmRemoveRecipe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRemoveRecipe";
+            this.Load += new System.EventHandler(this.frmRemoveRecipe_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -78,6 +78,8 @@ namespace Recipe_Manager
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
+                    bool foundRecipes = false;  // Flag to check if any recipes are found
+
                     while (reader.Read())
                     {
                         int recipeId = Convert.ToInt32(reader["recipe_id"]);
@@ -109,6 +111,24 @@ namespace Recipe_Manager
 
                         // Add the button to the panel
                         flowRecipeMenu.Controls.Add(recipeButton);
+
+                        foundRecipes = true;  // Mark that we found recipes
+                    }
+
+                    // If no recipes are found, display a "No Recipe Found" message
+                    if (!foundRecipes)
+                    {
+                        var noRecipeLabel = new Label
+                        {
+                            Text = "No Recipe Found",
+                            Font = new Font("Poppins", 12, FontStyle.Italic),
+                            ForeColor = Color.Gray,
+                            TextAlign = ContentAlignment.MiddleCenter,
+                            Width = 630,
+                            Height = 70,
+                            Margin = new Padding(18)
+                        };
+                        flowRecipeMenu.Controls.Add(noRecipeLabel);
                     }
                 }
             }
