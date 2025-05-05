@@ -47,7 +47,7 @@
             this.btnUploadUrl.CheckedState.Parent = this.btnUploadUrl;
             this.btnUploadUrl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUploadUrl.CustomImages.Parent = this.btnUploadUrl;
-            this.btnUploadUrl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
+            this.btnUploadUrl.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
             this.btnUploadUrl.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUploadUrl.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnUploadUrl.HoverState.Parent = this.btnUploadUrl;
@@ -87,7 +87,7 @@
             // 
             this.lblSlogan.BackColor = System.Drawing.Color.Transparent;
             this.lblSlogan.Font = new System.Drawing.Font("Poppins Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSlogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
+            this.lblSlogan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.lblSlogan.Location = new System.Drawing.Point(178, 136);
             this.lblSlogan.Name = "lblSlogan";
             this.lblSlogan.Size = new System.Drawing.Size(187, 24);
@@ -98,7 +98,7 @@
             // 
             this.lblTitile.BackColor = System.Drawing.Color.Transparent;
             this.lblTitile.Font = new System.Drawing.Font("Poppins", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
+            this.lblTitile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.lblTitile.Location = new System.Drawing.Point(174, 74);
             this.lblTitile.Name = "lblTitile";
             this.lblTitile.Size = new System.Drawing.Size(244, 86);
@@ -107,7 +107,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources.output_onlinetools__9_;
+            this.pictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources.output_onlinetools;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(108, 59);
             this.pictureBox1.Name = "pictureBox1";
@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(533, 391);
+            this.ClientSize = new System.Drawing.Size(533, 345);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblSlogan);
