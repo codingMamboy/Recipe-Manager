@@ -37,7 +37,9 @@
             // 
             // comboBoxRecipes
             // 
+            this.comboBoxRecipes.AutoRoundedCorners = true;
             this.comboBoxRecipes.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxRecipes.BorderRadius = 17;
             this.comboBoxRecipes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxRecipes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRecipes.FocusedColor = System.Drawing.Color.Empty;
@@ -60,7 +62,7 @@
             this.btnDelete.BorderRadius = 21;
             this.btnDelete.CheckedState.Parent = this.btnDelete;
             this.btnDelete.CustomImages.Parent = this.btnDelete;
-            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
+            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(118)))), ((int)(((byte)(43)))));
             this.btnDelete.Font = new System.Drawing.Font("Poppins", 9.75F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
@@ -76,7 +78,7 @@
             // 
             this.lblSignintext.BackColor = System.Drawing.Color.Transparent;
             this.lblSignintext.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignintext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(114)))), ((int)(((byte)(20)))));
+            this.lblSignintext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.lblSignintext.Location = new System.Drawing.Point(71, 48);
             this.lblSignintext.Name = "lblSignintext";
             this.lblSignintext.Size = new System.Drawing.Size(218, 50);
