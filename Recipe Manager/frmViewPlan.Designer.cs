@@ -104,10 +104,10 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(120)))), ((int)(((byte)(83)))));
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel1.Location = new System.Drawing.Point(456, -106);
+            this.guna2Panel1.Location = new System.Drawing.Point(541, -106);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(237, 587);
+            this.guna2Panel1.Size = new System.Drawing.Size(267, 587);
             this.guna2Panel1.TabIndex = 43;
             // 
             // guna2HtmlLabel3
@@ -115,7 +115,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(240)))), ((int)(((byte)(233)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(76, 304);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(95, 287);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(138, 50);
             this.guna2HtmlLabel3.TabIndex = 8;
@@ -126,7 +126,7 @@
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.BackgroundImage = global::Recipe_Manager.Properties.Resources._753958_chefs_cook_food_hat_restaurant_icon__3_;
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(13, 277);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(32, 260);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(74, 90);
@@ -178,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 451);
+            this.ClientSize = new System.Drawing.Size(803, 451);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDeletePLam);
             this.Controls.Add(this.guna2Panel1);
