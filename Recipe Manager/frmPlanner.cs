@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using Guna.UI2.WinForms;
-using MySql.Data.MySqlClient;
 
 namespace Recipe_Manager
 {
     public partial class frmPlanner : Form
     {
         private readonly int userId;
-        private readonly MySqlConnection conn; 
+        private readonly MySqlConnection conn;
         private readonly string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
 
         public frmPlanner(int userId)
@@ -41,7 +41,7 @@ namespace Recipe_Manager
                 conn.Close();
 
                 // Load the list of recipes into the panel
-              
+
             }
             catch (Exception ex)
             {

@@ -69,6 +69,7 @@
             this.tbxCode.ShadowDecoration.Parent = this.tbxCode;
             this.tbxCode.Size = new System.Drawing.Size(131, 36);
             this.tbxCode.TabIndex = 29;
+            this.tbxCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCode_KeyPress);
             // 
             // tbxNewpwd
             // 

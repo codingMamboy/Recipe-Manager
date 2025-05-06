@@ -185,6 +185,7 @@
             this.tbxCode2.ShadowDecoration.Parent = this.tbxCode2;
             this.tbxCode2.Size = new System.Drawing.Size(131, 36);
             this.tbxCode2.TabIndex = 34;
+            this.tbxCode2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCode2_KeyPress);
             // 
             // lblCode2
             // 

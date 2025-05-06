@@ -242,5 +242,14 @@ namespace Recipe_Manager
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             SetSignupButtonState(true);
         }
+
+        private void tbxCode2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits and control characters (like Backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Blocks the input
+            }
+        }
     }
 }

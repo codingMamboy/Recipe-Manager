@@ -211,5 +211,14 @@ namespace Recipe_Manager
         {
             Application.Exit();
         }
+
+        private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits and control characters (like Backspace)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Blocks the input
+            }
+        }
     }
 }
