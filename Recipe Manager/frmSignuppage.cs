@@ -172,7 +172,7 @@ namespace Recipe_Manager
         {
             // Show login form as dialog and hide this form
             new frmLoginpage().ShowDialog();
-            this.Hide();
+            this.Close();
         }
 
         // Hashes the password using SHA-256 and returns Base64 string
