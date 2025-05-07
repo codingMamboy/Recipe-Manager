@@ -20,16 +20,16 @@ namespace Recipe_Manager
         // Constructor - Initializes the form and loads user info
         public frmProfile(int userId)
         {
-            InitializeComponent();
-            this.userId = userId;
-            LoadUserInfo(); // Load user data on form creation
+            InitializeComponent();  // Initializes the form controls
+            this.userId = userId;   // Sets the userId passed to the form
+            LoadUserInfo();         // Loads the user data when the form is created
         }
 
-        // Sets cursor to "hand" when hovering over clickable labels
+        // Sets the cursor to "hand" when hovering over clickable labels
         private void frmProfile_Load(object sender, EventArgs e)
         {
-            lblChangeEmail.Cursor = Cursors.Hand;
-            lblEditUsername.Cursor = Cursors.Hand;
+            lblChangeEmail.Cursor = Cursors.Hand;  // Set cursor for Change Email label
+            lblEditUsername.Cursor = Cursors.Hand; // Set cursor for Edit Username label
         }
 
         // Loads the current username and email from the database and displays them on the form
@@ -37,21 +37,25 @@ namespace Recipe_Manager
         {
             using (var conn = new MySqlConnection(connectionString))
             {
-                conn.Open();
+                conn.Open();  // Open connection to the MySQL database
+
+                // SQL query to retrieve the username and email based on userId
                 const string query = "SELECT username, email FROM users WHERE user_id = @userId";
 
                 using (var cmd = new MySqlCommand(query, conn))
                 {
+                    // Adding parameter to avoid SQL injection
                     cmd.Parameters.AddWithValue("@userId", userId);
 
+                    // Execute the query and read the data
                     using (var reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (reader.Read())  // If data is found for the user
                         {
-                            currentUsername = reader.GetString("username");
-                            currentEmail = reader.GetString("email");
+                            currentUsername = reader.GetString("username");  // Retrieve the username
+                            currentEmail = reader.GetString("email");        // Retrieve the email
 
-                            // Update labels with retrieved values
+                            // Update the labels with the user's current username and email
                             lblUsername.Text = currentUsername;
                             lblEmail.Text = currentEmail;
                         }
@@ -63,14 +67,15 @@ namespace Recipe_Manager
         // Opens the "Change Password" form and hides the profile form while it's active
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Hide();  // Hide the profile form
 
+            // Create an instance of the Change Password form and pass userId
             using (var changePwd = new frmChangePassword(userId))
             {
-                changePwd.ShowDialog(); // Wait for password form to close
+                changePwd.ShowDialog();  // Show the Change Password form and wait for it to close
             }
 
-            this.Show();
+            this.Show();  // Once the password form is closed, show the profile form again
         }
 
         // Opens the "Edit Username" form; if the user saves changes, reload the user info
@@ -78,14 +83,14 @@ namespace Recipe_Manager
         {
             using (var editUser = new frmEditUsername(userId, currentUsername))
             {
-                this.Hide();
+                this.Hide();  // Hide the profile form while editing the username
 
-                if (editUser.ShowDialog() == DialogResult.OK)
+                if (editUser.ShowDialog() == DialogResult.OK)  // If the user confirms changes
                 {
-                    LoadUserInfo(); // Refresh the username on profile page
+                    LoadUserInfo();  // Reload the user information to show updated username
                 }
 
-                this.Show();
+                this.Show();  // Show the profile form again
             }
         }
 
@@ -94,34 +99,34 @@ namespace Recipe_Manager
         {
             using (var changeEmail = new frmChangeEmail(userId, currentEmail))
             {
-                this.Hide();
+                this.Hide();  // Hide the profile form while changing email
 
-                if (changeEmail.ShowDialog() == DialogResult.OK)
+                if (changeEmail.ShowDialog() == DialogResult.OK)  // If the user confirms changes
                 {
-                    LoadUserInfo(); // Refresh the email on profile page
+                    LoadUserInfo();  // Reload the user information to show updated email
                 }
 
-                this.Show();
+                this.Show();  // Show the profile form again
             }
         }
 
         // Returns to the Home form, closing the Profile form
         private void btnBack2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Hide();  // Hide the profile form
 
-            using (frmHome homeForm = new frmHome(userId))
+            using (frmHome homeForm = new frmHome(userId))  // Create an instance of the Home form
             {
-                homeForm.ShowDialog(); // Show home screen
+                homeForm.ShowDialog();  // Show the Home form and wait for it to close
             }
 
-            this.Close(); // Close profile form
+            this.Close();  // Once the home form is closed, close the profile form
         }
 
         // Exits the application
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit();  // Closes the entire application
         }
     }
 }

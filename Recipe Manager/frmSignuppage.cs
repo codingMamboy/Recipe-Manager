@@ -121,7 +121,7 @@ namespace Recipe_Manager
 
                         // Redirect to login
                         new frmLoginpage().Show();
-                        this.Hide();
+                        this.Close();
                     }
                     else
                     {
