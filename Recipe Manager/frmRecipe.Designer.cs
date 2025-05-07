@@ -301,6 +301,7 @@
             this.txtScale.ShadowDecoration.Parent = this.txtScale;
             this.txtScale.Size = new System.Drawing.Size(86, 36);
             this.txtScale.TabIndex = 21;
+
             this.txtScale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtScale_KeyPress);
             this.txtScale.Validating += new System.ComponentModel.CancelEventHandler(this.txtScale_Validating);
             // 

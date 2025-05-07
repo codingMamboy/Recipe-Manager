@@ -30,11 +30,11 @@ namespace Recipe_Manager
             // SQL query to fetch details of the plan, including the recipe, category, and image
             string query = @"
             SELECT 
-                p.plan_date,        // Plan date
-                p.notes,            // Notes for the plan
-                r.recipe_name,      // Recipe name
-                c.category_name,    // Category of the recipe
-                r.image_path        // Image path of the recipe
+                p.plan_date,
+                p.notes,
+                r.recipe_name,
+                c.category_name,
+                r.image_path
             FROM plans p
             INNER JOIN recipes r ON p.recipe_id = r.recipe_id
             INNER JOIN categories c ON r.category_id = c.category_id
