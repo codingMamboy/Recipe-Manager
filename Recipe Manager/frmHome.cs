@@ -1,121 +1,137 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Guna.UI2.WinForms;
+﻿// Required namespaces
+using MySql.Data.MySqlClient;       // Provides classes for MySQL database access
+using System;                       // Core system functions like Exception, EventArgs, etc.
+using System.Drawing;              // Used for GUI component styling (fonts, colors)
+using System.Windows.Forms;        // Windows Forms controls (Form, Button, Label, etc.)
+using Guna.UI2.WinForms;           // Guna UI framework for enhanced visual components
 
 namespace Recipe_Manager
 {
     public partial class frmHome : Form
     {
-        // Database connection string and connection object
-        private readonly string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
-        private readonly MySqlConnection conn;
-        private readonly int userId; // Stores the currently logged-in user's ID
+        // --- DATABASE FIELDS ---
 
-        // Constructor with userId passed from login/signup
+        // Connection string used to connect to your MySQL database
+        private readonly string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
+
+        // MySqlConnection object reused across queries
+        private readonly MySqlConnection conn;
+
+        // Stores the ID of the user currently logged in (used for personalized data access)
+        private readonly int userId;
+
+        // --- CONSTRUCTOR ---
+
+        // Constructor receives the userId from the login form
         public frmHome(int userId)
         {
-            InitializeComponent();
-            conn = new MySqlConnection(connectionString);
-            this.userId = userId;
+            InitializeComponent(); // Initializes the form controls (designer code)
 
-            // Attach real-time search event handler
+            conn = new MySqlConnection(connectionString); // Instantiate DB connection
+            this.userId = userId; // Save the logged-in user's ID
+
+            // Attach an event handler for real-time search when the user types in the search bar
             txtSearchbar.TextChanged += txtSearchbar_TextChanged;
         }
 
-        // Load user details and recipes on form load
+        // --- FORM LOAD EVENT ---
+
+        // This method runs automatically when the form loads
         private void frmHome_Load(object sender, EventArgs e)
         {
             try
             {
-                // Query to get the logged-in user's username
+                // Prepare a SQL query to fetch the user's username from the database
                 string query = "SELECT username FROM users WHERE user_id = @userId";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@userId", userId); // Bind the userId to the query
 
-                conn.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
+                conn.Open(); // Open DB connection
+                MySqlDataReader reader = cmd.ExecuteReader(); // Execute the query
 
                 if (reader.Read())
                 {
-                    // Display welcome message using username
+                    // If the user was found, personalize the welcome button text
                     btnWelcome.Text = "Welcome, " + reader["username"].ToString();
                 }
 
-                reader.Close();  // Close the reader before executing other queries
-                conn.Close();
+                reader.Close();  // Important: Close the reader before using the connection again
+                conn.Close();    // Close DB connection after read
 
-                // Load the list of recipes into the panel
+                // Load all the user's recipes into the flow panel (cards/buttons)
                 LoadRecipesToPanel();
             }
             catch (Exception ex)
             {
+                // Catch and show any error during user loading
                 MessageBox.Show("Error loading user data: " + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // --- LOAD RECIPES TO FLOW PANEL ---
+
+        // This function loads recipes into the flow panel (optionally filtered by a search string)
         private void LoadRecipesToPanel(string search = "")
         {
-            // Clear existing controls to refresh the panel
+            // Clear previously loaded recipe buttons before reloading
             flowRecipeMenu.Controls.Clear();
 
             try
             {
-                conn.Open();
+                conn.Open(); // Open the DB connection
 
-                // SQL query to fetch recipe names and IDs matching the search keyword
+                // SQL query to retrieve recipes owned by the user and filtered by search term
                 string query = @"
-            SELECT recipe_id, recipe_name
-            FROM recipes
-            WHERE user_id = @userId
-              AND recipe_name LIKE @search";
+                SELECT recipe_id, recipe_name
+                FROM recipes
+                WHERE user_id = @userId
+                  AND recipe_name LIKE @search";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@userId", userId);
-                cmd.Parameters.AddWithValue("@search", $"%{search}%");
+                cmd.Parameters.AddWithValue("@search", $"%{search}%"); // Wildcard search
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    bool foundRecipes = false;  // Flag to check if any recipes are found
+                    bool foundRecipes = false;
 
+                    // Loop through each recipe returned from the DB
                     while (reader.Read())
                     {
                         int recipeId = Convert.ToInt32(reader["recipe_id"]);
                         string recipeName = reader["recipe_name"].ToString();
 
-                        // Create and configure a Guna2Button for each recipe
+                        // Dynamically create a Guna2Button to represent the recipe
                         var recipeButton = new Guna2Button
                         {
                             Width = 180,
                             Height = 70,
                             Font = new Font("Poppins", 10),
-                            FillColor = Color.FromArgb(233, 118, 43),
+                            FillColor = Color.FromArgb(233, 118, 43), // Orange shade
                             ForeColor = Color.White,
-                            Text = recipeName,
-                            Tag = recipeId,
-                            Margin = new Padding(18),
-                            BorderRadius = 3,
+                            Text = recipeName, // Recipe title
+                            Tag = recipeId,    // Store recipe ID for reference
+                            Margin = new Padding(18), // Padding around each button
+                            BorderRadius = 3,   // Rounded corners
                             Cursor = Cursors.Hand,
-                            Animated = true
+                            Animated = true     // Enables animation effects
                         };
 
-                        // Event handler to open the selected recipe
+                        // Click event opens the detailed view of the selected recipe
                         recipeButton.Click += (s, e) =>
                         {
-                            var viewForm = new frmViewRecipe(recipeId, userId);
+                            var viewForm = new frmViewRecipe(recipeId, userId); // Pass ID to view form
                             this.Hide();
                             viewForm.Show();
                         };
 
-                        // Add the button to the panel
+                        // Add the button to the flow layout panel
                         flowRecipeMenu.Controls.Add(recipeButton);
-
-                        foundRecipes = true;  // Mark that we found recipes
+                        foundRecipes = true;
                     }
 
-                    // If no recipes are found, display a "No Recipe Found" message
+                    // If no recipes were found, show a message label
                     if (!foundRecipes)
                     {
                         var noRecipeLabel = new Label
@@ -134,31 +150,35 @@ namespace Recipe_Manager
             }
             catch (Exception ex)
             {
+                // Display any errors that occur during the recipe load
                 MessageBox.Show("Failed to load recipes: " + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                conn.Close();
+                conn.Close(); // Ensure the DB connection is always closed
             }
         }
 
+        // --- SEARCH FUNCTIONALITY ---
 
-        // Real-time search: triggers whenever text changes in the search bar
+        // This event is triggered whenever the user types in the search bar
         private void txtSearchbar_TextChanged(object sender, EventArgs e)
         {
-            LoadRecipesToPanel(txtSearchbar.Text.Trim());
+            LoadRecipesToPanel(txtSearchbar.Text.Trim()); // Refresh recipe list with search filter
         }
 
-        // Open the Add Recipe form
+        // --- BUTTON EVENTS FOR NAVIGATION ---
+
+        // Opens the Add Recipe form when the recipe button is clicked
         private void btnRecipe_Click(object sender, EventArgs e)
         {
-            var addForm = new frmRecipe(userId);
+            var addForm = new frmRecipe(userId); // Open Add Recipe form with current user
             this.Close();
             addForm.Show();
         }
 
-        // Another button for adding recipes (duplicate functionality)
+        // Duplicate functionality: also opens the Add Recipe form
         private void btnAddRecipe_Click(object sender, EventArgs e)
         {
             var addForm = new frmRecipe(userId);
@@ -166,7 +186,7 @@ namespace Recipe_Manager
             addForm.Show();
         }
 
-        // Open the Remove Recipe form
+        // Opens the Remove Recipe form
         private void btnRemoveRecipe_Click(object sender, EventArgs e)
         {
             var removeForm = new frmRemoveRecipe(userId);
@@ -174,23 +194,24 @@ namespace Recipe_Manager
             removeForm.Show();
         }
 
-        // Exit the application
+        // Exit the entire application when clicked
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // Navigate to the profile form
+        // Opens the user profile form
         private void btnWelcome_Click(object sender, EventArgs e)
         {
-            var frmProfile = new frmProfile(userId);
+            var frmProfile = new frmProfile(userId); // Navigate to profile
             this.Close();
             frmProfile.Show();
         }
 
+        // Opens the Meal Planner form
         private void btnPlanner_Click(object sender, EventArgs e)
         {
-            var frmPlanner = new frmPlanner(userId);
+            var frmPlanner = new frmPlanner(userId); // Navigate to planner
             this.Close();
             frmPlanner.Show();
         }

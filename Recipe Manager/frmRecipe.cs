@@ -1,56 +1,58 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿// Required namespaces for various .NET functionalities
+using System;
+using System.ComponentModel;     // For CancelEventArgs
+using System.Drawing;           // For image handling
+using System.IO;                // For file and directory operations
+using System.Linq;              // For working with collections
+using System.Threading.Tasks;   // For asynchronous operations
+using System.Windows.Forms;     // For Windows Forms UI
+using MySql.Data.MySqlClient;   // For MySQL database access
 
 namespace Recipe_Manager
 {
     public partial class frmRecipe : Form
     {
-        // Connection string to the MySQL database
+        // Connection string to connect to MySQL database
         private readonly string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
-        private readonly int userId;                      // ID of the logged-in user
-        private string uploadedImagePath = string.Empty;  // Local path of any uploaded image
 
-        // Standard constructor, stores user ID
+        private readonly int userId; // Stores the ID of the currently logged-in user
+        private string uploadedImagePath = string.Empty; // Path to uploaded image
+
+        // Constructor used when recipe is not being imported
         public frmRecipe(int userId)
         {
-            InitializeComponent();
-            this.userId = userId;
+            InitializeComponent(); // Initializes form components
+            this.userId = userId;  // Set user ID for session
         }
 
-        // Overloaded constructor for when a recipe is imported
+        // Overloaded constructor when importing a recipe from another form
         public frmRecipe(int userId, frmImportPage.Recipe importedRecipe)
-            : this(userId)
+            : this(userId) // Call the base constructor
         {
-            InitializeImportedRecipe(importedRecipe);
+            InitializeImportedRecipe(importedRecipe); // Load the imported recipe into UI
         }
 
-        // Populate form fields from an imported recipe object
+        // Load imported recipe into the form fields
         private void InitializeImportedRecipe(frmImportPage.Recipe importedRecipe)
         {
             txtDishname.Text = importedRecipe.Name;
             txtDirection.Text = importedRecipe.Instructions;
 
-            // Add each imported ingredient to the checklist
+            // If ingredients are provided, split and add to checked list box
             if (!string.IsNullOrEmpty(importedRecipe.Ingredients))
             {
                 foreach (var ing in importedRecipe.Ingredients.Split(','))
                 {
-                    lstIngredients.Items.Add(ing.Trim(), true);
+                    lstIngredients.Items.Add(ing.Trim(), true); // Checked by default
                 }
             }
 
-            // Download and display the imported recipe image
+            // Load the image from URL, if provided
             if (!string.IsNullOrEmpty(importedRecipe.ImageUrl))
                 LoadImageFromUrl(importedRecipe.ImageUrl);
         }
 
-        // Downloads an image from a URL into the local Images folder
+        // Download image from URL and save it locally in Images folder
         private void LoadImageFromUrl(string imageUrl)
         {
             try
@@ -58,35 +60,30 @@ namespace Recipe_Manager
                 using (var client = new System.Net.WebClient())
                 {
                     string imagesDir = Path.Combine(Application.StartupPath, "Images");
-                    Directory.CreateDirectory(imagesDir);
+                    Directory.CreateDirectory(imagesDir); // Ensure folder exists
 
-                    string fileName = Path.GetFileName(new Uri(imageUrl).LocalPath);
-                    string localPath = Path.Combine(imagesDir, fileName);
-                    client.DownloadFile(imageUrl, localPath);
+                    string fileName = Path.GetFileName(new Uri(imageUrl).LocalPath); // Extract file name from URL
+                    string localPath = Path.Combine(imagesDir, fileName); // Local save path
 
-                    uploadedImagePath = Path.Combine("Images", fileName);
-                    pictureBoxRecipe.Image = Image.FromFile(localPath);
+                    client.DownloadFile(imageUrl, localPath); // Download the image
+
+                    uploadedImagePath = Path.Combine("Images", fileName); // Store relative path
+                    pictureBoxRecipe.Image = Image.FromFile(localPath); // Display in PictureBox
                 }
             }
             catch
             {
-                MessageBox.Show(
-                    "Failed to load image from URL.",
-                    "Image Load Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                MessageBox.Show("Failed to load image from URL.", "Image Load Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        // Form Load event: configure UI and asynchronously load initial data
+        // When form loads, configure UI and fetch data
         private void frmRecipe_Load(object sender, EventArgs e)
         {
-            // Enable multiline and line breaks in the directions textbox
             txtDirection.Multiline = true;
             txtDirection.AcceptsReturn = true;
 
-            // Run database loads on a background thread to keep UI responsive
+            // Load user info and course list in background thread
             Task.Run(() =>
             {
                 LoadUser();
@@ -94,7 +91,7 @@ namespace Recipe_Manager
             });
         }
 
-        // Helper to run arbitrary SQL and process results
+        // General-purpose method to execute SQL commands and process results
         private void LoadData(
             string sql,
             Action<MySqlCommand> paramSetter,
@@ -107,28 +104,21 @@ namespace Recipe_Manager
                     conn.Open();
                     using (var cmd = new MySqlCommand(sql, conn))
                     {
-                        // Set parameters if provided
-                        paramSetter?.Invoke(cmd);
+                        paramSetter?.Invoke(cmd); // Set parameters if needed
                         using (var reader = cmd.ExecuteReader())
                         {
-                            // Process each row via the provided action
-                            readerAction?.Invoke(reader);
+                            readerAction?.Invoke(reader); // Process result
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    $"Error: {ex.Message}\n{ex.StackTrace}",
-                    "Database Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show($"Error: {ex.Message}\n{ex.StackTrace}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // Load and display the current user's username
+        // Load the current user's name to welcome them
         private void LoadUser()
         {
             LoadData(
@@ -138,7 +128,6 @@ namespace Recipe_Manager
                 {
                     if (reader.Read())
                     {
-                        // Safely update UI from background thread
                         Invoke((Action)(() =>
                             btnWelcome.Text = "Welcome, " + reader.GetString(0)
                         ));
@@ -147,9 +136,7 @@ namespace Recipe_Manager
             );
         }
 
-        // Populate the ingredients dropdown
-
-        // Populate the course/category dropdown
+        // Load recipe categories into the combo box
         private void LoadCourses()
         {
             LoadData(
@@ -167,7 +154,7 @@ namespace Recipe_Manager
             );
         }
 
-        // Navigate back to the home form
+        // Navigate to Home form
         private void btnHome_Click(object sender, EventArgs e)
         {
             var frmHome = new frmHome(userId);
@@ -175,42 +162,38 @@ namespace Recipe_Manager
             frmHome.Show();
         }
 
-        // Add the selected ingredient entry to the checklist
+        // Add an ingredient to the ingredient list
         private void btnAddIngre_Click(object sender, EventArgs e)
         {
             if (!ValidateIngredientInputs()) return;
 
             string entry = $"{txtScale.Text.Trim()} {cboMeasurement.SelectedItem} {cboIngredients.SelectedItem}";
+
             if (lstIngredients.Items.Contains(entry))
             {
                 MessageBox.Show("Ingredient already added.", "Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                lstIngredients.Items.Add(entry, true);
-                ClearInputs();
+                lstIngredients.Items.Add(entry, true); // Add and check it
+                ClearInputs(); // Reset input fields
             }
         }
 
-        // Ensure ingredient fields are filled before adding
+        // Check if ingredient fields are filled
         private bool ValidateIngredientInputs()
         {
             if (cboIngredients.SelectedItem == null ||
                 cboMeasurement.SelectedItem == null ||
                 string.IsNullOrWhiteSpace(txtScale.Text))
             {
-                MessageBox.Show(
-                    "Complete all ingredient fields.",
-                    "Incomplete Input",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                MessageBox.Show("Complete all ingredient fields.", "Incomplete Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
         }
 
-        // Reset the ingredient input controls
+        // Clear ingredient input fields
         private void ClearInputs()
         {
             cboIngredients.SelectedIndex = -1;
@@ -225,8 +208,7 @@ namespace Recipe_Manager
             ClearInputs();
         }
 
-
-        // Handle the “Upload Recipe” button click asynchronously
+        // Upload recipe to database
         private async void btnUploadRecipe_Click(object sender, EventArgs e)
         {
             btnUploadRecipe.Text = "Loading...";
@@ -238,15 +220,9 @@ namespace Recipe_Manager
                 return;
             }
 
-            // Ensure a course is selected
             if (cboCourses.SelectedItem == null)
             {
-                MessageBox.Show(
-                    "Please select a course before uploading.",
-                    "Validation Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                MessageBox.Show("Please select a course before uploading.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ResetButtonState();
                 return;
             }
@@ -259,32 +235,21 @@ namespace Recipe_Manager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    $"Error retrieving category ID: {ex.Message}",
-                    "Database Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show($"Error retrieving category ID: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ResetButtonState();
                 return;
             }
 
             if (catId == 0)
             {
-                MessageBox.Show(
-                    "Selected course not found in database.",
-                    "Validation Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                MessageBox.Show("Selected course not found in database.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ResetButtonState();
                 return;
             }
 
-            // Compile ingredient list as a comma-separated string
             string ingredients = string.Join(", ", lstIngredients.Items.Cast<string>());
 
-            // Run the database insert on a background thread
+            // Insert recipe into database on background thread
             await Task.Run(() =>
             {
                 LoadData(
@@ -298,31 +263,25 @@ namespace Recipe_Manager
                         cmd.Parameters.AddWithValue("@c", catId);
                         cmd.Parameters.AddWithValue("@i", ingredients);
                         cmd.Parameters.AddWithValue("@s", txtDirection.Text.Trim());
-                        cmd.Parameters.AddWithValue(
-                            "@p",
-                            string.IsNullOrEmpty(uploadedImagePath)
-                                ? (object)DBNull.Value
-                                : uploadedImagePath
-                        );
+                        cmd.Parameters.AddWithValue("@p", string.IsNullOrEmpty(uploadedImagePath) ? (object)DBNull.Value : uploadedImagePath);
                     },
                     null
                 );
             });
 
-            // Notify success, reset form and button
             MessageBox.Show("Recipe saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ResetForm();
             ResetButtonState();
         }
 
-        // Restore Upload button text and enabled state
+        // Restore Upload button to default state
         private void ResetButtonState()
         {
             btnUploadRecipe.Text = "Upload Recipe";
             btnUploadRecipe.Enabled = true;
         }
 
-        // Ensure all recipe fields are valid before uploading
+        // Check if all form inputs are valid
         private bool ValidateRecipeInputs()
         {
             if (string.IsNullOrWhiteSpace(txtDishname.Text))
@@ -333,7 +292,6 @@ namespace Recipe_Manager
                 return ShowWarning("Add at least one ingredient.");
             if (cboCourses.SelectedItem == null)
                 return ShowWarning("Select a course.");
-
             return true;
 
             bool ShowWarning(string msg)
@@ -343,7 +301,7 @@ namespace Recipe_Manager
             }
         }
 
-        // Clear all form fields back to their default state
+        // Reset form fields
         private void ResetForm()
         {
             Invoke((Action)(() =>
@@ -357,7 +315,7 @@ namespace Recipe_Manager
             }));
         }
 
-        // Retrieve numeric category ID for a given category name
+        // Get ID of category from category name
         private int GetCategoryId(string name)
         {
             int id = 0;
@@ -369,7 +327,7 @@ namespace Recipe_Manager
             return id;
         }
 
-        // Open the “Import Recipe” dialog, then return here afterward
+        // Show Import Recipe form
         private void btnImportUrl_Click(object sender, EventArgs e)
         {
             Hide();
@@ -377,40 +335,33 @@ namespace Recipe_Manager
             Show();
         }
 
-        // Restrict Scale textbox input to digits and at most one decimal point
+        // Allow only digits and one decimal point in txtScale
         private void txtScale_KeyPress(object sender, KeyPressEventArgs e)
         {
-            bool invalidChar = !char.IsControl(e.KeyChar)
-                               && !char.IsDigit(e.KeyChar)
-                               && e.KeyChar != '.';
-            bool secondDot = e.KeyChar == '.'
-                             && txtScale.Text.Contains('.');
+            bool invalidChar = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.';
+            bool secondDot = e.KeyChar == '.' && txtScale.Text.Contains('.');
             e.Handled = invalidChar || secondDot;
         }
 
-        // Validate Scale value is a float between 0.01 and 100
+        // Validate txtScale value
         private void txtScale_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtScale.Text)) return;
 
             if (!float.TryParse(txtScale.Text, out float v) || v < 0.01f || v > 100f)
             {
-                MessageBox.Show(
-                    "Enter a value between 0.01 and 100.",
-                    "Invalid Input",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                MessageBox.Show("Enter a value between 0.01 and 100.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true;
             }
         }
 
-        // Exit the entire application
+        // Exit application
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        // Navigate to Profile form
         private void btnWelcome_Click(object sender, EventArgs e)
         {
             var frmProfile = new frmProfile(userId);
@@ -418,6 +369,7 @@ namespace Recipe_Manager
             frmProfile.Show();
         }
 
+        // Navigate to Planner form
         private void btnPlanner_Click(object sender, EventArgs e)
         {
             var frmPlanner = new frmPlanner(userId);
@@ -425,6 +377,7 @@ namespace Recipe_Manager
             frmPlanner.Show();
         }
 
+        // Handle image upload via file dialog
         private void btnUploadImage_Click_1(object sender, EventArgs e)
         {
             using (var ofd = new OpenFileDialog
@@ -436,19 +389,14 @@ namespace Recipe_Manager
                 if (ofd.ShowDialog() != DialogResult.OK) return;
 
                 var fileInfo = new FileInfo(ofd.FileName);
-                // Enforce a 2MB size limit
+
+                // Limit file size to 2MB
                 if (fileInfo.Length > 2 * 1024 * 1024)
                 {
-                    MessageBox.Show(
-                        "Select an image under 2MB.",
-                        "File Too Large",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                    MessageBox.Show("Select an image under 2MB.", "File Too Large", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Copy into an “Images” folder inside the app directory
                 string imagesDir = Path.Combine(Application.StartupPath, "Images");
                 Directory.CreateDirectory(imagesDir);
 

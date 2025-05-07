@@ -6,23 +6,29 @@ namespace Recipe_Manager
 {
     public partial class frmRemoveRecipe : Form
     {
+        // Connection string to the MySQL database
         private readonly string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
+
+        // Stores the ID of the currently logged-in user
         private readonly int userId;
 
+        // Constructor that initializes the form with the user's ID
         public frmRemoveRecipe(int userId)
         {
             InitializeComponent();
             this.userId = userId;
         }
 
+        // Event triggered when the form is loaded
         private void frmRemoveRecipe_Load(object sender, EventArgs e)
         {
-            LoadUserRecipes();
+            LoadUserRecipes();  // Load the user's recipes into the ComboBox
         }
 
+        // Loads the recipes created by the current user into the ComboBox
         private void LoadUserRecipes()
         {
-            comboBoxRecipes.Items.Clear();
+            comboBoxRecipes.Items.Clear();  // Clear previous items
 
             try
             {
@@ -30,6 +36,7 @@ namespace Recipe_Manager
                 {
                     conn.Open();
 
+                    // SQL query to fetch recipe IDs and names for the current user
                     string query = @"
                         SELECT recipe_id, recipe_name
                         FROM recipes
@@ -45,12 +52,15 @@ namespace Recipe_Manager
                             {
                                 int recipeId = reader.GetInt32("recipe_id");
                                 string recipeName = reader.GetString("recipe_name");
+
+                                // Add the recipe as a RecipeItem object to the ComboBox
                                 comboBoxRecipes.Items.Add(new RecipeItem(recipeId, recipeName));
                             }
                         }
                     }
                 }
 
+                // Set the first item as selected if recipes exist
                 if (comboBoxRecipes.Items.Count > 0)
                     comboBoxRecipes.SelectedIndex = 0;
                 else
@@ -63,17 +73,21 @@ namespace Recipe_Manager
             }
         }
 
+        // Event triggered when the "Delete" button is clicked
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            // Ensure a valid recipe is selected
             if (!(comboBoxRecipes.SelectedItem is RecipeItem selectedRecipe))
                 return;
 
+            // Ask the user to confirm deletion
             var result = MessageBox.Show(
                 $"Are you sure you want to delete '{selectedRecipe.Name}'?",
                 "Confirm Delete",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
             );
+
             if (result != DialogResult.Yes)
                 return;
 
@@ -83,7 +97,7 @@ namespace Recipe_Manager
                 {
                     conn.Open();
 
-                    // Check for linked plans
+                    // Check if the recipe is linked to any plans
                     string checkSql = @"
                         SELECT COUNT(*)
                         FROM plans
@@ -96,6 +110,7 @@ namespace Recipe_Manager
 
                         if (planCount > 0)
                         {
+                            // Warn user about cascading deletions
                             var cascadeResult = MessageBox.Show(
                                 $"This recipe is used in {planCount} plan(s). Deleting it will also remove those plans. Continue?",
                                 "Cascade Delete Warning",
@@ -107,6 +122,7 @@ namespace Recipe_Manager
                         }
                     }
 
+                    // Delete the recipe only if it belongs to the current user
                     string deleteSql = @"
                         DELETE FROM recipes
                         WHERE recipe_id = @recipeId
@@ -128,7 +144,7 @@ namespace Recipe_Manager
                         {
                             MessageBox.Show("Recipe deleted successfully.",
                                             "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadUserRecipes();
+                            LoadUserRecipes();  // Refresh the ComboBox list
                         }
                     }
                 }
@@ -140,23 +156,26 @@ namespace Recipe_Manager
             }
         }
 
+        // Navigates back to the home form
         private void btnBack_Click(object sender, EventArgs e)
         {
             var homeForm = new frmHome(userId);
-            this.Close();
-            homeForm.Show();
+            this.Close();  // Close current form
+            homeForm.Show();  // Open the home form
         }
 
+        // Closes the entire application
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
     }
 
+    // Helper class to represent an item in the ComboBox (ID + Name)
     public class RecipeItem
     {
-        public int Id { get; }
-        public string Name { get; }
+        public int Id { get; }         // Recipe ID
+        public string Name { get; }    // Recipe name
 
         public RecipeItem(int id, string name)
         {
@@ -164,6 +183,7 @@ namespace Recipe_Manager
             Name = name;
         }
 
+        // Override ToString to display only the name in the ComboBox
         public override string ToString() => Name;
     }
 }

@@ -13,6 +13,7 @@ namespace Recipe_Manager
         private readonly MySqlConnection conn;
         private readonly string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
 
+        // Constructor to initialize the form with user ID and connection details
         public frmPlanner(int userId)
         {
             InitializeComponent();
@@ -20,9 +21,11 @@ namespace Recipe_Manager
             this.userId = userId;
         }
 
+        // Form load event - populates user details, recipe dropdown, and plans
         private void frmPlanner_Load(object sender, EventArgs e)
         {
             cboRecipes.MaxDropDownItems = 5;
+
             try
             {
                 // Query to get the logged-in user's username
@@ -40,26 +43,24 @@ namespace Recipe_Manager
                 }
                 conn.Close();
 
-                // Load the list of recipes into the panel
-
+                // Load the list of recipes and existing plans
+                LoadRecipes();
+                LoadPlans();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading user data: " + ex.Message,
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading user data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            // Configure date picker
+
+            // Configure date picker to show date in "weekday, day month year" format
             dtpPlanDate.Format = DateTimePickerFormat.Custom;
             dtpPlanDate.CustomFormat = "dddd, d MMMM yyyy";
             dtpPlanDate.Value = DateTime.Today;
-
-            LoadRecipes();
-            LoadPlans();
         }
 
+        // Loads the user's recipes into the combo box
         private void LoadRecipes()
         {
-            // Populate recipe dropdown with recipe_id, name & category_id
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -80,7 +81,7 @@ namespace Recipe_Manager
                     cboRecipes.ValueMember = "recipe_id";
                 }
 
-                // When recipe changes, show its original category
+                // When a recipe is selected, show its category
                 cboRecipes.SelectedIndexChanged += cboRecipes_SelectedIndexChanged;
             }
             catch (Exception ex)
@@ -89,6 +90,7 @@ namespace Recipe_Manager
             }
         }
 
+        // Loads existing plans for the selected date and displays them in cards
         private void LoadPlans()
         {
             flowRecipeMenu.Controls.Clear();
@@ -117,7 +119,7 @@ namespace Recipe_Manager
                     MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        // Display text
+                        // Display each plan as a button (card) in the flow layout
                         string text = $"{reader["recipe_name"]} ({reader["category_name"]})";
                         int planId = reader.GetInt32("plan_id");
 
@@ -136,17 +138,14 @@ namespace Recipe_Manager
                             Animated = true
                         };
 
-                        // Open frmViewPlan on click
+                        // Open the plan details when clicked
                         card.Click += (s, ev) =>
                         {
                             int selectedPlanId = (int)((Guna2Button)s).Tag;
-
                             var viewForm = new frmViewPlan(selectedPlanId, userId);
                             this.Hide();
                             viewForm.ShowDialog();
-
-                            // Optional: Refresh the list after returning
-                            LoadPlans();
+                            LoadPlans();  // Optionally refresh plans after viewing
                         };
 
                         flowRecipeMenu.Controls.Add(card);
@@ -159,9 +158,9 @@ namespace Recipe_Manager
             }
         }
 
+        // Adds a new recipe to the plan on button click
         private void btnAddRecipe_Click(object sender, EventArgs e)
         {
-            // Require a selected recipe
             if (cboRecipes.SelectedIndex < 0 || string.IsNullOrWhiteSpace(txtCourse.Text))
             {
                 MessageBox.Show("Please select a recipe and category.");
@@ -172,7 +171,7 @@ namespace Recipe_Manager
             string notes = txtRecipeNotes.Text.Trim();
             DateTime date = dtpPlanDate.Value.Date;
 
-            // Lookup category_id from the course textbox
+            // Get the category ID from the category text box
             int categoryId = 0;
             try
             {
@@ -197,7 +196,7 @@ namespace Recipe_Manager
                     return;
                 }
 
-                // Insert new plan
+                // Insert new plan into the database
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     MySqlCommand cmd = conn.CreateCommand();
@@ -216,7 +215,7 @@ namespace Recipe_Manager
                     cmd.ExecuteNonQuery();
                 }
 
-                // Reset fields
+                // Clear the inputs after adding the recipe
                 cboRecipes.SelectedIndex = -1;
                 txtCourse.Clear();
                 txtRecipeNotes.Clear();
@@ -229,9 +228,11 @@ namespace Recipe_Manager
             }
         }
 
+        // Refresh the plan view when the date changes
         private void dtpPlanDate_ValueChanged(object sender, EventArgs e)
             => LoadPlans();
 
+        // Navigate to the home screen
         private void btnHome_Click(object sender, EventArgs e)
         {
             Hide();
@@ -242,9 +243,9 @@ namespace Recipe_Manager
             Close();
         }
 
+        // Display the selected recipe's category in the category text box
         private void cboRecipes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // When a recipe is picked, fetch & display its original category
             if (cboRecipes.SelectedItem is DataRowView rv)
             {
                 int catId = Convert.ToInt32(rv["category_id"]);
@@ -272,6 +273,7 @@ namespace Recipe_Manager
             }
         }
 
+        // Navigate to the Recipe screen
         private void btnRecipe_Click(object sender, EventArgs e)
         {
             var frmRecipe = new frmRecipe(userId);
@@ -279,6 +281,7 @@ namespace Recipe_Manager
             frmRecipe.ShowDialog();
         }
 
+        // Navigate to the Profile screen
         private void btnWelcome_Click(object sender, EventArgs e)
         {
             var frmProfile = new frmProfile(userId);

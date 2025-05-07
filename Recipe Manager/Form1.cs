@@ -1,146 +1,149 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Security.Cryptography;
-using System.Text;
-using System.Windows.Forms;
+﻿// Required namespaces
+using MySql.Data.MySqlClient;  // For interacting with MySQL database
+using System;  // Provides base types like Exception
+using System.Security.Cryptography;  // For password hashing
+using System.Text;  // For string encoding (used in hashing)
+using System.Windows.Forms;  // For Windows Forms GUI elements
 
 namespace Recipe_Manager
 {
+    // Partial class for the login form
     public partial class frmLoginpage : Form
     {
-        // Connection string to your MySQL database
+        // Connection string to the MySQL database
         private string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
-        private MySqlConnection conn;
+        private MySqlConnection conn; // MySQL connection object
 
+        // Constructor - called when the form is initialized
         public frmLoginpage()
         {
-            InitializeComponent();
-            this.AcceptButton = btnLogin; // Allow pressing Enter to trigger login
-            conn = new MySqlConnection(connectionString); // Initialize connection
+            InitializeComponent(); // Sets up the form components
+            this.AcceptButton = btnLogin; // Pressing Enter will trigger the login button
+            conn = new MySqlConnection(connectionString); // Initialize the database connection
         }
 
-        // Form Load event handler
+        // Event triggered when the form loads
         private void Form1_Load(object sender, EventArgs e)
         {
-            lblForgotpwd.Cursor = Cursors.Hand;
-            lblSignin.Cursor = Cursors.Hand;
-            tbxPwd.UseSystemPasswordChar = true; // Mask password input
+            lblForgotpwd.Cursor = Cursors.Hand; // Makes the "Forgot Password" label clickable
+            lblSignin.Cursor = Cursors.Hand; // Makes the "Sign up" label clickable
+            tbxPwd.UseSystemPasswordChar = true; // Masks password input with dots or asterisks
         }
 
-        // Login button click event
+        // Login button click handler
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SetLoginButtonState(false, "Loading...");
+            SetLoginButtonState(false, "Loading..."); // Disable button and change text to indicate processing
 
-            string username = tbxUsername.Text.Trim();
-            string password = tbxPwd.Text.Trim();
+            string username = tbxUsername.Text.Trim(); // Get entered username
+            string password = tbxPwd.Text.Trim(); // Get entered password
 
-            // Basic input validation
+            // Basic validation to check if username or password is empty
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please input username and password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                SetLoginButtonState(true);
+                SetLoginButtonState(true); // Re-enable the button
                 return;
             }
 
             try
             {
-                conn.Open();
+                conn.Open(); // Open database connection
 
-                // SQL to get hashed password using the entered username
+                // SQL query to fetch hashed password and user ID for the given username
                 string query = "SELECT user_id, password_hash FROM users WHERE username = @username";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@username", username); // Bind username to query
 
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    using (MySqlDataReader reader = cmd.ExecuteReader()) // Execute the query and get the result
                     {
-                        if (reader.Read())
+                        if (reader.Read()) // If a record is found
                         {
-                            int userId = reader.GetInt32("user_id");
-                            string storedHash = reader.GetString("password_hash");
-                            string enteredHash = HashPassword(password); // Hash entered password
+                            int userId = reader.GetInt32("user_id"); // Retrieve user ID
+                            string storedHash = reader.GetString("password_hash"); // Retrieve stored password hash
+                            string enteredHash = HashPassword(password); // Hash the entered password
 
+                            // Compare the hashed entered password with stored hash
                             if (enteredHash == storedHash)
                             {
                                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                // Open Home Form and pass user ID
+                                // Open the Home form and pass the user ID to it
                                 frmHome home = new frmHome(userId);
-                                home.Show();
-                                this.Hide();
+                                home.Show(); // Show the home form
+                                this.Hide(); // Hide the login form
                             }
                             else
                             {
-                                ShowLoginFailed();
+                                ShowLoginFailed(); // If hashes don’t match
                             }
                         }
                         else
                         {
-                            ShowLoginFailed();
+                            ShowLoginFailed(); // If no user was found
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
+                // Handle connection or query errors
                 MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                SetLoginButtonState(true);
+                SetLoginButtonState(true); // Re-enable button
             }
             finally
             {
-                conn.Close(); // Ensure connection is closed
+                conn.Close(); // Ensure the connection is closed
             }
         }
 
-        // Securely hash the password using SHA256 (Note: Adding salt is recommended in production)
+        // Hashes the password using SHA256 (does not use a salt — consider adding one in production)
         private string HashPassword(string password)
         {
-            using (SHA256 sha256 = SHA256.Create())
+            using (SHA256 sha256 = SHA256.Create()) // Create SHA256 instance
             {
-                byte[] bytes = Encoding.UTF8.GetBytes(password);
-                byte[] hash = sha256.ComputeHash(bytes);
-                return Convert.ToBase64String(hash); // Return hashed string
+                byte[] bytes = Encoding.UTF8.GetBytes(password); // Convert password string to byte array
+                byte[] hash = sha256.ComputeHash(bytes); // Compute the hash
+                return Convert.ToBase64String(hash); // Convert hashed byte array to base64 string
             }
         }
 
-        // Exit button: closes the application
+        // Exit button handler — closes the entire application
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // "Forgot Password" label click
+        // "Forgot Password" label click handler — opens forgot password form
         private void label1_Click(object sender, EventArgs e)
         {
-            frmForgotpwd frm = new frmForgotpwd();
-            frm.Show();
-            this.Hide();
+            frmForgotpwd frm = new frmForgotpwd(); // Create instance of forgot password form
+            frm.Show(); // Show the form
+            this.Hide(); // Hide current login form
         }
 
-        // "Sign up" label click
+        // "Sign up" label click handler — opens registration form
         private void label2_Click(object sender, EventArgs e)
         {
-            frmSignuppage frm = new frmSignuppage();
-            frm.Show();
-            this.Hide();
+            frmSignuppage frm = new frmSignuppage(); // Create sign-up form
+            frm.Show(); // Show the sign-up form
+            this.Hide(); // Hide the login form
         }
 
-        // Reset login form state after failure
+        // Displays a standard login failure message and re-enables the login button
         private void ShowLoginFailed()
         {
             MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            SetLoginButtonState(true);
+            SetLoginButtonState(true); // Re-enable button
         }
 
-        // Helper to set the login button text and state
+        // Utility to enable or disable login button and update its text
         private void SetLoginButtonState(bool enabled, string text = "Log in")
         {
             btnLogin.Enabled = enabled;
             btnLogin.Text = text;
         }
-
-
     }
 }

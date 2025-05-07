@@ -10,11 +10,11 @@ namespace Recipe_Manager
 {
     public partial class frmChangeEmail : Form
     {
-        private int userId;
-        private string currentEmail;
-        private string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";
-        private string verificationCode;
-        private string verifiedEmail;
+        private int userId;               // Stores the user ID
+        private string currentEmail;      // Stores the current email address
+        private string connectionString = "server=localhost;uid=root;pwd=12345;database=recipe_managerv2";  // Connection string for MySQL database
+        private string verificationCode; // Holds the generated verification code
+        private string verifiedEmail;    // Stores the new email to be verified
 
         // Constructor initializes user ID and current email
         public frmChangeEmail(int userId, string currentEmail)
@@ -27,7 +27,7 @@ namespace Recipe_Manager
         // Hide password characters on form load
         private void frmChangeEmail_Load(object sender, EventArgs e)
         {
-            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.UseSystemPasswordChar = true;  // Ensure password field hides input characters
         }
 
         // Sends a 6-digit verification code to the new email
@@ -35,14 +35,14 @@ namespace Recipe_Manager
         {
             string newEmail = txtEmail.Text.Trim();
 
-            btnSendCode.Text = "Sending...";
-            btnSendCode.Enabled = false;
+            btnSendCode.Text = "Sending...";  // Change button text to indicate sending
+            btnSendCode.Enabled = false;     // Disable the button while sending
 
             // Basic email format validation
             if (string.IsNullOrEmpty(newEmail) || !newEmail.Contains("@") || !newEmail.Contains("."))
             {
                 MessageBox.Show("Please enter a valid email address.");
-                ResetSendCodeButton();
+                ResetSendCodeButton(); // Reset button if validation fails
                 return;
             }
 
@@ -60,41 +60,40 @@ namespace Recipe_Manager
                         if (count > 0)
                         {
                             MessageBox.Show("This email is already taken. Please choose another one.");
-                            ResetSendCodeButton();
+                            ResetSendCodeButton(); // Reset button if email exists
                             return;
                         }
                     }
                 }
 
-                // Generate random 6-digit code
+                // Generate a random 6-digit verification code
                 verificationCode = new Random().Next(100000, 999999).ToString();
 
-                // Attempt to send email
+                // Attempt to send the verification code email
                 SendVerificationCodeEmail(newEmail);
                 MessageBox.Show("Verification code sent to the new email.");
 
                 // Lock email field after sending
                 txtEmail.Enabled = false;
-                verifiedEmail = newEmail;
+                verifiedEmail = newEmail;  // Store the new email to be verified
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error sending code: " + ex.Message);
+                MessageBox.Show("Error sending code: " + ex.Message); // Display error if sending fails
             }
             finally
             {
-                ResetSendCodeButton();
+                ResetSendCodeButton(); // Reset the button regardless of success or failure
             }
         }
-
 
         // Updates the email in the database after verification
         private void btnUpdateEmail_Click(object sender, EventArgs e)
         {
-            string inputCode = txtCode.Text.Trim();
-            string inputPassword = txtPassword.Text.Trim();
+            string inputCode = txtCode.Text.Trim();  // Get the entered verification code
+            string inputPassword = txtPassword.Text.Trim();  // Get the entered password
 
-            // Ensure email was verified
+            // Ensure email was verified first
             if (verifiedEmail == null)
             {
                 MessageBox.Show("Please verify your email first.");
@@ -121,7 +120,7 @@ namespace Recipe_Manager
                 {
                     conn.Open();
 
-                    // Check if password matches the one in DB
+                    // Check if the password matches the one stored in the database
                     string checkQuery = "SELECT password_hash FROM users WHERE user_id = @userId";
                     MySqlCommand cmd = new MySqlCommand(checkQuery, conn);
                     cmd.Parameters.AddWithValue("@userId", userId);
@@ -133,7 +132,7 @@ namespace Recipe_Manager
                         return;
                     }
 
-                    // Update the email
+                    // Update the email in the database
                     string updateQuery = "UPDATE users SET email = @newEmail WHERE user_id = @userId";
                     MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn);
                     updateCmd.Parameters.AddWithValue("@newEmail", verifiedEmail);
@@ -142,35 +141,35 @@ namespace Recipe_Manager
 
                     MessageBox.Show("Email updated successfully.");
 
-                    // Return to profile form
+                    // Navigate back to profile form
                     frmProfile profileForm = new frmProfile(userId);
                     profileForm.Show();
 
-                    this.Close(); // Close this form
+                    this.Close(); // Close the current form
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message); // Display error if database operation fails
             }
         }
 
         // Sends an email containing the verification code
         private void SendVerificationCodeEmail(string recipientEmail)
         {
-            string senderEmail = "bryandelapaz66850@gmail.com";
+            string senderEmail = "bryandelapaz66850@gmail.com";  // Sender email
             string senderPassword = "lyui gelf lhxq flta"; // Gmail app password
 
             using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
             {
-                smtp.EnableSsl = true;
+                smtp.EnableSsl = true;  // Enable SSL encryption
                 smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
 
                 using (MailMessage mail = new MailMessage(senderEmail, recipientEmail))
                 {
                     mail.Subject = "Change Email Verification Code";
                     mail.Body = $"Your code to confirm the email change is: {verificationCode}";
-                    smtp.Send(mail);
+                    smtp.Send(mail);  // Send the email
                 }
             }
         }
@@ -182,34 +181,34 @@ namespace Recipe_Manager
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(password);
                 byte[] hash = sha256.ComputeHash(bytes);
-                return Convert.ToBase64String(hash);
+                return Convert.ToBase64String(hash); // Return the hashed password
             }
         }
 
         // Resets the "Send Code" button to its default state
         private void ResetSendCodeButton()
         {
-            btnSendCode.Text = "Send Code";
-            btnSendCode.Enabled = true;
+            btnSendCode.Text = "Send Code";  // Reset the button text
+            btnSendCode.Enabled = true;      // Re-enable the button
         }
 
         // Navigates back to the profile form
         private void btnBack2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Hide();  // Hide the current form
 
-            using (frmProfile frmProfile = new frmProfile(userId))
+            using (frmProfile frmProfile = new frmProfile(userId))  // Create a new profile form instance
             {
-                frmProfile.ShowDialog();
+                frmProfile.ShowDialog();  // Show the profile form
             }
 
-            this.Close();
+            this.Close();  // Close the current form
         }
 
         // Exits the application
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit();  // Exit the application
         }
 
         private void txtCode_KeyPress(object sender, KeyPressEventArgs e)
@@ -217,7 +216,7 @@ namespace Recipe_Manager
             // Allow only digits and control characters (like Backspace)
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Blocks the input
+                e.Handled = true; // Block the input
             }
         }
     }

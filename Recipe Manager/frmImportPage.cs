@@ -3,107 +3,104 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HtmlAgilityPack;
+using HtmlAgilityPack; // Used for parsing HTML documents
 
 namespace Recipe_Manager
 {
     public partial class frmImportPage : Form
     {
-        // Stores the user ID for later use in the recipe upload process
+        // Stores the user ID passed into this form
         private readonly int userId;
 
-        // Property to hold the imported recipe after parsing
+        // Property to store the parsed recipe after importing
         public Recipe ImportedRecipe { get; private set; }
 
-        // Constructor to initialize the form with the user's ID
+        // Constructor that accepts the user ID and initializes the form
         public frmImportPage(int userId)
         {
             InitializeComponent();
             this.userId = userId;
         }
 
-        // Click event handler for importing a recipe from a URL
+        // When the Import button is clicked
         private async void btnUploadUrl_Click(object sender, EventArgs e)
         {
-            string url = txtUrl.Text.Trim();  // Retrieve the URL entered by the user
+            string url = txtUrl.Text.Trim();  // Get and trim the entered URL
 
-            // Validate if the URL is provided
+            // Validate that the URL is not empty or just whitespace
             if (string.IsNullOrWhiteSpace(url))
             {
                 MessageBox.Show("Please enter a valid recipe URL.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Disable the button and change text to indicate loading
+            // Indicate to the user that loading has started
             btnUploadUrl.Enabled = false;
             btnUploadUrl.Text = "Loading...";
 
             try
             {
-                // Try to import the recipe asynchronously
+                // Call the async method to import the recipe from the URL
                 ImportedRecipe = await ImportRecipeAsync(url);
 
-                // If the recipe is successfully imported, open the recipe form
+                // If a recipe was successfully parsed, open the recipe form with it
                 if (ImportedRecipe != null)
                 {
                     frmRecipe recipeForm = new frmRecipe(userId, ImportedRecipe);
-                    Hide();  // Hide the current form
-                    recipeForm.ShowDialog();  // Show the new recipe form
-                    recipeForm.Dispose();  // Dispose of the recipe form after use
-                    Close();  // Close the current form
+                    Hide();  // Hide this form
+                    recipeForm.ShowDialog();  // Show the new form as a dialog
+                    recipeForm.Dispose();  // Release resources
+                    Close();  // Close this form
                 }
                 else
                 {
-                    // If the recipe is not parsed, show an error message
+                    // Recipe could not be parsed
                     MessageBox.Show("Could not parse the recipe. Please check the URL format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (HttpRequestException ex)
             {
-                // Handle network errors
+                // Handle HTTP-related errors (e.g., connection timeout)
                 MessageBox.Show($"Network error: {ex.Message}", "Network Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                // Handle any other unexpected errors
+                // Handle unexpected errors
                 MessageBox.Show($"Unexpected error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                // Re-enable the button and reset the text back to "Import"
+                // Restore button to its original state
                 btnUploadUrl.Enabled = true;
                 btnUploadUrl.Text = "Import";
             }
         }
 
-        // Asynchronous method that retrieves and parses the recipe from the given URL
+        // Asynchronous method to fetch and parse recipe HTML from a URL
         private async Task<Recipe> ImportRecipeAsync(string url)
         {
-            // Create an HTTP client with a 15-second timeout
-            HttpClient client = new HttpClient();
-            client.Timeout = TimeSpan.FromSeconds(15);
+            HttpClient client = new HttpClient(); // Create an HTTP client
+            client.Timeout = TimeSpan.FromSeconds(15); // Set a timeout
 
             try
             {
-                // Fetch the HTML content from the URL
+                // Download HTML content from the URL
                 string htmlContent = await client.GetStringAsync(url);
 
-                // Create an HTML document and load the HTML content
+                // Load the HTML content into an HtmlDocument
                 var document = new HtmlAgilityPack.HtmlDocument();
                 document.LoadHtml(htmlContent);
 
-                // Return a new Recipe object populated with extracted data
+                // Create a new Recipe object with extracted values
                 return new Recipe
                 {
-                    // Extract the recipe name using various XPath queries
                     Name = ExtractFirstMatch(document, new[]
                     {
-                        "//h1",
-                        "//meta[@property='og:title']/@content",
-                        "//title"
+                        "//h1", // Header tag
+                        "//meta[@property='og:title']/@content", // Open Graph title
+                        "//title" // Fallback to <title> tag
                     }) ?? "Untitled Recipe",
 
-                    // Extract ingredients using XPath queries
                     Ingredients = ExtractList(document, new[]
                     {
                         "//li[contains(@class,'ingredient')]",
@@ -113,7 +110,6 @@ namespace Recipe_Manager
                         "//li[contains(text(),'cup') or contains(text(),'tsp') or contains(text(),'tablespoon') or contains(text(),'gram')]"
                     }) ?? "Ingredients not found.",
 
-                    // Extract instructions using XPath queries
                     Instructions = ExtractList(document, new[]
                     {
                         "//li[contains(@class,'instruction')]",
@@ -124,33 +120,31 @@ namespace Recipe_Manager
                         "//p[contains(text(),'step') or contains(text(),'instruction') or contains(text(),'Step')]"
                     }) ?? "Instructions not found.",
 
-                    // Extract image URL if available
                     ImageUrl = ExtractFirstMatch(document, new[]
                     {
-                        "//meta[@property='og:image']/@content",
-                        "//meta[@name='twitter:image']/@content",
-                        "//img[contains(@class,'recipe')]/@src",
-                        "//img[contains(@src,'recipe')]/@src"
+                        "//meta[@property='og:image']/@content", // Open Graph image
+                        "//meta[@name='twitter:image']/@content", // Twitter card image
+                        "//img[contains(@class,'recipe')]/@src", // Recipe image by class
+                        "//img[contains(@src,'recipe')]/@src" // Recipe image by URL pattern
                     }) ?? string.Empty
                 };
             }
             finally
             {
-                // Ensure to dispose of the HTTP client after the operation
+                // Dispose of the client to free up resources
                 client.Dispose();
             }
         }
 
-        // Helper method to extract the first matching value from the document using multiple XPath queries
+        // Helper method to extract the first matching string from HTML using a list of XPath expressions
         private static string ExtractFirstMatch(HtmlAgilityPack.HtmlDocument document, string[] xpaths)
         {
             foreach (string xpath in xpaths)
             {
                 var node = document.DocumentNode.SelectSingleNode(xpath);
-
-                // If a node is found, extract either inner text or attribute value
                 if (node != null)
                 {
+                    // If XPath points to an attribute (e.g. @content), extract it
                     if (xpath.Contains("@"))
                     {
                         string attrName = xpath.Split('@').Last();
@@ -158,14 +152,14 @@ namespace Recipe_Manager
                     }
                     else
                     {
-                        return node.InnerText.Trim();
+                        return node.InnerText.Trim(); // Otherwise, get the inner text
                     }
                 }
             }
-            return null;
+            return null; // Nothing matched
         }
 
-        // Helper method to extract a list of values (like ingredients or instructions) from the document
+        // Helper method to extract multiple values from HTML and return them as a newline-separated string
         private static string ExtractList(HtmlAgilityPack.HtmlDocument document, string[] xpaths)
         {
             foreach (string xpath in xpaths)
@@ -173,14 +167,14 @@ namespace Recipe_Manager
                 var nodes = document.DocumentNode.SelectNodes(xpath);
                 if (nodes != null && nodes.Any())
                 {
-                    // Combine all matching values into a single string
+                    // Join all node texts into a single string separated by newlines
                     return string.Join(Environment.NewLine, nodes.Select(n => n.InnerText.Trim()));
                 }
             }
-            return null;
+            return null; // Nothing matched
         }
 
-        // Inner class to represent a recipe with its properties
+        // Simple model class to store the recipe data
         public class Recipe
         {
             public string Name { get; set; }
@@ -189,18 +183,18 @@ namespace Recipe_Manager
             public string ImageUrl { get; set; }
         }
 
-        // Button click event handler to navigate back to the recipe form
+        // Event handler for the Back button to return to the main recipe form
         private void btnBack_Click(object sender, EventArgs e)
         {
             frmRecipe recipeForm = new frmRecipe(userId);
-            this.Hide();  // Hide the current form
-            recipeForm.Show();  // Show the recipe form
+            this.Hide();
+            recipeForm.Show();
         }
 
-        // Button click event handler to exit the application
+        // Event handler for the Exit button to close the application
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();  // Exit the application
+            Application.Exit(); // Exit the app
         }
     }
 }
